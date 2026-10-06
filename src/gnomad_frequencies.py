@@ -38,8 +38,11 @@ COLUMNS = ("variation_id", "chrom", "pos", "ref", "alt", "in_gnomad", "filter") 
 
 
 def selected(row: dict, rows: str) -> bool:
-    """Rows to annotate: chromosomes 1-22 and X, at least one star; 'new' keeps the new-label set."""
+    """Rows to annotate: chromosomes 1-22 and X, at least one star, the regions of the study (intronic,
+    UTR, synonymous); 'new' keeps the new-label set."""
     if row["chrom"] not in CHROMS or not row["stars"].isdigit() or int(row["stars"]) < 1:
+        return False
+    if row["family"] not in ("intronic", "utr") and row["region"] != "synonymous":
         return False
     return rows == "all" or row["new_label"] == "yes"
 
