@@ -1,0 +1,9 @@
+{
+ "inputs": {
+  "data/raw/traitgym/mendelian_traits_all/test.parquet": "f25fd8d75ecc1b943d72492af8605cb7d160740ec9e66d6ab75691bd75a9c534",
+  "data/raw/traitgym/mendelian_traits_matched_9/test.parquet": "144db4bf965e3c2b8936cd675448bade96369b6546cfdadb5c7b2bca17389607",
+  "data/raw/traitgym/mendelian_traits_v21_matched_9/test.parquet": "4c21738b3add21d98ec888712cbd369ccf99902d98967524142313e38ac282b2",
+  "data/raw/traitgym/mendelian_traits_v22_matched_9/test.parquet": "17a448919fb736eff1a300c8302200cc68bd7e7d7f93fcdfa21c517e9812e0f1"
+ },
+ "merged_intervals": 4899231
+}

@@ -1,0 +1,4572 @@
+[
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/variant_summary_2025-07.txt.gz",
+    "file": "data/raw/variant_summary_2025-07.txt.gz",
+    "http_status": 200,
+    "last_modified": "Thu, 03 Jul 2025 04:05:04 GMT",
+    "bytes": 372755443,
+    "sha256": "87f1478bf1b894b7772c943db3e4858ce01fddb07817746178104751b75f0de2",
+    "started_utc": "2026-10-05T18:10:06+00:00",
+    "finished_utc": "2026-10-05T18:10:49+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/variant_summary_2026-10.txt.gz",
+    "file": "data/raw/variant_summary_2026-10.txt.gz",
+    "http_status": 200,
+    "last_modified": "Thu, 01 Oct 2026 04:05:02 GMT",
+    "bytes": 450727547,
+    "sha256": "a6a58df4d9049c9187a79a8fb4e70f1f3b5550e1708c6c74b7be0b268f5032da",
+    "started_utc": "2026-10-05T18:10:49+00:00",
+    "finished_utc": "2026-10-05T18:11:31+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/archive_2.0/2025/clinvar_20250615.vcf.gz",
+    "file": "data/raw/clinvar_20250615.vcf.gz",
+    "http_status": 200,
+    "last_modified": "Sun, 15 Jun 2025 18:18:43 GMT",
+    "bytes": 163971203,
+    "sha256": "ee9b7a8d9bb549d0b19870812cea08bbece14d4c09596e0b9d82ba57ecc77f2f",
+    "started_utc": "2026-10-05T18:43:50+00:00",
+    "finished_utc": "2026-10-05T18:44:09+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/2024/variant_summary_2024-07.txt.gz",
+    "file": "data/raw/variant_summary_2024-07.txt.gz",
+    "http_status": 200,
+    "last_modified": "Thu, 04 Jul 2024 04:05:04 GMT",
+    "bytes": 276997836,
+    "sha256": "d6e1de9db597efcdd3af624155352740412506f5c795040b99408e063906bbe4",
+    "started_utc": "2026-10-05T18:44:09+00:00",
+    "finished_utc": "2026-10-05T18:44:40+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/variant_summary_2026-09.txt.gz",
+    "file": "data/raw/variant_summary_2026-09.txt.gz",
+    "obtained_by": "copy of an earlier download",
+    "source_description": "earlier download of 2026-09-23 by the same research group (public-data cache), Last-Modified Thu, 03 Sep 2026 04:05:02 GMT, 442495433 bytes",
+    "bytes": 442495433,
+    "sha256_expected": "186ad2838a138f0bc7a79b1b7b6dde5533b105175d293e1131652889529804c9",
+    "sha256": "186ad2838a138f0bc7a79b1b7b6dde5533b105175d293e1131652889529804c9",
+    "copied_utc": "2026-10-05T18:45:20+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/organization_summary.txt",
+    "file": "data/raw/organization_summary.txt",
+    "http_status": 200,
+    "last_modified": "Sun, 04 Oct 2026 13:44:52 GMT",
+    "bytes": 938614,
+    "sha256": "33fbc59af60622dba0d231e978c6fee46642a16bf5a192f5ce072a60ab3a880a",
+    "started_utc": "2026-10-06T01:54:09+00:00",
+    "finished_utc": "2026-10-06T01:54:10+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/refseq/MANE/MANE_human/release_1.5/MANE.GRCh38.v1.5.summary.txt.gz",
+    "file": "data/raw/MANE.GRCh38.v1.5.summary.txt.gz",
+    "http_status": 200,
+    "last_modified": "Thu, 04 Dec 2025 19:53:44 GMT",
+    "bytes": 1115288,
+    "sha256": "d10ace2720681a3b2e0eefd9da4f551274a6b4141ac9bfd6a2565dfb6e9ad55c",
+    "started_utc": "2026-10-06T12:00:47+00:00",
+    "finished_utc": "2026-10-06T12:00:48+00:00"
+  },
+  {
+    "url": "https://huggingface.co/datasets/songlab/TraitGym/resolve/1fde19555fe8c0a55b1382bdf4c6f7082209f566/mendelian_traits_all/test.parquet",
+    "file": "data/raw/traitgym/mendelian_traits_all/test.parquet",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 27307550,
+    "sha256": "f25fd8d75ecc1b943d72492af8605cb7d160740ec9e66d6ab75691bd75a9c534",
+    "started_utc": "2026-10-06T12:13:30+00:00",
+    "finished_utc": "2026-10-06T12:13:35+00:00"
+  },
+  {
+    "url": "https://huggingface.co/datasets/songlab/TraitGym/resolve/1fde19555fe8c0a55b1382bdf4c6f7082209f566/mendelian_traits_matched_9/test.parquet",
+    "file": "data/raw/traitgym/mendelian_traits_matched_9/test.parquet",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 50205,
+    "sha256": "144db4bf965e3c2b8936cd675448bade96369b6546cfdadb5c7b2bca17389607",
+    "started_utc": "2026-10-06T12:13:35+00:00",
+    "finished_utc": "2026-10-06T12:13:36+00:00"
+  },
+  {
+    "url": "https://huggingface.co/datasets/songlab/TraitGym/resolve/1fde19555fe8c0a55b1382bdf4c6f7082209f566/mendelian_traits_v21_matched_9/test.parquet",
+    "file": "data/raw/traitgym/mendelian_traits_v21_matched_9/test.parquet",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 52737,
+    "sha256": "4c21738b3add21d98ec888712cbd369ccf99902d98967524142313e38ac282b2",
+    "started_utc": "2026-10-06T12:13:38+00:00",
+    "finished_utc": "2026-10-06T12:13:39+00:00"
+  },
+  {
+    "url": "https://huggingface.co/datasets/songlab/TraitGym/resolve/1fde19555fe8c0a55b1382bdf4c6f7082209f566/mendelian_traits_v22_matched_9/test.parquet",
+    "file": "data/raw/traitgym/mendelian_traits_v22_matched_9/test.parquet",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 10106,
+    "sha256": "17a448919fb736eff1a300c8302200cc68bd7e7d7f93fcdfa21c517e9812e0f1",
+    "started_utc": "2026-10-06T12:13:42+00:00",
+    "finished_utc": "2026-10-06T12:13:43+00:00"
+  },
+  {
+    "url": "https://huggingface.co/datasets/songlab/TraitGym/resolve/1fde19555fe8c0a55b1382bdf4c6f7082209f566/complex_traits_all/test.parquet",
+    "file": "data/raw/traitgym/complex_traits_all/test.parquet",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 230931760,
+    "sha256": "607631cc9d90a7a0863e0d99e95b6653e30526617c1ce798f69580e0b1426d12",
+    "started_utc": "2026-10-06T12:13:44+00:00",
+    "finished_utc": "2026-10-06T12:14:16+00:00"
+  },
+  {
+    "url": "https://huggingface.co/datasets/songlab/TraitGym/resolve/1fde19555fe8c0a55b1382bdf4c6f7082209f566/complex_traits_matched_9/test.parquet",
+    "file": "data/raw/traitgym/complex_traits_matched_9/test.parquet",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 411336,
+    "sha256": "068940684e1e6f735a25a1a4418fb65390628023a96188af7f1a15dd17de7036",
+    "started_utc": "2026-10-06T12:14:22+00:00",
+    "finished_utc": "2026-10-06T12:14:24+00:00"
+  },
+  {
+    "url": "https://huggingface.co/datasets/songlab/TraitGym/resolve/1fde19555fe8c0a55b1382bdf4c6f7082209f566/complex_traits_v22_matched_9/test.parquet",
+    "file": "data/raw/traitgym/complex_traits_v22_matched_9/test.parquet",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 351680,
+    "sha256": "970ae4123f92042de86b5ac2cb18c19526da8609b0867f44b4a45283dbf6c727",
+    "started_utc": "2026-10-06T12:14:29+00:00",
+    "finished_utc": "2026-10-06T12:14:31+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Gardner-BinfLab/ncVarDB/42828402cd3fea565308faaefa187189faf2ec79/data/ncVar_pathogenic.tsv",
+    "file": "data/raw/ncvardb/ncVar_pathogenic.tsv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 104449,
+    "sha256": "2f2fc0d893be3443e702adaddfeffc09c432895e22d8e4ce7cc4d477ac2bb5c8",
+    "started_utc": "2026-10-06T12:14:32+00:00",
+    "finished_utc": "2026-10-06T12:14:34+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Gardner-BinfLab/ncVarDB/42828402cd3fea565308faaefa187189faf2ec79/data/ncVar_benign.tsv",
+    "file": "data/raw/ncvardb/ncVar_benign.tsv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 552113,
+    "sha256": "66da187661e4a08ae9cc624b8ccf1d2ce3da1fb73bff9e84efce5626a20ab17c",
+    "started_utc": "2026-10-06T12:14:35+00:00",
+    "finished_utc": "2026-10-06T12:14:36+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Gardner-BinfLab/ncVarDB/42828402cd3fea565308faaefa187189faf2ec79/data/ncVar_pathogenic.vcf",
+    "file": "data/raw/ncvardb/ncVar_pathogenic.vcf",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 51581,
+    "sha256": "aadb20f82b4b670a1c1175959f5ac31ef502cd6254162626fb5ebb7489892516",
+    "started_utc": "2026-10-06T12:14:40+00:00",
+    "finished_utc": "2026-10-06T12:14:40+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Gardner-BinfLab/ncVarDB/42828402cd3fea565308faaefa187189faf2ec79/data/ncVar_benign.vcf",
+    "file": "data/raw/ncvardb/ncVar_benign.vcf",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 379178,
+    "sha256": "4c117df24e8cf9399337c31db5c1f6f29a55929f648a88db2985ea5f912248fe",
+    "started_utc": "2026-10-06T12:14:41+00:00",
+    "finished_utc": "2026-10-06T12:14:42+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Gardner-BinfLab/ncVarDB/42828402cd3fea565308faaefa187189faf2ec79/README.md",
+    "file": "data/raw/ncvardb/README.md",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2355,
+    "sha256": "9e59a3fa653ce3b819ae239166f8877212a59f31770ff04993890eaf8fea5052",
+    "started_utc": "2026-10-06T12:14:44+00:00",
+    "finished_utc": "2026-10-06T12:14:48+00:00"
+  },
+  {
+    "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz",
+    "file": "data/raw/hg19ToHg38.over.chain.gz",
+    "http_status": 200,
+    "last_modified": "Wed, 01 Jan 2014 07:08:46 GMT",
+    "bytes": 227698,
+    "sha256": "5c0598e500ceb5a78c73086929e8ef993aec309bcafb595139b53d440b125a1d",
+    "started_utc": "2026-10-06T12:14:50+00:00",
+    "finished_utc": "2026-10-06T12:14:52+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/genomes/all/annotation_releases/9606/GCF_000001405.40-RS_2025_08/GCF_000001405.40_GRCh38.p14_genomic.gff.gz",
+    "file": "data/raw/GCF_000001405.40_GRCh38.p14_genomic.gff.gz",
+    "http_status": 200,
+    "last_modified": "Thu, 07 Aug 2025 00:15:39 GMT",
+    "bytes": 78190483,
+    "sha256": "4920f0eae7e2197c50b67a201e06d657387137b49dd60f474b4f1d5b29334051",
+    "started_utc": "2026-10-06T12:14:53+00:00",
+    "finished_utc": "2026-10-06T12:15:10+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/xml/ClinVarVCVRelease_2026-10.xml.gz",
+    "file": "data/raw/ClinVarVCVRelease_2026-10.xml.gz",
+    "http_status": 200,
+    "last_modified": "Thu, 01 Oct 2026 04:07:46 GMT",
+    "bytes": 5984688352,
+    "sha256": "91752427f359de1e3ad0f332de5aa00d448187188ea9187bf091464f467d4c46",
+    "started_utc": "2026-10-06T12:19:36+00:00",
+    "finished_utc": "2026-10-06T12:29:11+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/xml/ClinVarVCVRelease_2026-10.xml.gz.md5",
+    "file": "data/raw/ClinVarVCVRelease_2026-10.xml.gz.md5",
+    "http_status": 200,
+    "last_modified": "Thu, 01 Oct 2026 04:08:13 GMT",
+    "bytes": 67,
+    "sha256": "7d610aca9e7e601787580b0326c40010fe1d0b22d6140df9f6294ae75c1e86cd",
+    "started_utc": "2026-10-06T12:29:12+00:00",
+    "finished_utc": "2026-10-06T12:29:12+00:00"
+  },
+  {
+    "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr21.fa.gz",
+    "file": "data/raw/checks/hg38_chr21.fa.gz",
+    "http_status": 200,
+    "last_modified": "Fri, 24 Jan 2014 00:39:54 GMT",
+    "bytes": 12709705,
+    "sha256": "c979ca1e5065c2521a50773473e0d0cc018fd6f3e9bb3aa90493fe7b45d57d1b",
+    "started_utc": "2026-10-06T12:58:19+00:00",
+    "finished_utc": "2026-10-06T12:58:26+00:00"
+  },
+  {
+    "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr22.fa.gz",
+    "file": "data/raw/checks/hg38_chr22.fa.gz",
+    "http_status": 200,
+    "last_modified": "Fri, 24 Jan 2014 00:39:55 GMT",
+    "bytes": 12255678,
+    "sha256": "05f9d97d6fbfd08a44ca45b50837ca2ae9c471f35ba79dffec04d2cb5eaaf695",
+    "started_utc": "2026-10-06T12:59:39+00:00",
+    "finished_utc": "2026-10-06T12:59:43+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-0",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-0.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 4976,
+    "sha256": "cb1bf0239e0529db44f3ab3fd0eefa11a1d045e8d8d11d488bf0907df3d4b683",
+    "started_utc": "2026-10-06T13:00:42+00:00",
+    "finished_utc": "2026-10-06T13:00:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-0-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-0-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 75150,
+    "sha256": "4666a7c26e545cbe4e727948a6c32403c5605e236eb4c005e4a9c539820c9edb",
+    "started_utc": "2026-10-06T13:00:42+00:00",
+    "finished_utc": "2026-10-06T13:00:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-0-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-0-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 610024,
+    "sha256": "906dc152f28b4c8261e4e532a03c9c42f2e45e211aa3ada12e3c826c151580ec",
+    "started_utc": "2026-10-06T13:04:45+00:00",
+    "finished_utc": "2026-10-06T13:04:47+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-0-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-0-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 16191515,
+    "sha256": "1ef747d80d5e990ebb3295e34afc578c2017065dc21c75ad19b151ad0a176b24",
+    "started_utc": "2026-10-06T13:04:47+00:00",
+    "finished_utc": "2026-10-06T13:05:01+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-a",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "e5b3dfe3fe86b2576ff4af408be23971f8e3e070eed1e9773f2a720f58033c58",
+    "started_utc": "2026-10-06T13:05:02+00:00",
+    "finished_utc": "2026-10-06T13:05:03+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8922,
+    "sha256": "f2e6a46f58d39cd88d2f4a59651fc20ec3bc2b94c52dd2b0768fb22034ec039a",
+    "started_utc": "2026-10-06T13:05:03+00:00",
+    "finished_utc": "2026-10-06T13:05:04+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 40353,
+    "sha256": "8aad71073df9143177cc5975229f96056d0a73c90d6fe8f381d322b5af52ef4a",
+    "started_utc": "2026-10-06T13:05:04+00:00",
+    "finished_utc": "2026-10-06T13:05:05+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 136972,
+    "sha256": "5b0eb06fe1b0abaab46d4d6bd5f131711b1dc61aab37181d468556533208cd0e",
+    "started_utc": "2026-10-06T13:05:05+00:00",
+    "finished_utc": "2026-10-06T13:05:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9453,
+    "sha256": "28c4303a94b05eb39497c96ba6f9b2927938bcb1807fd775d69a5b5d2b785e2d",
+    "started_utc": "2026-10-06T13:05:06+00:00",
+    "finished_utc": "2026-10-06T13:05:07+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 46932,
+    "sha256": "fd25b7e7432d638a9fcec092495020cd9b0909c0c78c459adc1a5e104b8cecba",
+    "started_utc": "2026-10-06T13:05:07+00:00",
+    "finished_utc": "2026-10-06T13:05:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 731109,
+    "sha256": "5c5173f309fc69076f66889d1d1f46f2dad462d9b95343584a5e7e8851f6a859",
+    "started_utc": "2026-10-06T13:05:08+00:00",
+    "finished_utc": "2026-10-06T13:05:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-b",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-b.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "17afff061f10a5c190fe6ca8fbdd83b1b32aa82838191674390ee01f07a23e3e",
+    "started_utc": "2026-10-06T13:05:11+00:00",
+    "finished_utc": "2026-10-06T13:05:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-b-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-b-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8843,
+    "sha256": "ac2fafd5d3222c2963f3c2dcef3ab523b3140f17941b8cd8a8995ad6b4abde53",
+    "started_utc": "2026-10-06T13:05:12+00:00",
+    "finished_utc": "2026-10-06T13:05:13+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-b-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-b-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 40307,
+    "sha256": "24eb80fb26f04cebd14c758d4dc66afb93f691228c8c4dacaf890966708d0c2c",
+    "started_utc": "2026-10-06T13:05:13+00:00",
+    "finished_utc": "2026-10-06T13:05:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-b-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-b-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 136972,
+    "sha256": "3869043956ef71b79d67f5f52fbf253202d710f9a9a1fad5646c727cbeffb191",
+    "started_utc": "2026-10-06T13:05:14+00:00",
+    "finished_utc": "2026-10-06T13:05:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-b-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-b-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9374,
+    "sha256": "aae8069bd0137df06a8d16207ec623bf010ffd4506c443c1cb7485313b8a87c1",
+    "started_utc": "2026-10-06T13:05:16+00:00",
+    "finished_utc": "2026-10-06T13:05:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-b-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-b-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 46887,
+    "sha256": "aa701fbb03fdbed8920d205720bd1cd36b8f729e96b5a506344a73c7f9e69ce6",
+    "started_utc": "2026-10-06T13:05:17+00:00",
+    "finished_utc": "2026-10-06T13:05:18+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-b-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-b-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 730874,
+    "sha256": "72b06dbcd071b26f29fa79f53ef08021bbb20a5708ce8122429bbeb4ffbca65e",
+    "started_utc": "2026-10-06T13:05:18+00:00",
+    "finished_utc": "2026-10-06T13:05:20+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-c",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-c.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "78cd15fc3c1ccba002254e91d1694a8bfca76f7b7552563b244dcc505dd15d78",
+    "started_utc": "2026-10-06T13:05:20+00:00",
+    "finished_utc": "2026-10-06T13:05:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-c-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-c-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8922,
+    "sha256": "04b1a129eb67beafb2046ace550127a5c2b05e0e0fb0c4957a0f4202f4e67b52",
+    "started_utc": "2026-10-06T13:05:21+00:00",
+    "finished_utc": "2026-10-06T13:05:22+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-c-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-c-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 36498,
+    "sha256": "fed281f6485a7db587033f5e1233da4e501d306c01159cdbb627e5842d01468d",
+    "started_utc": "2026-10-06T13:05:22+00:00",
+    "finished_utc": "2026-10-06T13:05:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-c-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-c-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 176030,
+    "sha256": "aea0ec0c9f966f8c32ea82c1c44427644a2b89a8ce6f9c2c0e1b0a954fe5dded",
+    "started_utc": "2026-10-06T13:05:23+00:00",
+    "finished_utc": "2026-10-06T13:05:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-c-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-c-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9447,
+    "sha256": "06b8b458274eb4b0401277fb24b79caf775d946496538edf0e561746103af781",
+    "started_utc": "2026-10-06T13:05:25+00:00",
+    "finished_utc": "2026-10-06T13:05:26+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-c-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-c-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 41399,
+    "sha256": "9d2f57a00fd3dfcec0a38a4805041e438ef13ed0f75b80d0767c8ba6a5f581b2",
+    "started_utc": "2026-10-06T13:05:26+00:00",
+    "finished_utc": "2026-10-06T13:05:27+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-c-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-c-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 518342,
+    "sha256": "aacbf8901ae404119d06b401df3cb9391210f27d628805409841ee52b9167d9f",
+    "started_utc": "2026-10-06T13:05:28+00:00",
+    "finished_utc": "2026-10-06T13:05:30+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-d",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-d.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "0af08abf99b02f4cd86066b5800287eda95d9210ce89f3042407b83128f0ee38",
+    "started_utc": "2026-10-06T13:05:30+00:00",
+    "finished_utc": "2026-10-06T13:05:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-d-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-d-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8922,
+    "sha256": "4e8e1ae89d38f2a03a9df39ea54d4adb99d41eaf72b4e9939c6e4fd64cc8f10a",
+    "started_utc": "2026-10-06T13:05:31+00:00",
+    "finished_utc": "2026-10-06T13:05:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-d-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-d-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 36477,
+    "sha256": "88d490ab7a61e538fdfb16de45a423731040bbbf4804715b5f710f231c5735ad",
+    "started_utc": "2026-10-06T13:05:32+00:00",
+    "finished_utc": "2026-10-06T13:05:33+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-d-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-d-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 176030,
+    "sha256": "aed0ed88000938e1d128aa3b3dbfd58837b71cada3e09dbbd1ed35d095dbae53",
+    "started_utc": "2026-10-06T13:05:33+00:00",
+    "finished_utc": "2026-10-06T13:05:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-d-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-d-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9447,
+    "sha256": "9e1b97bf88fbeb743563cfae92deb2fc224d680f611f814bbdce12663321909b",
+    "started_utc": "2026-10-06T13:05:34+00:00",
+    "finished_utc": "2026-10-06T13:05:35+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-d-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-d-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 41358,
+    "sha256": "acb57febe8cd88ad8b6c5ecf234e71ee17b32a60a33bdc1a006a5eccdc4eb449",
+    "started_utc": "2026-10-06T13:05:35+00:00",
+    "finished_utc": "2026-10-06T13:05:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-d-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-d-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 518032,
+    "sha256": "53dd50a991dab8c9b37d7f3d5c647728155d5ec889932c8160a21a5bff6f1b6c",
+    "started_utc": "2026-10-06T13:05:36+00:00",
+    "finished_utc": "2026-10-06T13:05:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-e",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-e.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "b6cfddcd1edc219214d9fed20f35ae8d4cf2e1226c15096d500d75668d199ecb",
+    "started_utc": "2026-10-06T13:05:38+00:00",
+    "finished_utc": "2026-10-06T13:05:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-e-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-e-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8922,
+    "sha256": "ef6ab96090656308b06912d519947ed21d387e46d03c516775f255071bd2b475",
+    "started_utc": "2026-10-06T13:05:39+00:00",
+    "finished_utc": "2026-10-06T13:05:40+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-e-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-e-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 37374,
+    "sha256": "aad0e09bfb73ad25a3eea49d7d19675062468207374c12f42f19ee2474a954e9",
+    "started_utc": "2026-10-06T13:05:40+00:00",
+    "finished_utc": "2026-10-06T13:05:41+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-e-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-e-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 147510,
+    "sha256": "cebc91af975586437158e41d0a7c249ae0a17f718ff945c547077ff14eeb716e",
+    "started_utc": "2026-10-06T13:05:41+00:00",
+    "finished_utc": "2026-10-06T13:05:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-e-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-e-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9447,
+    "sha256": "c1550df039cab72e17aa849d5251dd4fa5197f24db3ba3a91b28525701166fb8",
+    "started_utc": "2026-10-06T13:05:42+00:00",
+    "finished_utc": "2026-10-06T13:05:43+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-e-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-e-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 43691,
+    "sha256": "e336b38c039789287f6a0737e8173c417929d9293d0162975d1f9aa7e1a1151b",
+    "started_utc": "2026-10-06T13:05:43+00:00",
+    "finished_utc": "2026-10-06T13:05:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-e-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-e-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 703678,
+    "sha256": "c7bcd72b2a2b78a44b47a15caf2f8e437222c7affa206b2261026ddcc013afa8",
+    "started_utc": "2026-10-06T13:05:44+00:00",
+    "finished_utc": "2026-10-06T13:05:47+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-f",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-f.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "188083d832a7e49b16b47a23aa4df8900f1b908e029f36bf43a331cdfbfc7154",
+    "started_utc": "2026-10-06T13:05:47+00:00",
+    "finished_utc": "2026-10-06T13:05:47+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-f-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-f-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8922,
+    "sha256": "feced7003c3127ca4ecfab1a53f8c9289b16e1376f876c3875cc5a849dc3e5ee",
+    "started_utc": "2026-10-06T13:05:47+00:00",
+    "finished_utc": "2026-10-06T13:05:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-f-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-f-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 37429,
+    "sha256": "4fb66751f15891da4b071e4b1348ca36ce7c88ead6bbc61378575f117dd3d30f",
+    "started_utc": "2026-10-06T13:05:48+00:00",
+    "finished_utc": "2026-10-06T13:05:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-f-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-f-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 147510,
+    "sha256": "783bef183ea2377dc0b7ab6859818b03da565bf81e932f42aab833c03993355e",
+    "started_utc": "2026-10-06T13:05:49+00:00",
+    "finished_utc": "2026-10-06T13:05:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-f-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-f-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9447,
+    "sha256": "10db332228bc3cd05610e19e6348d64d9260327b92a78513bed2c20ea69c2c0d",
+    "started_utc": "2026-10-06T13:05:51+00:00",
+    "finished_utc": "2026-10-06T13:05:52+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-f-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-f-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 43787,
+    "sha256": "d766f3cd231a7a1aa068f2b4a25e92f85c55b9ebc2d74279a926fd3c014cb493",
+    "started_utc": "2026-10-06T13:05:52+00:00",
+    "finished_utc": "2026-10-06T13:05:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-f-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-f-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 703451,
+    "sha256": "62a92b96b0f8236caf3070e687d8d34e545a7216d076e1c11f9f6aa9071810fe",
+    "started_utc": "2026-10-06T13:05:53+00:00",
+    "finished_utc": "2026-10-06T13:05:55+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-g",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-g.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "55840a94adf02d36d99fd499faa7163b9f0dd1f462d0732b674f3b31644df132",
+    "started_utc": "2026-10-06T13:05:55+00:00",
+    "finished_utc": "2026-10-06T13:05:56+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-g-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-g-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8922,
+    "sha256": "7fe0d3b9ddab485e171fb899f2872029d70ecfa07eb1c4bef0ce269073d47644",
+    "started_utc": "2026-10-06T13:05:56+00:00",
+    "finished_utc": "2026-10-06T13:05:56+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-g-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-g-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 38668,
+    "sha256": "d69156b54a7e2ae97c275ca9b987b281b95f27f869bf6a9c56011338d560ade8",
+    "started_utc": "2026-10-06T13:05:57+00:00",
+    "finished_utc": "2026-10-06T13:05:57+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-g-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-g-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 147955,
+    "sha256": "79200d0bd313b20376e0219b7f1e2712ee5d8325291b01834dad1de6d00e121c",
+    "started_utc": "2026-10-06T13:05:57+00:00",
+    "finished_utc": "2026-10-06T13:05:59+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-g-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-g-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9456,
+    "sha256": "a505bb3aee577355b4b290848f2afdef7bfaee1dfccf7db381e7c06d565a5af0",
+    "started_utc": "2026-10-06T13:05:59+00:00",
+    "finished_utc": "2026-10-06T13:06:00+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-g-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-g-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 45351,
+    "sha256": "4c9f7ec615504bb69c17bb49b1971edd23e4078f139dd6d472eaf27f68516012",
+    "started_utc": "2026-10-06T13:06:00+00:00",
+    "finished_utc": "2026-10-06T13:06:01+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-g-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-g-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 756615,
+    "sha256": "57f4c90a0c22a7fddce84dacdfd168b84655ad77a23c273476566cc94c314896",
+    "started_utc": "2026-10-06T13:06:01+00:00",
+    "finished_utc": "2026-10-06T13:06:05+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-h",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-h.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3930,
+    "sha256": "a39e5991298eb6b1c141e4475aebb623538cd53461e566dc2d94b6f64dde17e3",
+    "started_utc": "2026-10-06T13:06:05+00:00",
+    "finished_utc": "2026-10-06T13:06:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-h-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-h-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8922,
+    "sha256": "42338e32e7d7d5e28808d6e1f9f5870b7260c10c6cf9d7618ae9b0762e137fbe",
+    "started_utc": "2026-10-06T13:06:06+00:00",
+    "finished_utc": "2026-10-06T13:06:07+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-h-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-h-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 38789,
+    "sha256": "785ea365273fd9c9afbdd342668510d06b50b7804a2c165b2bb2ad11c7eee47c",
+    "started_utc": "2026-10-06T13:06:07+00:00",
+    "finished_utc": "2026-10-06T13:06:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-h-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-h-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 147955,
+    "sha256": "f4735752a48b9cd9c13d13ef677ee307040c2ae16860726974412634813d8cb5",
+    "started_utc": "2026-10-06T13:06:08+00:00",
+    "finished_utc": "2026-10-06T13:06:09+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-h-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-h-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9456,
+    "sha256": "fa0d1fee025d7c72191ff497001bcd693801f4b9dd9321b339b219ea08ae5b34",
+    "started_utc": "2026-10-06T13:06:09+00:00",
+    "finished_utc": "2026-10-06T13:06:10+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-h-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-h-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 45528,
+    "sha256": "e2de064263a7ce17f547cd3e3fabd8b1b683b31a62734ae6efb766a735d172f9",
+    "started_utc": "2026-10-06T13:06:10+00:00",
+    "finished_utc": "2026-10-06T13:06:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-h-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-h-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 756123,
+    "sha256": "401404b452ffad0410b2525ff3aa38bc6b86932f23f40b5f20fa8ebf67dd08db",
+    "started_utc": "2026-10-06T13:06:11+00:00",
+    "finished_utc": "2026-10-06T13:06:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-i",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-i.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "a313c8ee883e6cb6ae1cc175c0d8f74f1294dbabde45fa259e47900976ec8855",
+    "started_utc": "2026-10-06T13:06:14+00:00",
+    "finished_utc": "2026-10-06T13:06:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-i-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-i-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "96485fbca122e268b3fc4ee6778cd8fba518846d915ed941286f5d26e48fe8b5",
+    "started_utc": "2026-10-06T13:06:15+00:00",
+    "finished_utc": "2026-10-06T13:06:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-i-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-i-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 39981,
+    "sha256": "147130cfa0082afcf26acfbcefb8914b73b590a3913e76c53eef940628e55299",
+    "started_utc": "2026-10-06T13:06:15+00:00",
+    "finished_utc": "2026-10-06T13:06:17+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-i-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-i-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 137791,
+    "sha256": "e032147820ce05b1351021ea639112602cce1bae5b52576ff0b41eee1902b878",
+    "started_utc": "2026-10-06T13:06:17+00:00",
+    "finished_utc": "2026-10-06T13:06:18+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-i-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-i-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9461,
+    "sha256": "0e6da20f5a2a96b3b3959bdb54c296e6458ba2ff59c8234cea741ad07ea5a1ac",
+    "started_utc": "2026-10-06T13:06:18+00:00",
+    "finished_utc": "2026-10-06T13:06:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-i-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-i-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 47987,
+    "sha256": "9884066f5121079f44754d9035a3cd78fabae4d2069f50d24bad4b1a4be8ad3d",
+    "started_utc": "2026-10-06T13:06:19+00:00",
+    "finished_utc": "2026-10-06T13:06:20+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-i-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-i-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 846560,
+    "sha256": "3aeef17b2a8d47fe140cf659217d006c3d05b31de3c11792fe6b77e6071040ac",
+    "started_utc": "2026-10-06T13:06:20+00:00",
+    "finished_utc": "2026-10-06T13:06:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-j",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-j.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "f9e7198d38c448de6e045df17e2473cff993d8c7d53c785c1106cb79d0a05ada",
+    "started_utc": "2026-10-06T13:06:23+00:00",
+    "finished_utc": "2026-10-06T13:06:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-j-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-j-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "738a54093533a404399dcdac2bc54202360b10de274f7c94ff38fefd457df9da",
+    "started_utc": "2026-10-06T13:06:23+00:00",
+    "finished_utc": "2026-10-06T13:06:24+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-j-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-j-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 40041,
+    "sha256": "d89e13692ef9a1ce55b2df3cdb2c903bb1c9340097ebb0c4286c0d153988e134",
+    "started_utc": "2026-10-06T13:06:24+00:00",
+    "finished_utc": "2026-10-06T13:06:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-j-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-j-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 137791,
+    "sha256": "adb01e6679b31bdd7bb84675f7bf663ea4f99d9453b8228361fd9d6df0370223",
+    "started_utc": "2026-10-06T13:06:25+00:00",
+    "finished_utc": "2026-10-06T13:06:27+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-j-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-j-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9461,
+    "sha256": "1d69162da06e7513fdbaf941e802799bdb442fe3979521a8502bf9facd0ea65f",
+    "started_utc": "2026-10-06T13:06:27+00:00",
+    "finished_utc": "2026-10-06T13:06:28+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-j-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-j-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 48055,
+    "sha256": "d8a12144085e2c37a3a0e93352b5ac9ee3f1412380db8c331a75a3fd91dd1028",
+    "started_utc": "2026-10-06T13:06:28+00:00",
+    "finished_utc": "2026-10-06T13:06:29+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-j-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-j-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 846283,
+    "sha256": "e9f7d32f22a4410a1f3bc3ea9a562ff544224d428854c454ed6ade4c8936aebb",
+    "started_utc": "2026-10-06T13:06:29+00:00",
+    "finished_utc": "2026-10-06T13:06:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-k",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-k.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "dd0f6cb8103e6d3e104cfbd39949a2afb3553a75ac6ea7d5bab8c60ee15c2408",
+    "started_utc": "2026-10-06T13:06:34+00:00",
+    "finished_utc": "2026-10-06T13:06:35+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-k-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-k-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "4252d635758bed5b48252553893578525df0a62f528929e74e59a0c6f90a824d",
+    "started_utc": "2026-10-06T13:06:35+00:00",
+    "finished_utc": "2026-10-06T13:06:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-k-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-k-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 40150,
+    "sha256": "708341206bbb4745978ccd09b889c27ccf29231843e6e4332d87934a8e3229fc",
+    "started_utc": "2026-10-06T13:06:36+00:00",
+    "finished_utc": "2026-10-06T13:06:37+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-k-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-k-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 152532,
+    "sha256": "e341d34d24b190ccc5dc43314a9737b2ad54c8da677daf39cc0ea122c8205197",
+    "started_utc": "2026-10-06T13:06:37+00:00",
+    "finished_utc": "2026-10-06T13:06:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-k-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-k-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9463,
+    "sha256": "86c91fa4032caddf8ec513d8fc3743377be2cf2b6839f231785e4087ffd310fb",
+    "started_utc": "2026-10-06T13:06:39+00:00",
+    "finished_utc": "2026-10-06T13:06:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-k-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-k-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 47576,
+    "sha256": "8a7838902acc84fa54c9787cc8505f288776db3dab376bce62ef15071ca93968",
+    "started_utc": "2026-10-06T13:06:40+00:00",
+    "finished_utc": "2026-10-06T13:06:41+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-k-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-k-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 778248,
+    "sha256": "451a24b2f8d781e3e467d96bfc8bc6bd110fb3ab98e7c6f5add6d4963e95f09e",
+    "started_utc": "2026-10-06T13:06:41+00:00",
+    "finished_utc": "2026-10-06T13:06:43+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-l",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-l.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "a3b53be22fae49f681161964dbbeb115f4b5c30b3ce3207801d3d17527b7c6b4",
+    "started_utc": "2026-10-06T13:06:43+00:00",
+    "finished_utc": "2026-10-06T13:06:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-l-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-l-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "2e1cfd0560c0f24021cafcc66558bc537d802f7142d2cbdabd0a2dc5cf5aaaaa",
+    "started_utc": "2026-10-06T13:06:44+00:00",
+    "finished_utc": "2026-10-06T13:06:45+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-l-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-l-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 40169,
+    "sha256": "813c09162e97ee4cb224c40ceb4d83a8e14a1286bfedb62e05e0784ba1083f07",
+    "started_utc": "2026-10-06T13:06:45+00:00",
+    "finished_utc": "2026-10-06T13:06:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-l-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-l-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 152532,
+    "sha256": "bf23a8f544185001fbe2cd87a35ea6be8c8b79752543e8a3bc1048d93c2470af",
+    "started_utc": "2026-10-06T13:06:46+00:00",
+    "finished_utc": "2026-10-06T13:06:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-l-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-l-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9463,
+    "sha256": "7e3d2093d8b014af8b5a46129683a5a4a4dd5752aabc356072ff1dcc00d621cc",
+    "started_utc": "2026-10-06T13:06:48+00:00",
+    "finished_utc": "2026-10-06T13:06:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-l-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-l-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 47524,
+    "sha256": "555d75ce28e54b6f9220328e91901ab8c6f5c8a53d3f7623e4024c4e66b7961f",
+    "started_utc": "2026-10-06T13:06:48+00:00",
+    "finished_utc": "2026-10-06T13:06:50+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-l-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-l-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 777997,
+    "sha256": "d06418ad9629a25a3e4088f3adb4e2184fe0507b070a59c5f5ce8f4a7600c2ac",
+    "started_utc": "2026-10-06T13:06:50+00:00",
+    "finished_utc": "2026-10-06T13:06:52+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-m",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-m.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "59cbc3356d905a2f8ed2c6def74ebac69b847b38fb324b898dbb326346b616ec",
+    "started_utc": "2026-10-06T13:06:52+00:00",
+    "finished_utc": "2026-10-06T13:06:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-m-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-m-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "f5860d313195768edfcc4621875802106070009af816beae6964af9eb3f0fafe",
+    "started_utc": "2026-10-06T13:06:53+00:00",
+    "finished_utc": "2026-10-06T13:06:54+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-m-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-m-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 37076,
+    "sha256": "8d7ab127084906eeb3650128cfcf89878e893bb41ba4692c2658aec11e931a65",
+    "started_utc": "2026-10-06T13:06:54+00:00",
+    "finished_utc": "2026-10-06T13:06:55+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-m-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-m-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 142644,
+    "sha256": "57e60a50807784cc58e22ed8e129bc66debe408e0a09dfe6ba7b9625864627e2",
+    "started_utc": "2026-10-06T13:06:55+00:00",
+    "finished_utc": "2026-10-06T13:06:57+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-m-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-m-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9453,
+    "sha256": "0cc87e4024d550cf5ef432ef5dbd2e9db9287655f60109edcc633f86bd852908",
+    "started_utc": "2026-10-06T13:06:57+00:00",
+    "finished_utc": "2026-10-06T13:06:58+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-m-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-m-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 43759,
+    "sha256": "4001b30acd9905344648d925466cb08811ebb22c3d347e7433ed70f610dd63fc",
+    "started_utc": "2026-10-06T13:06:58+00:00",
+    "finished_utc": "2026-10-06T13:06:59+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-m-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-m-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 706158,
+    "sha256": "99e5557fe02ce71b30c2543af193873c477c61469959bbe90de849b3e5d2225f",
+    "started_utc": "2026-10-06T13:06:59+00:00",
+    "finished_utc": "2026-10-06T13:07:02+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-n",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-n.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "83cb21e30ba2cff21b95d20ae37829b78bcfa416083f4ccaa3bcc6e763634345",
+    "started_utc": "2026-10-06T13:07:02+00:00",
+    "finished_utc": "2026-10-06T13:07:02+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-n-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-n-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "7b3485ee041959181c6882fd0a271c6484b8ff54aa25e169d5694b4188bbcd64",
+    "started_utc": "2026-10-06T13:07:03+00:00",
+    "finished_utc": "2026-10-06T13:07:03+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-n-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-n-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 37074,
+    "sha256": "55b51293377b90b8092bb5ffddfc7c85571b0645b1b8697875924bbb7c7711da",
+    "started_utc": "2026-10-06T13:07:03+00:00",
+    "finished_utc": "2026-10-06T13:07:04+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-n-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-n-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 142644,
+    "sha256": "efcbb01428819caa79166141d148c2f4a21b92d93c98ef96b2d0dce9b9e75086",
+    "started_utc": "2026-10-06T13:07:04+00:00",
+    "finished_utc": "2026-10-06T13:07:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-n-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-n-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9453,
+    "sha256": "5bfdad1e732bc65cb6207766dede5cbe118c8c229fafd9558ae298b493b8a63a",
+    "started_utc": "2026-10-06T13:07:06+00:00",
+    "finished_utc": "2026-10-06T13:07:07+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-n-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-n-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 43767,
+    "sha256": "7387b7fef1f1b63f49f0be287ee8ec4d70a552e35642f29f7f3a2496f994890d",
+    "started_utc": "2026-10-06T13:07:07+00:00",
+    "finished_utc": "2026-10-06T13:07:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-n-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-n-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 705931,
+    "sha256": "2a238b781a086d5a8f3260ed96a23fb64d3c2d4ffe72a5108db80353dfc021f7",
+    "started_utc": "2026-10-06T13:07:08+00:00",
+    "finished_utc": "2026-10-06T13:07:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-o",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-o.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "7eb8881f26aeac5b7569a972c1e3194926e5796e73fdcf2724b677c89cde7e52",
+    "started_utc": "2026-10-06T13:07:11+00:00",
+    "finished_utc": "2026-10-06T13:07:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-o-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-o-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8917,
+    "sha256": "3b574d2748d13bfd51f07fe187d4f828347921bf46525ebbcecd77fb1f387fac",
+    "started_utc": "2026-10-06T13:07:11+00:00",
+    "finished_utc": "2026-10-06T13:07:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-o-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-o-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 33829,
+    "sha256": "f1ebee4789480a740c60ecca762007d89bb77c27de0fe40a459cd178be51c10c",
+    "started_utc": "2026-10-06T13:07:12+00:00",
+    "finished_utc": "2026-10-06T13:07:13+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-o-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-o-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 193850,
+    "sha256": "d01c7c80dde071171f228c6ddd7dce9373bcf912bc4116e7d32f5be41667b110",
+    "started_utc": "2026-10-06T13:07:13+00:00",
+    "finished_utc": "2026-10-06T13:07:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-o-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-o-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9456,
+    "sha256": "f27efb072378278004e917fbdabdd77c433098e156be2b890e0ce450b430360f",
+    "started_utc": "2026-10-06T13:07:15+00:00",
+    "finished_utc": "2026-10-06T13:07:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-o-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-o-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 39047,
+    "sha256": "463daf8aadb44cd21702faaf1608d9fde2b9b5a8f4105afc1cd91950455adf6c",
+    "started_utc": "2026-10-06T13:07:16+00:00",
+    "finished_utc": "2026-10-06T13:07:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-o-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-o-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 421562,
+    "sha256": "6c883f9332c41aa544864e44b062bbc519db9c29d23ac78f6ba3eaf28e6b33d7",
+    "started_utc": "2026-10-06T13:07:16+00:00",
+    "finished_utc": "2026-10-06T13:07:18+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-p",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-p.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "1ff7cb29d7c903e01255bb05b6d20778ee35c2a384995325e680c797032e5b2e",
+    "started_utc": "2026-10-06T13:07:19+00:00",
+    "finished_utc": "2026-10-06T13:07:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-p-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-p-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8917,
+    "sha256": "e997dc1c7c6c490eac8cbc626795bb3be5bc9093e94904938c7c473e200ea85f",
+    "started_utc": "2026-10-06T13:07:19+00:00",
+    "finished_utc": "2026-10-06T13:07:20+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-p-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-p-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 33897,
+    "sha256": "f893a8b5e8b17aa8bedb279aa1c9b2bcea09a40517109cd2a4ee6d107989e43d",
+    "started_utc": "2026-10-06T13:07:20+00:00",
+    "finished_utc": "2026-10-06T13:07:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-p-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-p-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 193850,
+    "sha256": "f0bbf5e4ce90777e3bd87ee714d7f339f3db10da2ec509b11594ca25c20f7576",
+    "started_utc": "2026-10-06T13:07:21+00:00",
+    "finished_utc": "2026-10-06T13:07:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-p-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-p-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9456,
+    "sha256": "3f24a96f17ab899efa06a300efaa14edeca8b2f9b718922fe25f44043a66ec41",
+    "started_utc": "2026-10-06T13:07:23+00:00",
+    "finished_utc": "2026-10-06T13:07:24+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-p-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-p-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 39111,
+    "sha256": "6a8fd79989feafddb1e54230e91732965956eb9ea1131048fbcb3a055a6b92e6",
+    "started_utc": "2026-10-06T13:07:24+00:00",
+    "finished_utc": "2026-10-06T13:07:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-p-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-p-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 421330,
+    "sha256": "ecca9c437e3c2fac75c97a153863425ee3b6306ac4a16758ef4a5fffe29d1b16",
+    "started_utc": "2026-10-06T13:07:25+00:00",
+    "finished_utc": "2026-10-06T13:07:27+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-q",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-q.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "b23ce4f8eb225838516feeb808e8f641a191117e7acdd9180bcd39568697f7b2",
+    "started_utc": "2026-10-06T13:07:27+00:00",
+    "finished_utc": "2026-10-06T13:07:28+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-q-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-q-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "f0f7701bfe78b195ce8434f70e90c714c0825c6b38e7744e082ab8de2d3cdfd8",
+    "started_utc": "2026-10-06T13:07:28+00:00",
+    "finished_utc": "2026-10-06T13:07:29+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-q-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-q-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 39226,
+    "sha256": "6807f254a68c6aa1fb4176eb877462efd64ba00957dbb03a560e59efbd1c00eb",
+    "started_utc": "2026-10-06T13:07:29+00:00",
+    "finished_utc": "2026-10-06T13:07:30+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-q-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-q-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 148827,
+    "sha256": "98afc43c2b5a764eed006a56d0ba53db8ad745dc338aa41808a130b33f3dfff4",
+    "started_utc": "2026-10-06T13:07:30+00:00",
+    "finished_utc": "2026-10-06T13:07:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-q-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-q-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9459,
+    "sha256": "6df0fffe8fc8a55d397f1269f448c42d41142ff7afbfe5162e136aae48f11eea",
+    "started_utc": "2026-10-06T13:07:31+00:00",
+    "finished_utc": "2026-10-06T13:07:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-q-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-q-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 46452,
+    "sha256": "4d0a9bc4f085a352cb265195fb63dece0e0035ea012ce57a02214fa145133a49",
+    "started_utc": "2026-10-06T13:07:32+00:00",
+    "finished_utc": "2026-10-06T13:07:33+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-q-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-q-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 756807,
+    "sha256": "f4fd45c08c3653be828010e7ba471b7bd1a70dc54c70733697e5713e12e271d4",
+    "started_utc": "2026-10-06T13:07:33+00:00",
+    "finished_utc": "2026-10-06T13:07:35+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-r",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-r.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "2891c898dc270f9e6203c97320feea108eb4af49276aeedbb81f594875ba6f00",
+    "started_utc": "2026-10-06T13:07:35+00:00",
+    "finished_utc": "2026-10-06T13:07:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-r-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-r-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "70ac4f73c7c05a3753b184269149a16abfe069be53e70d3d9deb057103cfd2fe",
+    "started_utc": "2026-10-06T13:07:36+00:00",
+    "finished_utc": "2026-10-06T13:07:37+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-r-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-r-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 39269,
+    "sha256": "0d88fe7148eec0e8161591cb5db05097bdc283c2aa4b951acc9d1a21cff01be4",
+    "started_utc": "2026-10-06T13:07:37+00:00",
+    "finished_utc": "2026-10-06T13:07:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-r-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-r-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 148836,
+    "sha256": "acb277dc62d0605c97aacdd57c4839f06439afce4edab6d93e72df51af524b30",
+    "started_utc": "2026-10-06T13:07:38+00:00",
+    "finished_utc": "2026-10-06T13:07:40+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-r-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-r-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9459,
+    "sha256": "998d9da07b9c751e46100aaeffcb917a8e66b6976a8753b7b9ae428f86e132dc",
+    "started_utc": "2026-10-06T13:07:40+00:00",
+    "finished_utc": "2026-10-06T13:07:41+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-r-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-r-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 46486,
+    "sha256": "f6df84eb24e334ade17b7cb8db8863d7ed824c89f86123168cb156c7904626c4",
+    "started_utc": "2026-10-06T13:07:41+00:00",
+    "finished_utc": "2026-10-06T13:07:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-r-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-r-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 756554,
+    "sha256": "64d234be7db8d857eceba4a52f42fd9ba6870783ff04ee3b11a51c0c7bad781a",
+    "started_utc": "2026-10-06T13:07:42+00:00",
+    "finished_utc": "2026-10-06T13:07:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-s",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-s.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "aea2e315bbe3b61be49901bb539aa1b5b444a43aeef917d8bbb11e8dc79979ba",
+    "started_utc": "2026-10-06T13:07:44+00:00",
+    "finished_utc": "2026-10-06T13:07:45+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-s-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-s-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "dd99fea62372ec6f48f07c99ad883fd9f1b687c2d7f6f186b2263971e43a3eef",
+    "started_utc": "2026-10-06T13:07:45+00:00",
+    "finished_utc": "2026-10-06T13:07:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-s-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-s-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 35970,
+    "sha256": "e9ac876e9e11562d0f401457fd26d9bd4095c7d6cefbb91def4cfb35bf379d5d",
+    "started_utc": "2026-10-06T13:07:46+00:00",
+    "finished_utc": "2026-10-06T13:07:47+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-s-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-s-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 172611,
+    "sha256": "8c3bf8bbe7573bcbb524c1d8157fe64fccc584167c3361a0ec491b82bbf874e7",
+    "started_utc": "2026-10-06T13:07:47+00:00",
+    "finished_utc": "2026-10-06T13:07:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-s-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-s-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9455,
+    "sha256": "4491f7c2639960420c996b78acc3f6a7e61504bace60d0b712d4a56c308a057e",
+    "started_utc": "2026-10-06T13:07:49+00:00",
+    "finished_utc": "2026-10-06T13:07:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-s-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-s-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 41046,
+    "sha256": "2ddb5d976010b2563e81ed7ed9cdb1af858980e28274cf0e1f435c4a89e1a219",
+    "started_utc": "2026-10-06T13:07:50+00:00",
+    "finished_utc": "2026-10-06T13:07:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-s-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-s-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 517013,
+    "sha256": "49b92d37eac7a3c4d1f468f20c7e837ed692fb454edb5cd471eebe50e1a5f113",
+    "started_utc": "2026-10-06T13:07:51+00:00",
+    "finished_utc": "2026-10-06T13:07:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-t",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-t.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "b5061fde158285b761e6946e4a27e497471bd2717810c13dc82c0dd993d0400b",
+    "started_utc": "2026-10-06T13:07:53+00:00",
+    "finished_utc": "2026-10-06T13:07:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-t-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-t-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "a35ace78faf1c9fdfd9db25e19de6d7256a8671a6ddd0b76589d7632569f54de",
+    "started_utc": "2026-10-06T13:07:54+00:00",
+    "finished_utc": "2026-10-06T13:07:54+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-t-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-t-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 36076,
+    "sha256": "e4659aaa24151c3d836611ea6fbcfe67243bac5396ccd3fae0fd0f69791e6ce6",
+    "started_utc": "2026-10-06T13:07:55+00:00",
+    "finished_utc": "2026-10-06T13:07:55+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-t-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-t-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 172537,
+    "sha256": "49d218bd940677bd288e7d19cc848be0e5ebb9da0c4f53d45e81c2127d81eaf9",
+    "started_utc": "2026-10-06T13:07:55+00:00",
+    "finished_utc": "2026-10-06T13:07:57+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-t-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-t-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9455,
+    "sha256": "e6886b228db8067901408e78a513e70d2ca4659fe29520ff4636fa4862aba3e3",
+    "started_utc": "2026-10-06T13:07:57+00:00",
+    "finished_utc": "2026-10-06T13:07:58+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-t-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-t-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 41134,
+    "sha256": "1eeb441fcf89c2c52c43b0779c7db0c0a7b06fcddf89eac13b5ef38533705d02",
+    "started_utc": "2026-10-06T13:07:58+00:00",
+    "finished_utc": "2026-10-06T13:07:59+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-t-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-t-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 516933,
+    "sha256": "1cba5944fb9bf7808f9f855a00ec634282cb935ab49ec6c3f61aac0e02ca666c",
+    "started_utc": "2026-10-06T13:07:59+00:00",
+    "finished_utc": "2026-10-06T13:08:01+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-u",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-u.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "efbfd47209bf549f58dac6afb1dd23bc975e9b0d8550f5af016253b5faf14551",
+    "started_utc": "2026-10-06T13:08:01+00:00",
+    "finished_utc": "2026-10-06T13:08:02+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-u-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-u-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "b483e20b76d5d29491d7b84e5185bc73af58fa0297b1aa8c081d95982bc5ca36",
+    "started_utc": "2026-10-06T13:08:02+00:00",
+    "finished_utc": "2026-10-06T13:08:03+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-u-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-u-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 39056,
+    "sha256": "82d74657c0650c02eff6c422dfb53af8fc533f40e4b2c1625b4ce8fe1e0f4697",
+    "started_utc": "2026-10-06T13:08:03+00:00",
+    "finished_utc": "2026-10-06T13:08:04+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-u-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-u-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 162343,
+    "sha256": "4cf544d6a539f940a5fba923199017a83bb205b5f5c731d534769396a2810c32",
+    "started_utc": "2026-10-06T13:08:04+00:00",
+    "finished_utc": "2026-10-06T13:08:05+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-u-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-u-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9460,
+    "sha256": "1bc26d17dfe74f74c69e97371e0854b74d4516ce7edba4f43acebb86cdedf7de",
+    "started_utc": "2026-10-06T13:08:06+00:00",
+    "finished_utc": "2026-10-06T13:08:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-u-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-u-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 45677,
+    "sha256": "0d8a75eafaa9e6b17fcce85ae5bee6969cc832ffd1fd90bf368a2c40cf51db64",
+    "started_utc": "2026-10-06T13:08:06+00:00",
+    "finished_utc": "2026-10-06T13:08:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-u-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-u-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 682475,
+    "sha256": "1fcd15707866fdb3eb5524c7977363f6068967c70b501e80936a3d7562dbe1bd",
+    "started_utc": "2026-10-06T13:08:08+00:00",
+    "finished_utc": "2026-10-06T13:08:10+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-v",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-v.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "e4f11680c76cf69e15cb20770a24423e91626e0ad7f18d2c56b610849f88f474",
+    "started_utc": "2026-10-06T13:08:10+00:00",
+    "finished_utc": "2026-10-06T13:08:10+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-v-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-v-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "acf693e14415c4c003c9e838cd66b2b7151ff69ad7dffae5ad2f2ae1cd4a7286",
+    "started_utc": "2026-10-06T13:08:10+00:00",
+    "finished_utc": "2026-10-06T13:08:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-v-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-v-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 39070,
+    "sha256": "043fe6ef5465584119f36703c1baa2713873fc050fadbdc7e8cbf3c607df4f9b",
+    "started_utc": "2026-10-06T13:08:11+00:00",
+    "finished_utc": "2026-10-06T13:08:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-v-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-v-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 162361,
+    "sha256": "679df95096c7f2e9918548ce48e51a1fecd595a9b25cab2663d5002ab924a9eb",
+    "started_utc": "2026-10-06T13:08:12+00:00",
+    "finished_utc": "2026-10-06T13:08:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-v-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-v-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9460,
+    "sha256": "1cebeb9b4a4ce2e23d63b83f1b5a44c48c6e0c9e1e65d9c22352d6629ca7b77a",
+    "started_utc": "2026-10-06T13:08:14+00:00",
+    "finished_utc": "2026-10-06T13:08:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-v-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-v-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 45659,
+    "sha256": "ff9601c49108a8fdafe9b2d2e6231a1bcd907a5b07f0d787ed4df06531b8a14f",
+    "started_utc": "2026-10-06T13:08:15+00:00",
+    "finished_utc": "2026-10-06T13:08:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-v-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-v-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 682242,
+    "sha256": "e94636fe3ae2cddcb4351ad10f6743c834a00192f1a233fdc40710d87388d3a7",
+    "started_utc": "2026-10-06T13:08:16+00:00",
+    "finished_utc": "2026-10-06T13:08:18+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-w",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-w.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "b4e4e1296439ef0e488eed7cc97281b5e391b05422f43d5b4a9919bb9bc78e00",
+    "started_utc": "2026-10-06T13:08:18+00:00",
+    "finished_utc": "2026-10-06T13:08:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-w-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-w-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "f3f070ac025a682b0515b0957c14878d10fd994fcbfc298d18227987c4963bc2",
+    "started_utc": "2026-10-06T13:08:19+00:00",
+    "finished_utc": "2026-10-06T13:08:20+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-w-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-w-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 36526,
+    "sha256": "fff624caaaaa3e425278fc643af79f7674129e568994de04d4bc2a5f922ac97f",
+    "started_utc": "2026-10-06T13:08:20+00:00",
+    "finished_utc": "2026-10-06T13:08:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-w-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-w-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 165156,
+    "sha256": "3418b3a4693a1926502327e7a065b51709f946236c1b4b2f378ea41ad14a33cc",
+    "started_utc": "2026-10-06T13:08:21+00:00",
+    "finished_utc": "2026-10-06T13:08:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-w-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-w-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9455,
+    "sha256": "15af510c90bbcde18991606747c033e9b78b8d0a2b7b228e831c30e3fe961fa8",
+    "started_utc": "2026-10-06T13:08:23+00:00",
+    "finished_utc": "2026-10-06T13:08:24+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-w-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-w-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 42077,
+    "sha256": "802fd51180298040ada7326feb8d61c3290edc6cac62b1e613347cfb5f61bdac",
+    "started_utc": "2026-10-06T13:08:24+00:00",
+    "finished_utc": "2026-10-06T13:08:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-w-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-w-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 569308,
+    "sha256": "aac159f50e0b4882c4c89defdcb95c37a4f08d07de7d007b4dee10b887c2d00a",
+    "started_utc": "2026-10-06T13:08:25+00:00",
+    "finished_utc": "2026-10-06T13:08:27+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-x",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-x.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "17c7cdb49c566bfbc205fe82f9f169cf7a3f5f7164e4ce4e9db921afc59ea176",
+    "started_utc": "2026-10-06T13:08:27+00:00",
+    "finished_utc": "2026-10-06T13:08:28+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-x-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-x-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "130427b6a5445d303ed64744c7d7b1c8ba2d5df6c43624cef92eda488d596988",
+    "started_utc": "2026-10-06T13:08:28+00:00",
+    "finished_utc": "2026-10-06T13:08:29+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-x-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-x-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 36454,
+    "sha256": "7b176414c1577448b974e9ed26c0a42c6fb40a91e50e5b24af1af6d5f3ef34b6",
+    "started_utc": "2026-10-06T13:08:29+00:00",
+    "finished_utc": "2026-10-06T13:08:30+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-x-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-x-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 165183,
+    "sha256": "87fc8b45342e6dffc3b6406c54f31078ad29104e09dbb26fed7f60dc67971b01",
+    "started_utc": "2026-10-06T13:08:30+00:00",
+    "finished_utc": "2026-10-06T13:08:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-x-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-x-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9455,
+    "sha256": "d4f7edd11e72133279eb132a43dc088432c03fc3f87e9670c7371778f3d5e05a",
+    "started_utc": "2026-10-06T13:08:32+00:00",
+    "finished_utc": "2026-10-06T13:08:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-x-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-x-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 41966,
+    "sha256": "baa8eacc7f5bb95fa97579f83993db57d1d91613303cc3a717ef95cd5a175303",
+    "started_utc": "2026-10-06T13:08:33+00:00",
+    "finished_utc": "2026-10-06T13:08:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-x-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-x-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 569107,
+    "sha256": "d1d5ead0a4a786873a33dc01511a20f7b79f0eb2d4a8af1374100bacf6e0013a",
+    "started_utc": "2026-10-06T13:08:34+00:00",
+    "finished_utc": "2026-10-06T13:08:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-y",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-y.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "cc0b24b8e15a3de5bcc17dd4adc590234129f478d593522261958b5d03d30838",
+    "started_utc": "2026-10-06T13:08:36+00:00",
+    "finished_utc": "2026-10-06T13:08:37+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-y-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-y-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "ef08bf88df7eb9c03e41c7e05d6fb890c234b25226a02d83259ad9f118a07490",
+    "started_utc": "2026-10-06T13:08:37+00:00",
+    "finished_utc": "2026-10-06T13:08:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-y-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-y-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 40845,
+    "sha256": "54ceccc7cbf3f0a70945a1128e82b56c8a35e0d134f1b94a086db9217b5a6cfe",
+    "started_utc": "2026-10-06T13:08:38+00:00",
+    "finished_utc": "2026-10-06T13:08:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-y-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-y-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 140710,
+    "sha256": "03c270940fe106542392315be7584f9c440c0cfc4f6976c7d4f3d60076abce4b",
+    "started_utc": "2026-10-06T13:08:39+00:00",
+    "finished_utc": "2026-10-06T13:08:41+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-y-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-y-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9463,
+    "sha256": "46683d12e2b402799378f66638458e014077719d8b9629210e96e553dcb2eab5",
+    "started_utc": "2026-10-06T13:08:41+00:00",
+    "finished_utc": "2026-10-06T13:08:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-y-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-y-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 48936,
+    "sha256": "814b0ad1b12803c600a32ced0a8db00b2b0c76dfcbd4b28543b14f6bc1b5b848",
+    "started_utc": "2026-10-06T13:08:42+00:00",
+    "finished_utc": "2026-10-06T13:08:43+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-y-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-y-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 861997,
+    "sha256": "ee0543cae9558e4645485d10865a6e9b3e3bf256d23476909fec32b9b0b9da56",
+    "started_utc": "2026-10-06T13:08:43+00:00",
+    "finished_utc": "2026-10-06T13:08:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000097-z",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-z.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3933,
+    "sha256": "c49358fa4dccfc7b0fa475f35628c358579082ea1029ffde8ca358e11651a203",
+    "started_utc": "2026-10-06T13:08:46+00:00",
+    "finished_utc": "2026-10-06T13:08:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-z-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-z-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8929,
+    "sha256": "5b077ba680b3c9a21b4cad09a07f4ebdd1b42825f2109808690287df5432650e",
+    "started_utc": "2026-10-06T13:08:47+00:00",
+    "finished_utc": "2026-10-06T13:08:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-z-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-z-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 40748,
+    "sha256": "59a45ed17059c0c5ae3d38138d3e25669c7bb07a4a903a75967e00c2a67b9899",
+    "started_utc": "2026-10-06T13:08:48+00:00",
+    "finished_utc": "2026-10-06T13:08:50+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-z-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-z-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 140710,
+    "sha256": "3edb44a9217b02972372facffe8f7a7ffbfcecb19601d3ccae2a65aab2840b24",
+    "started_utc": "2026-10-06T13:08:50+00:00",
+    "finished_utc": "2026-10-06T13:08:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-z-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-z-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9463,
+    "sha256": "1913891c2b54c3fa3e398a79d0c43a944d5158ac41cb20755fe02c697bc2ed39",
+    "started_utc": "2026-10-06T13:08:51+00:00",
+    "finished_utc": "2026-10-06T13:08:52+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-z-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-z-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 48802,
+    "sha256": "3431e44e41130624797424b84e9bb2d9e6c0327b691759b9ea85cb1196e00768",
+    "started_utc": "2026-10-06T13:08:52+00:00",
+    "finished_utc": "2026-10-06T13:08:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-z-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000097-z-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 861715,
+    "sha256": "888f952248f9d4ce96b142aaf1c570d3c3687912864feda3f90e40ab059dd61e",
+    "started_utc": "2026-10-06T13:08:53+00:00",
+    "finished_utc": "2026-10-06T13:08:56+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001225-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001225-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 6085,
+    "sha256": "c79940e67a778d3f67231db522dd92c7a55f05e068f08a71feace7dafec2da88",
+    "started_utc": "2026-10-06T13:08:56+00:00",
+    "finished_utc": "2026-10-06T13:08:56+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001225-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001225-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 13570,
+    "sha256": "ccdac94da96c5714e6eebfd041dd72cd47249575871223d3826c0a3c10388fee",
+    "started_utc": "2026-10-06T13:08:57+00:00",
+    "finished_utc": "2026-10-06T13:08:57+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001225-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001225-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 573836,
+    "sha256": "b799cd0cecb74d391e2e23c07ccf68cbf2512f168e76c2586693cea1a04938b2",
+    "started_utc": "2026-10-06T13:08:58+00:00",
+    "finished_utc": "2026-10-06T13:08:59+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001225-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001225-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19386008,
+    "sha256": "d3a4d7888f3cbb57d3d012033dc84485b29b7da0f182413c88196efaed79fca8",
+    "started_utc": "2026-10-06T13:09:00+00:00",
+    "finished_utc": "2026-10-06T13:09:18+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001279-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001279-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8326,
+    "sha256": "918874d3ecdb45b08f139756e5cfe668851b94744246b8b7afdb7452201d829f",
+    "started_utc": "2026-10-06T13:09:18+00:00",
+    "finished_utc": "2026-10-06T13:09:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001279-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001279-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 15660,
+    "sha256": "3caae00a78d391caa92bcfb16bce62cf04b2457c7a53114083db593b467156ca",
+    "started_utc": "2026-10-06T13:09:19+00:00",
+    "finished_utc": "2026-10-06T13:09:20+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001279-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001279-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 489662,
+    "sha256": "4e1798c8cd5564221faeb247c5fa2102a147c13fa246b5fc1349e9873135e6d8",
+    "started_utc": "2026-10-06T13:11:56+00:00",
+    "finished_utc": "2026-10-06T13:11:58+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001279-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001279-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9659495,
+    "sha256": "9b457073f4c1930ec9eeff2b800d6d0b67123b05ec0076051c6ca101882a9f49",
+    "started_utc": "2026-10-06T13:11:59+00:00",
+    "finished_utc": "2026-10-06T13:12:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-0",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-0.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5938,
+    "sha256": "1419fa8d1c57a9200e0ed0360371cea8914f46ab6c5c16d3fc5ed2c45919856f",
+    "started_utc": "2026-10-06T13:12:15+00:00",
+    "finished_utc": "2026-10-06T13:12:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-0-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-0-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 52161,
+    "sha256": "326e99ea7cab4934088b2e60fe31198e3532c9dc020b46201e7b64bde0f6bf95",
+    "started_utc": "2026-10-06T13:12:17+00:00",
+    "finished_utc": "2026-10-06T13:12:18+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-0-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-0-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5336587,
+    "sha256": "c3db0a827c86ad73967258745dd5d5263227a0c1fff62d243de450408962d20e",
+    "started_utc": "2026-10-06T13:12:20+00:00",
+    "finished_utc": "2026-10-06T13:12:24+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-0-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-0-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 70753582,
+    "sha256": "8f43b9bc3443534a852df037557e280d93d591dd60818d94878c307f07758ed3",
+    "started_utc": "2026-10-06T13:19:31+00:00",
+    "finished_utc": "2026-10-06T13:20:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-a",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5686,
+    "sha256": "6ddd35323d1b7b25b61c4bf977fa33ae027fdffecac64534e8256099798dbfc2",
+    "started_utc": "2026-10-06T13:20:20+00:00",
+    "finished_utc": "2026-10-06T13:20:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19423,
+    "sha256": "46f594234a86d18583a3ea21e2c1c298c7065736bda3bf156214883189dd6317",
+    "started_utc": "2026-10-06T13:20:22+00:00",
+    "finished_utc": "2026-10-06T13:20:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 190536,
+    "sha256": "4117ec263777211adbe36301f30d5d8623f45bbc25be16a5327f51133d8cb8bc",
+    "started_utc": "2026-10-06T13:20:24+00:00",
+    "finished_utc": "2026-10-06T13:20:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 680067,
+    "sha256": "f3a89c8278c7c6a9297bbccfd9f015a70b6bcc304e8a36da350fb5915766f883",
+    "started_utc": "2026-10-06T13:20:26+00:00",
+    "finished_utc": "2026-10-06T13:20:29+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-b",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-b.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5808,
+    "sha256": "3d46059a2cf5efcd3c46b55c8c5c41a8c9ef3f726b6a7f9db0612f42ab6eb602",
+    "started_utc": "2026-10-06T13:20:30+00:00",
+    "finished_utc": "2026-10-06T13:20:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-b-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-b-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19222,
+    "sha256": "b21225087aa8b666c000a590bdec6d5ded61c05358005e347af49c0b4b358700",
+    "started_utc": "2026-10-06T13:20:32+00:00",
+    "finished_utc": "2026-10-06T13:20:33+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-b-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-b-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 26921,
+    "sha256": "58351d675b6d2189bd6be6fe71c2decf2bac9a318bf7e40ddc58e1f13a6b76ba",
+    "started_utc": "2026-10-06T13:20:34+00:00",
+    "finished_utc": "2026-10-06T13:20:35+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-b-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-b-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 314486,
+    "sha256": "f34d853e38bebb70eb8114355e76a2a31551c8f7bbe89bb40186d6a1ca19b317",
+    "started_utc": "2026-10-06T13:20:36+00:00",
+    "finished_utc": "2026-10-06T13:20:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-c",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-c.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5789,
+    "sha256": "e03cd261011a898955c0b3e9f664713adc109d7b63f90430553c7c40fe355095",
+    "started_utc": "2026-10-06T13:20:39+00:00",
+    "finished_utc": "2026-10-06T13:20:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-c-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-c-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19646,
+    "sha256": "4bc1479b9f09d46a07045eb326a79cfe44e021d3f312bb02f5776d52e3423021",
+    "started_utc": "2026-10-06T13:20:41+00:00",
+    "finished_utc": "2026-10-06T13:20:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-c-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-c-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 159299,
+    "sha256": "d4a2c8a2e2b1ff32cc464c4e69c1e7678714f5cdad1c9f02e8132a4ee848c8b6",
+    "started_utc": "2026-10-06T13:20:43+00:00",
+    "finished_utc": "2026-10-06T13:20:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-c-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-c-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 547223,
+    "sha256": "53a9ae6e46101fed258cd3d3e475fe72fe3021a0c9ff5e5c02998f8df2c0aa59",
+    "started_utc": "2026-10-06T13:20:45+00:00",
+    "finished_utc": "2026-10-06T13:20:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-d",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-d.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5808,
+    "sha256": "49ba23994e8633f1f5f81e39c1270d27888d56822e857fa0aeb490b4a6b50211",
+    "started_utc": "2026-10-06T13:20:49+00:00",
+    "finished_utc": "2026-10-06T13:20:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-d-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-d-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19676,
+    "sha256": "d18bc2818e9abb0f5f768d68ccba024aebe3cd2ef65287b27ac51e5fd9c3ed67",
+    "started_utc": "2026-10-06T13:20:50+00:00",
+    "finished_utc": "2026-10-06T13:20:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-d-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-d-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 325791,
+    "sha256": "491586428afc066a395b07a73bfcf09d7c9c2556290cb7f052b84331d8dfed13",
+    "started_utc": "2026-10-06T13:20:52+00:00",
+    "finished_utc": "2026-10-06T13:20:54+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-d-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-d-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1372773,
+    "sha256": "a1223137cdd3f2cad3cfce434bd705c96c3ee1eed915a8ce0a2ed5d4f9daacf4",
+    "started_utc": "2026-10-06T13:20:55+00:00",
+    "finished_utc": "2026-10-06T13:20:58+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-e",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-e.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5790,
+    "sha256": "774ebe276ee05c51f8f1e7a85d2d4a30bbddf06e379b221573219d33a580d01f",
+    "started_utc": "2026-10-06T13:20:59+00:00",
+    "finished_utc": "2026-10-06T13:21:00+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-e-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-e-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19527,
+    "sha256": "5a86b485f66410687b47102cd3b3e790406c86cfd0de1354d74afcc655921ec2",
+    "started_utc": "2026-10-06T13:21:01+00:00",
+    "finished_utc": "2026-10-06T13:21:02+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-e-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-e-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 313989,
+    "sha256": "0f2d52e86718f38af1cf4b99877139d59da30371fdfe173839fce6684524e749",
+    "started_utc": "2026-10-06T13:21:03+00:00",
+    "finished_utc": "2026-10-06T13:21:05+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-e-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-e-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1290851,
+    "sha256": "eaf8ee252c0dca2fe90554a551ad29c0bccd3f47105c82bf9ec929975a2f71a1",
+    "started_utc": "2026-10-06T13:21:06+00:00",
+    "finished_utc": "2026-10-06T13:21:10+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-f",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-f.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5790,
+    "sha256": "0094f637d1fb16f380c336a8d97b2a08f921e14d0155873ea8d519216f08ca63",
+    "started_utc": "2026-10-06T13:21:11+00:00",
+    "finished_utc": "2026-10-06T13:21:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-f-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-f-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19502,
+    "sha256": "a5af1f2f021e96eba6d3ef5ba5df4fb960b03724f7c0e1fe9f0796595a54c016",
+    "started_utc": "2026-10-06T13:21:12+00:00",
+    "finished_utc": "2026-10-06T13:21:13+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-f-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-f-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 177071,
+    "sha256": "e0ab6cf28113f4eda25dbe08c9cbac1b627ebe03fc4384cbf3eed2bf9fe3cbd8",
+    "started_utc": "2026-10-06T13:21:14+00:00",
+    "finished_utc": "2026-10-06T13:21:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-f-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-f-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 687546,
+    "sha256": "11bfba88c01043e919844a3fa864a01068a3f759182e99f9b209782f0301f440",
+    "started_utc": "2026-10-06T13:21:17+00:00",
+    "finished_utc": "2026-10-06T13:21:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-g",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-g.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5790,
+    "sha256": "21679bef02b934fac017b1711e35eea5ec8002be9dfeafa1d79cd32bf1dc3086",
+    "started_utc": "2026-10-06T13:21:20+00:00",
+    "finished_utc": "2026-10-06T13:21:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-g-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-g-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19528,
+    "sha256": "86d020acb850a608c19e324a29c64ab4f66ba2060d4e014c2b5199fbc362f7c8",
+    "started_utc": "2026-10-06T13:21:22+00:00",
+    "finished_utc": "2026-10-06T13:21:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-g-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-g-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 330402,
+    "sha256": "ce29138a9bbe44cb8d8395bf6a80c5fe6141c47842209e2bbff8fb511757643c",
+    "started_utc": "2026-10-06T13:21:24+00:00",
+    "finished_utc": "2026-10-06T13:21:26+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-g-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-g-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1479796,
+    "sha256": "813826f7311c735d829cf6680d20b70671803c0f954e3f38344408683dc9b605",
+    "started_utc": "2026-10-06T13:21:27+00:00",
+    "finished_utc": "2026-10-06T13:21:30+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-h",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-h.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5790,
+    "sha256": "113e109ca01f8bce47cce3e7b3ca54e4cef914dc40ba40ca8a007162be7a680d",
+    "started_utc": "2026-10-06T13:21:31+00:00",
+    "finished_utc": "2026-10-06T13:21:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-h-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-h-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19527,
+    "sha256": "de6dfe2666261d6dfc073724ee30bf2cc815da5003c912392c00d76f3502ba35",
+    "started_utc": "2026-10-06T13:21:33+00:00",
+    "finished_utc": "2026-10-06T13:21:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-h-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-h-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 189895,
+    "sha256": "d9b08eacf4e2d96badc3eb7b090845e20ca026dd2d38faa3bef63764126cdbd3",
+    "started_utc": "2026-10-06T13:21:35+00:00",
+    "finished_utc": "2026-10-06T13:21:37+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-h-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-h-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 761924,
+    "sha256": "48c3df3d028bd8acc2442756b896a7174d17d5b2ae063546154f88b72ee7aa51",
+    "started_utc": "2026-10-06T13:21:38+00:00",
+    "finished_utc": "2026-10-06T13:21:40+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-i",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-i.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "11c98312368cbe93df18eb44d085e2eca08727d1943da2c737b2628e20bb19ac",
+    "started_utc": "2026-10-06T13:21:41+00:00",
+    "finished_utc": "2026-10-06T13:21:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-i-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-i-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19532,
+    "sha256": "2251ecd355e0a5a7be1c3d77a3c258d496632c972b14c2041ca9eea5d3844a15",
+    "started_utc": "2026-10-06T13:21:43+00:00",
+    "finished_utc": "2026-10-06T13:21:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-i-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-i-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 408467,
+    "sha256": "e8beb3064ae1a9cbad6fd97cc1d5f61e626c2ccb3f31b66a2939520e666fee38",
+    "started_utc": "2026-10-06T13:21:45+00:00",
+    "finished_utc": "2026-10-06T13:21:47+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-i-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-i-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1875194,
+    "sha256": "0087f5970dd192a8be59c7bb33b5841e03c8e0cdd52a0dba2a781cc36f13b985",
+    "started_utc": "2026-10-06T13:21:48+00:00",
+    "finished_utc": "2026-10-06T13:21:56+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-j",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-j.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5790,
+    "sha256": "a4c4a4afca895549d176ca32d9d8932df9ae224b59738d86fedc1db4a482bf19",
+    "started_utc": "2026-10-06T13:21:57+00:00",
+    "finished_utc": "2026-10-06T13:21:58+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-j-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-j-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19528,
+    "sha256": "c273afb822180b8b99a8bd96de23a7118c0f1196929eea0fb4ff71d6d87b2031",
+    "started_utc": "2026-10-06T13:21:59+00:00",
+    "finished_utc": "2026-10-06T13:22:00+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-j-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-j-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 300253,
+    "sha256": "877b6177a944271e0f35325e1dd6391ff9b790d580aff09abcf47e8062c4f9dd",
+    "started_utc": "2026-10-06T13:22:01+00:00",
+    "finished_utc": "2026-10-06T13:22:03+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-j-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-j-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1313403,
+    "sha256": "2b434acbd821625d0af83eb98e453862a12af085f143676947ab271a9fb0129c",
+    "started_utc": "2026-10-06T13:22:04+00:00",
+    "finished_utc": "2026-10-06T13:22:07+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-k",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-k.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "1de247afbc221b977be22cb4ca59098a54001c44df2183def990cd5fe7a11f11",
+    "started_utc": "2026-10-06T13:22:08+00:00",
+    "finished_utc": "2026-10-06T13:22:09+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-k-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-k-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19532,
+    "sha256": "8fd3b5ce1efa7ac849c23df4052f0ac49905778603cdff49fbe225d91c5df260",
+    "started_utc": "2026-10-06T13:22:10+00:00",
+    "finished_utc": "2026-10-06T13:22:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-k-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-k-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 332555,
+    "sha256": "acdfe198434e922e3ada1500ce85a6f1e23c106d5d8c7a16308a75177a47f013",
+    "started_utc": "2026-10-06T13:22:12+00:00",
+    "finished_utc": "2026-10-06T13:22:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-k-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-k-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1525767,
+    "sha256": "9118c990e8a9c1952dc84934a21d77fe7064781e18b520003e58560fa6853895",
+    "started_utc": "2026-10-06T13:22:16+00:00",
+    "finished_utc": "2026-10-06T13:22:20+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-l",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-l.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "5ab277920cf8b981df6fc221ec3e491cdffebb2172df1443e7a0636bfa6cc72a",
+    "started_utc": "2026-10-06T13:22:21+00:00",
+    "finished_utc": "2026-10-06T13:22:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-l-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-l-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19532,
+    "sha256": "061bc1d0fe640f97228f935a97effa560ffeae863f0cd542aab3a7452e0d0d08",
+    "started_utc": "2026-10-06T13:22:23+00:00",
+    "finished_utc": "2026-10-06T13:22:24+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-l-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-l-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 342321,
+    "sha256": "b07bb84cc27532da97c8905d7df5367a2069887556810a80968113f776b65ea9",
+    "started_utc": "2026-10-06T13:22:25+00:00",
+    "finished_utc": "2026-10-06T13:22:26+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-l-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-l-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1442151,
+    "sha256": "4d80ee0a5dc4708f1e468c98c9e368194e2c99f3146059ba4c122cf3e3269375",
+    "started_utc": "2026-10-06T13:22:27+00:00",
+    "finished_utc": "2026-10-06T13:22:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-m",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-m.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "17524873b2c991eb8d91edd484f97109c61d72533470cedbc858678381e989f1",
+    "started_utc": "2026-10-06T13:22:33+00:00",
+    "finished_utc": "2026-10-06T13:22:33+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-m-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-m-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19532,
+    "sha256": "b1716cb3ea7783fdb254c392a9f6149597ca77574f5475d26e4e7d1d75c2230c",
+    "started_utc": "2026-10-06T13:22:35+00:00",
+    "finished_utc": "2026-10-06T13:22:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-m-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-m-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 459331,
+    "sha256": "979a3c751bc149f2dbbbce2c7d8d47ffa037a61c8d43c4f222599ed5a8e869d9",
+    "started_utc": "2026-10-06T13:22:37+00:00",
+    "finished_utc": "2026-10-06T13:22:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-m-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-m-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2233086,
+    "sha256": "f472c98eb1fde7d369619ffbd3f8933cc99f1f22df8bc428f6f21bb3dcdc0786",
+    "started_utc": "2026-10-06T13:22:39+00:00",
+    "finished_utc": "2026-10-06T13:22:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-n",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-n.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "9d0ba769f444fdd8c0fc06bdd9f1f871e92f9ee68392819567f264e5b6cd8e79",
+    "started_utc": "2026-10-06T13:22:45+00:00",
+    "finished_utc": "2026-10-06T13:22:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-n-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-n-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19532,
+    "sha256": "6289028c2dfbf03604cbfccf5622f197287939165259ec58b2ccfd2527e65099",
+    "started_utc": "2026-10-06T13:22:47+00:00",
+    "finished_utc": "2026-10-06T13:22:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-n-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-n-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 349978,
+    "sha256": "e9ea9827b30c9cee9d9a93d261f82ff4ce4ea80d386198e33a8441df70774926",
+    "started_utc": "2026-10-06T13:22:49+00:00",
+    "finished_utc": "2026-10-06T13:22:52+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-n-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-n-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1627645,
+    "sha256": "80418bc34a0aa2bf6d34291d196b30b0fa4ab25ce34c82a9829fa2bdc36f69ec",
+    "started_utc": "2026-10-06T13:22:53+00:00",
+    "finished_utc": "2026-10-06T13:22:57+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-o",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-o.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "5d4117b6a5bb680df38290c00e76db5c5343f2d628cc49079c4c5920e442b665",
+    "started_utc": "2026-10-06T13:22:58+00:00",
+    "finished_utc": "2026-10-06T13:22:58+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-o-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-o-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19531,
+    "sha256": "4614a13e08c2128c3c77cb469c595ea55b9889ca9cf60a4cb81cae4e36f77d14",
+    "started_utc": "2026-10-06T13:22:59+00:00",
+    "finished_utc": "2026-10-06T13:23:00+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-o-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-o-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 238622,
+    "sha256": "2cce352e1c00774ffa09f566b73613498a02be8ee5757b8e0cdc2c9493cfd0c9",
+    "started_utc": "2026-10-06T13:23:02+00:00",
+    "finished_utc": "2026-10-06T13:23:03+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-o-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-o-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 980434,
+    "sha256": "ab0a85468b565cba62b5113a3e841de943333d3aeb3a6b56b9325265e8115971",
+    "started_utc": "2026-10-06T13:23:04+00:00",
+    "finished_utc": "2026-10-06T13:23:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-p",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-p.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "b59799357a2242a0244beb092f82f7b5c2c7723c6427dc15b42e0ef3556e562b",
+    "started_utc": "2026-10-06T13:23:09+00:00",
+    "finished_utc": "2026-10-06T13:23:09+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-p-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-p-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19531,
+    "sha256": "8d4bdd2c55ed067f46d7092a3c770f7b69b65d8a4d10d3d2befd2b542cdfc295",
+    "started_utc": "2026-10-06T13:23:11+00:00",
+    "finished_utc": "2026-10-06T13:23:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-p-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-p-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 202437,
+    "sha256": "fcb4ea7609d304de56dacbbe71795014832c45b6438ef516fce7499ed0a4aee2",
+    "started_utc": "2026-10-06T13:23:13+00:00",
+    "finished_utc": "2026-10-06T13:23:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-p-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-p-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 803860,
+    "sha256": "f86c5e9c3099faff0e5dfde8dcc33ed9bfecc003fde682a439d7a69880314cf6",
+    "started_utc": "2026-10-06T13:23:15+00:00",
+    "finished_utc": "2026-10-06T13:23:18+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-q",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-q.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5792,
+    "sha256": "2719d4bb7970843ed85bce9484ed76b7df65c9bb645d508f1207bb74301980fd",
+    "started_utc": "2026-10-06T13:23:19+00:00",
+    "finished_utc": "2026-10-06T13:23:20+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-q-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-q-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 19532,
+    "sha256": "964f88df0754c382ffee1aac94f60bb4bf4f6dc441b87552ddc5c881c463e923",
+    "started_utc": "2026-10-06T13:23:21+00:00",
+    "finished_utc": "2026-10-06T13:23:22+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-q-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-q-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 390787,
+    "sha256": "024741662d1b1c1e0512301faa0a061877438de7e4c5a7b4f98277f51d09115d",
+    "started_utc": "2026-10-06T13:23:23+00:00",
+    "finished_utc": "2026-10-06T13:23:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-q-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-q-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1708642,
+    "sha256": "528e25038c9ca7ab21c1e6cc34efac8e11db65ed644b5fa5fa1d2f4f27601b62",
+    "started_utc": "2026-10-06T13:23:26+00:00",
+    "finished_utc": "2026-10-06T13:23:30+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000662-r",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-r.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7789,
+    "sha256": "facb45a8c6db978e048159710a7390dd8692dfa460fa05f8c2dd2aece9620bc5",
+    "started_utc": "2026-10-06T13:23:31+00:00",
+    "finished_utc": "2026-10-06T13:23:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-r-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-r-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12613,
+    "sha256": "be35e75e72af4111046a03830eb9c60490e0453431a85878898e755bbd406e73",
+    "started_utc": "2026-10-06T13:23:33+00:00",
+    "finished_utc": "2026-10-06T13:23:33+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-r-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-r-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 498070,
+    "sha256": "a49f752d16b145019562d39a93d8e6f0d494e3d7a1d8735dfcfb4fc37c0a9287",
+    "started_utc": "2026-10-06T13:23:34+00:00",
+    "finished_utc": "2026-10-06T13:23:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000662-r-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000662-r-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2512562,
+    "sha256": "a9a1f9749d87d53cbda655693dfc6169b07455e8083fb01cb4521e582cb37a9e",
+    "started_utc": "2026-10-06T13:23:37+00:00",
+    "finished_utc": "2026-10-06T13:23:41+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-0",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-0.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 6009,
+    "sha256": "697879bf8bf9b10cdf1760811382041e966e76ce379efe8076d411b0332d8489",
+    "started_utc": "2026-10-06T13:23:42+00:00",
+    "finished_utc": "2026-10-06T13:23:43+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-0-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-0-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 49919,
+    "sha256": "c410dc9bf6d364d1d8389a1d3ca695b1c524803b187e873d903d3c1dd2c57648",
+    "started_utc": "2026-10-06T13:23:44+00:00",
+    "finished_utc": "2026-10-06T13:23:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-0-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-0-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3517021,
+    "sha256": "d9bea586b8cf64e20ca9b2c77595fc3c4f7c4483d17f75a43e6bca84d7937ea9",
+    "started_utc": "2026-10-06T13:23:48+00:00",
+    "finished_utc": "2026-10-06T13:23:52+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-0-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-0-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 35746988,
+    "sha256": "f22e20368ba0d30c76e2ef6adc108aefd67f7bfc963d3a7254c3f0d612e276a3",
+    "started_utc": "2026-10-06T13:23:53+00:00",
+    "finished_utc": "2026-10-06T13:24:28+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-a",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8322,
+    "sha256": "fb4b2fbb3b569cefae08695001a0a8752d6264bc1392a1a1b268aafde658cb61",
+    "started_utc": "2026-10-06T13:24:29+00:00",
+    "finished_utc": "2026-10-06T13:24:30+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12364,
+    "sha256": "8e694c3d665ebe89fc5ea93a70b51eed534d9bfd39a0ecf302b0c1cddc3f67a2",
+    "started_utc": "2026-10-06T13:24:31+00:00",
+    "finished_utc": "2026-10-06T13:24:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 410339,
+    "sha256": "df5233d11c64107974570f02ce1f8e08d7fd638403d7c9c34f5728b88cdf1c0e",
+    "started_utc": "2026-10-06T13:24:33+00:00",
+    "finished_utc": "2026-10-06T13:24:35+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1497369,
+    "sha256": "d0015c047b4ea2560d903710db1638539c42f95a718f5789e3c1c41b2b3036cd",
+    "started_utc": "2026-10-06T13:24:36+00:00",
+    "finished_utc": "2026-10-06T13:24:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-b",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-b.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "75f16e35092836f8288cc9bea41ce461e3476c2af8d0bd7a1058ca987f436ede",
+    "started_utc": "2026-10-06T13:24:40+00:00",
+    "finished_utc": "2026-10-06T13:24:41+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-b-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-b-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12345,
+    "sha256": "7a8a0ef4edd8f8a050791fcfef81b3d2eddf64e025fae1084ac0df1d2500d50b",
+    "started_utc": "2026-10-06T13:24:42+00:00",
+    "finished_utc": "2026-10-06T13:24:43+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-b-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-b-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 243010,
+    "sha256": "be121aadba03c40a2b514fcebfedff7a6a2d219c5ecf4e97269ca1ddb7806740",
+    "started_utc": "2026-10-06T13:24:44+00:00",
+    "finished_utc": "2026-10-06T13:24:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-b-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-b-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 731332,
+    "sha256": "d9e0d9d8dc6319eb715a8f9bc7a9df9b1d0fff662624e6ab1c0d6c81f4fe82c6",
+    "started_utc": "2026-10-06T13:24:47+00:00",
+    "finished_utc": "2026-10-06T13:24:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-c",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-c.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "ca920b1f3198cfa744bd3b137f63fcb7874d8d2dca218ec3b60267a25c0d6ffe",
+    "started_utc": "2026-10-06T13:24:50+00:00",
+    "finished_utc": "2026-10-06T13:24:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-c-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-c-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12346,
+    "sha256": "78b5cd5280390bbb5196d908087c039bd5fb72a84efae4dd5edf669fb57a78ca",
+    "started_utc": "2026-10-06T13:24:52+00:00",
+    "finished_utc": "2026-10-06T13:24:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-c-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-c-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 703278,
+    "sha256": "0bfa39f46373e136a1b6bf77339a3e742fea1da21d95937b238f60df90113847",
+    "started_utc": "2026-10-06T13:24:54+00:00",
+    "finished_utc": "2026-10-06T13:24:56+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-c-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-c-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2569243,
+    "sha256": "e7bfb90efa05f42b1c482a605b165f462fdaa54c576af9cbe294346cd4a36f1b",
+    "started_utc": "2026-10-06T13:24:57+00:00",
+    "finished_utc": "2026-10-06T13:25:04+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-d",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-d.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "8e788030c4f579cab847f6f9e1fd1320fa2227b245c0bc4d6f185496b88c4176",
+    "started_utc": "2026-10-06T13:25:05+00:00",
+    "finished_utc": "2026-10-06T13:25:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-d-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-d-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12346,
+    "sha256": "09bb2fed30c58fd6050790e3c848703b8563a40b1cf4ee7e8caf7415e15f1f6c",
+    "started_utc": "2026-10-06T13:25:07+00:00",
+    "finished_utc": "2026-10-06T13:25:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-d-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-d-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 508472,
+    "sha256": "657e7aebf3723a2c7139cbf1472ba29d75b3804e39af5691d5aee8c06f65c1f7",
+    "started_utc": "2026-10-06T13:25:09+00:00",
+    "finished_utc": "2026-10-06T13:25:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-d-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-d-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1700419,
+    "sha256": "b81b0b9750ef06ac86dc9c46421c8a068c87567cceb14c4cc9e79e971f5a08ab",
+    "started_utc": "2026-10-06T13:25:12+00:00",
+    "finished_utc": "2026-10-06T13:25:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-e",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-e.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "82fe06782b7af928e6ea955dc320525427fe2acd74830b7e70c153fae1645608",
+    "started_utc": "2026-10-06T13:25:16+00:00",
+    "finished_utc": "2026-10-06T13:25:17+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-e-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-e-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12216,
+    "sha256": "07d41f2881c339aa11c2ecf38ba3e5582916ae31e3e2af2771b9705c7c85bd1f",
+    "started_utc": "2026-10-06T13:25:18+00:00",
+    "finished_utc": "2026-10-06T13:25:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-e-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-e-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 415909,
+    "sha256": "6029b25ed6cfd1b80425b037de177bc5bcf0a16af786e12a6eb60a99591a5b9d",
+    "started_utc": "2026-10-06T13:25:20+00:00",
+    "finished_utc": "2026-10-06T13:25:22+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-e-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-e-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1411692,
+    "sha256": "ec6176602be43f410055b7d2738fe3d2b141b8f7c92ca5c8fc66008b4b64bcd6",
+    "started_utc": "2026-10-06T13:25:23+00:00",
+    "finished_utc": "2026-10-06T13:25:26+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-f",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-f.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "f795c13a3ef879f35b59eacf2a8929c7c24d0bc0cd71ce70eed56620e2dd831a",
+    "started_utc": "2026-10-06T13:25:27+00:00",
+    "finished_utc": "2026-10-06T13:25:28+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-f-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-f-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12346,
+    "sha256": "88010f674e718703d79513157e33b843a159066e4af7ea90f7198f4cfad2f061",
+    "started_utc": "2026-10-06T13:25:29+00:00",
+    "finished_utc": "2026-10-06T13:25:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-f-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-f-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 415738,
+    "sha256": "a05af2d7b10bf2e4f7494c55d5348dc7b28257f2508d650e9962f7874dd4615d",
+    "started_utc": "2026-10-06T13:25:32+00:00",
+    "finished_utc": "2026-10-06T13:25:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-f-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-f-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2786823,
+    "sha256": "deea746cc512efd298a518c33edf753b741a81e791e4ead58d2a419609d791ff",
+    "started_utc": "2026-10-06T13:25:35+00:00",
+    "finished_utc": "2026-10-06T13:25:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-g",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-g.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "05b43862d62dcfeed43d3e716d02a97e803e8da3ec9290422cb5c4dd3a1f6a24",
+    "started_utc": "2026-10-06T13:25:40+00:00",
+    "finished_utc": "2026-10-06T13:25:41+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-g-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-g-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12345,
+    "sha256": "f8120c685043b761e644fa21771215decf2167fec860e7705c141f6ad3a69f8c",
+    "started_utc": "2026-10-06T13:25:42+00:00",
+    "finished_utc": "2026-10-06T13:25:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-g-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-g-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 234360,
+    "sha256": "8dd28043a72bf250c13e4e297def2df87f5890adfd0af7aef9993ace023d4de1",
+    "started_utc": "2026-10-06T13:25:44+00:00",
+    "finished_utc": "2026-10-06T13:25:45+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-g-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-g-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 658346,
+    "sha256": "7370dd73329108e6220c898b76fec986bdfe08ad06eea29cee727ea1702e0d29",
+    "started_utc": "2026-10-06T13:25:46+00:00",
+    "finished_utc": "2026-10-06T13:26:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-h",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-h.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "fe504424847d6fe0fd7ed94f717c5346b099d635882dc52ae1472002ecf00980",
+    "started_utc": "2026-10-06T13:26:33+00:00",
+    "finished_utc": "2026-10-06T13:26:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-h-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-h-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12345,
+    "sha256": "c5a426d84ed1db25326a3bdb7ce502e74bf0119b9de18dbbb7bb32a8caedf79f",
+    "started_utc": "2026-10-06T13:26:35+00:00",
+    "finished_utc": "2026-10-06T13:26:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-h-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-h-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 261185,
+    "sha256": "5efd0f85d4118c7c2abf92441c202b29a882c676cdcd3f094c4ffa0d8f611e7c",
+    "started_utc": "2026-10-06T13:26:37+00:00",
+    "finished_utc": "2026-10-06T13:26:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-h-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-h-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 698698,
+    "sha256": "adb30576773b8fffffccd32237a4d3aba998bddb532d92cfe8f26848b86ad46d",
+    "started_utc": "2026-10-06T13:26:39+00:00",
+    "finished_utc": "2026-10-06T13:26:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000673-i",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-i.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8304,
+    "sha256": "3c9aa45b7d27cfc48d1e17bd2d8d929649bb310fefbb9ddee79a4bb35b303fd2",
+    "started_utc": "2026-10-06T13:26:43+00:00",
+    "finished_utc": "2026-10-06T13:26:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-i-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-i-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 12345,
+    "sha256": "bb4bdb89f09def07af5594a47ca1735289b6c1baf556916cd2d985af951d8697",
+    "started_utc": "2026-10-06T13:26:45+00:00",
+    "finished_utc": "2026-10-06T13:26:46+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-i-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-i-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 320773,
+    "sha256": "639f6426f5403bfa075139f7ab10b1424762a3e06f013d82c75ec966b4f0b10c",
+    "started_utc": "2026-10-06T13:26:47+00:00",
+    "finished_utc": "2026-10-06T13:26:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000673-i-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000673-i-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1153927,
+    "sha256": "ea22e13bab8130323169670367e78580452b82431a7937807266d3919b4bfd00",
+    "started_utc": "2026-10-06T13:26:50+00:00",
+    "finished_utc": "2026-10-06T13:26:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000675-a",
+    "file": "data/raw/mavedb/urn_mavedb_00000675-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8085,
+    "sha256": "c340d31d0e047a12f410b2fa9edb00d2550ca128462915280eb8d44b04732047",
+    "started_utc": "2026-10-06T13:26:54+00:00",
+    "finished_utc": "2026-10-06T13:26:55+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000675-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000675-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 43383,
+    "sha256": "791627ea2db5cf4b865c4f23f6179e88d4e4274f677043e49b6ff3480fda048a",
+    "started_utc": "2026-10-06T13:26:56+00:00",
+    "finished_utc": "2026-10-06T13:26:57+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000675-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000675-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 254856,
+    "sha256": "ae18add4440db00e0c9e94f8924130436307ab7bc4b8bceec091a9a5e87f17b7",
+    "started_utc": "2026-10-06T13:26:58+00:00",
+    "finished_utc": "2026-10-06T13:27:00+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000675-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000675-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8269244,
+    "sha256": "345264fabcbbc360bda1318451a327a641c8d4b49063af84993e84c36b5aacd6",
+    "started_utc": "2026-10-06T13:27:01+00:00",
+    "finished_utc": "2026-10-06T13:27:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-0",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-0.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8440,
+    "sha256": "8924683e1d016b658a8f05e36faff7f1f625e965fb4047105d268dfc89ea48bd",
+    "started_utc": "2026-10-06T13:27:12+00:00",
+    "finished_utc": "2026-10-06T13:27:13+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-0-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-0-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 24719,
+    "sha256": "0e8cd9560351fad2f8f04ffedb0d735a39d272e481ef31d096779e5b3e9d752d",
+    "started_utc": "2026-10-06T13:27:14+00:00",
+    "finished_utc": "2026-10-06T13:27:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-0-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-0-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1192899,
+    "sha256": "4b1fa436b2567606bca099a4023685497e93c81949cf5ae00b0bf5c36d26ea48",
+    "started_utc": "2026-10-06T13:27:16+00:00",
+    "finished_utc": "2026-10-06T13:27:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-0-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-0-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 22662262,
+    "sha256": "ad21e997514d20594b4bb33cf289f6112bf77e9855b2331116388785772903f5",
+    "started_utc": "2026-10-06T13:27:20+00:00",
+    "finished_utc": "2026-10-06T13:27:50+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-a",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "44db7959cc9e7224e59a26546cf39d746f691513dcc940a379a012475bf28543",
+    "started_utc": "2026-10-06T13:27:51+00:00",
+    "finished_utc": "2026-10-06T13:27:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7613,
+    "sha256": "02364cb5b230db475b587262a789262e5d1d89e1e5604517705080176f25e8a1",
+    "started_utc": "2026-10-06T13:28:22+00:00",
+    "finished_utc": "2026-10-06T13:28:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 88296,
+    "sha256": "9ccde791bbea848a98cf65bb4ca9d394343d1cd5a2c11b95f78e0db0bde7aa11",
+    "started_utc": "2026-10-06T13:28:24+00:00",
+    "finished_utc": "2026-10-06T13:28:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 546248,
+    "sha256": "a37101cb25b1918f63381f93458414d73e2f4c5703a83cae68d9a0ef8a51c04f",
+    "started_utc": "2026-10-06T13:28:40+00:00",
+    "finished_utc": "2026-10-06T13:28:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-b",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-b.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "9b9abc0af659d5f7b02b8268338fa59adb177048f539001f67a24f5694faa602",
+    "started_utc": "2026-10-06T13:29:12+00:00",
+    "finished_utc": "2026-10-06T13:29:13+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-b-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-b-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7629,
+    "sha256": "668a4662de58731e697061e8436ebdada58927b8e46d9062529b01f469236a17",
+    "started_utc": "2026-10-06T13:29:15+00:00",
+    "finished_utc": "2026-10-06T13:29:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-b-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-b-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 103794,
+    "sha256": "0e473510111fe38879bd437447e026c3ac72182a550d3e9617fd257d4d17e692",
+    "started_utc": "2026-10-06T13:29:31+00:00",
+    "finished_utc": "2026-10-06T13:29:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-b-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-b-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 784362,
+    "sha256": "9610f905c300f1178aae5812403353d2f4b12d68b98d6a43d90c45ccd45785c8",
+    "started_utc": "2026-10-06T13:29:33+00:00",
+    "finished_utc": "2026-10-06T13:29:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-c",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-c.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "22dc0f83473bcb56e8bab59d8e0478aa0e3e989001d57c76e8d299f67f07e5a1",
+    "started_utc": "2026-10-06T13:29:37+00:00",
+    "finished_utc": "2026-10-06T13:29:37+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-c-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-c-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7659,
+    "sha256": "cbac3f06f7fd783a751e52458fd071ff2201a0aacff13ff61a6a52a4b09e90af",
+    "started_utc": "2026-10-06T13:29:52+00:00",
+    "finished_utc": "2026-10-06T13:29:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-c-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-c-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 86706,
+    "sha256": "03edce36b047138410afd5103ba76c9eafb17d110d25bcc5fd7931fbdb1cfb6e",
+    "started_utc": "2026-10-06T13:29:54+00:00",
+    "finished_utc": "2026-10-06T13:29:55+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-c-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-c-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 555088,
+    "sha256": "1af6c897368513f56f2c25e2a6e3885a06b49d87f1fae697311e8fe8b0efbdd4",
+    "started_utc": "2026-10-06T13:30:45+00:00",
+    "finished_utc": "2026-10-06T13:30:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-d",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-d.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "6f7a8f990a1cbb9bbb330aebffc44f6db3fb4aa7e24be719305b596a9c204b55",
+    "started_utc": "2026-10-06T13:30:49+00:00",
+    "finished_utc": "2026-10-06T13:30:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-d-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-d-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7699,
+    "sha256": "1dc859e8c9792d732830f9fafa1f0ab51c89c9ef70767693c2e3624f77169efc",
+    "started_utc": "2026-10-06T13:30:51+00:00",
+    "finished_utc": "2026-10-06T13:30:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-d-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-d-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 199807,
+    "sha256": "a3c116892497c6e87a869ef6891841c902d6ece51ca0e0e1c46d21c658c71e83",
+    "started_utc": "2026-10-06T13:30:53+00:00",
+    "finished_utc": "2026-10-06T13:30:54+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-d-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-d-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1525091,
+    "sha256": "2171d7ad033da3e92f925502def9948fe7cd5be95555bad1ac4638b452069bdd",
+    "started_utc": "2026-10-06T13:30:55+00:00",
+    "finished_utc": "2026-10-06T13:30:59+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-e",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-e.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "e75ddfa307cd89b7a3f23895eca2195ff10a09cf54241cc64c7909367e42bedc",
+    "started_utc": "2026-10-06T13:31:00+00:00",
+    "finished_utc": "2026-10-06T13:31:01+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-e-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-e-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7726,
+    "sha256": "7edc73b47811168af418487ce6d6edf95344466267426d5ac79153a66b45eb11",
+    "started_utc": "2026-10-06T13:31:02+00:00",
+    "finished_utc": "2026-10-06T13:31:02+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-e-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-e-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 234051,
+    "sha256": "87c7e531a5ae919dc5147c5634c65ba0382b9c627f9939364a1b1fd569c86828",
+    "started_utc": "2026-10-06T13:31:04+00:00",
+    "finished_utc": "2026-10-06T13:31:05+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-e-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-e-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1783220,
+    "sha256": "fe51fadf1e8fbf334fa9aeee16a7d22e8a23ac4ed537ac982f237a73671f17c6",
+    "started_utc": "2026-10-06T13:31:06+00:00",
+    "finished_utc": "2026-10-06T13:31:10+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-f",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-f.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "3bc5fd3121cdbca4e29ad440eb548428ae801eefa0b56cb760ac941f7da80f77",
+    "started_utc": "2026-10-06T13:31:11+00:00",
+    "finished_utc": "2026-10-06T13:31:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-f-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-f-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7670,
+    "sha256": "d359276541ca2dcc3f52616b6616285e7ba8d1bb120ec12a6c0a37bc3b7a49f5",
+    "started_utc": "2026-10-06T13:31:13+00:00",
+    "finished_utc": "2026-10-06T13:31:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-f-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-f-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 155881,
+    "sha256": "d40032dc14777305c51ae8cca1c757d8634bf79fb4229747c2c0ff6371b2a007",
+    "started_utc": "2026-10-06T13:31:15+00:00",
+    "finished_utc": "2026-10-06T13:31:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-f-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-f-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1185939,
+    "sha256": "45fa28bb3a505a2f564297e62e12f16cc1e2bdc084b9f2c5df734df7ed909fcd",
+    "started_utc": "2026-10-06T13:31:17+00:00",
+    "finished_utc": "2026-10-06T13:31:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-g",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-g.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "0cb12ed85b03bd617f2218365934660720ae2408eb06303dd85a5d590cecacd8",
+    "started_utc": "2026-10-06T13:31:22+00:00",
+    "finished_utc": "2026-10-06T13:31:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-g-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-g-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7706,
+    "sha256": "8045415c322e70008475ff2fab3ca3b2bc03768793d4c1f2214ed80bf1f45af4",
+    "started_utc": "2026-10-06T13:31:24+00:00",
+    "finished_utc": "2026-10-06T13:31:25+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-g-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-g-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 203496,
+    "sha256": "3345f586afb3ede458c2cf93b4714f9b9e077ba9a911376046e0010081c61d9e",
+    "started_utc": "2026-10-06T13:31:26+00:00",
+    "finished_utc": "2026-10-06T13:31:27+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-g-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-g-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1540321,
+    "sha256": "ab6bbb06f18a8726c54468466c0d5bc29b97a43651842fa8d9ad3c5c0f9b030d",
+    "started_utc": "2026-10-06T13:31:28+00:00",
+    "finished_utc": "2026-10-06T13:31:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-h",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-h.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "02c4e843be65617b1784b59ec652c2718efd74bf53ee7289604c0c1ec944580d",
+    "started_utc": "2026-10-06T13:31:34+00:00",
+    "finished_utc": "2026-10-06T13:31:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-h-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-h-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7657,
+    "sha256": "4b32a2c363ee30aaa82208ac627ba7f8e841d9229f0bfa538132ee5406800c52",
+    "started_utc": "2026-10-06T13:31:35+00:00",
+    "finished_utc": "2026-10-06T13:31:36+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-h-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-h-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 138413,
+    "sha256": "ea28b829e23f839d7124c2061def0afeebcb23ea6d4f472e391da740103a03af",
+    "started_utc": "2026-10-06T13:31:37+00:00",
+    "finished_utc": "2026-10-06T13:31:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-h-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-h-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1041768,
+    "sha256": "12b2eb2024e8ca2cc423009728221cc9a4d2fbac840ac653226bfa5cffe36512",
+    "started_utc": "2026-10-06T13:31:40+00:00",
+    "finished_utc": "2026-10-06T13:31:43+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-i",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-i.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2157,
+    "sha256": "e3c033cfc6457e6dd0836d1049f7b05a26854a6963e45f1a6d7dcde044cb7a6b",
+    "started_utc": "2026-10-06T13:31:44+00:00",
+    "finished_utc": "2026-10-06T13:31:45+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-i-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-i-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7670,
+    "sha256": "d01ae5e92a124d6e7452f6205ec02f0b5e5a1646cea6c20d0952b0b84a9684d6",
+    "started_utc": "2026-10-06T13:31:46+00:00",
+    "finished_utc": "2026-10-06T13:31:47+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-i-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-i-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 156570,
+    "sha256": "20611fbc3b1a7142b3dbf04dc3d5d425ad5f9a2d0b628a99a2b7001bf0aa7881",
+    "started_utc": "2026-10-06T13:31:48+00:00",
+    "finished_utc": "2026-10-06T13:31:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-i-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-i-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1190731,
+    "sha256": "6a5e8ce24f840098fae0c24ad6c0bc400c7a72cb9dac6062e6012a287dd255a3",
+    "started_utc": "2026-10-06T13:31:51+00:00",
+    "finished_utc": "2026-10-06T13:31:54+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-j",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-j.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "0e3bb8e4ec2d46b7206be833dbd4c1517ce291198e70ad7e8ed80c844799b54b",
+    "started_utc": "2026-10-06T13:31:55+00:00",
+    "finished_utc": "2026-10-06T13:31:56+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-j-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-j-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7739,
+    "sha256": "4fefbeb4938fef6d5dbf5d870d2e28232f280c61dfb074b82489cd46a030dd8c",
+    "started_utc": "2026-10-06T13:31:57+00:00",
+    "finished_utc": "2026-10-06T13:31:58+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-j-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-j-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 241424,
+    "sha256": "d75eb503db1eccf83f14da968d4d53f985191bacab418ee41a43893cd613629b",
+    "started_utc": "2026-10-06T13:31:59+00:00",
+    "finished_utc": "2026-10-06T13:32:01+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-j-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-j-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1754749,
+    "sha256": "ef286b2f04a09d48e8fff0dfc185d568c614246bc984bad540dda40ed4455bcf",
+    "started_utc": "2026-10-06T13:32:02+00:00",
+    "finished_utc": "2026-10-06T13:32:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-k",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-k.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "ca8634673689ed765e98db7dac3f1337dc9fdf6b0702de70e3697f34936380bd",
+    "started_utc": "2026-10-06T13:32:07+00:00",
+    "finished_utc": "2026-10-06T13:32:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-k-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-k-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7720,
+    "sha256": "a54100db71b03043569af74dd557e3c744eea8e9c5f1090636837823a5742fec",
+    "started_utc": "2026-10-06T13:32:09+00:00",
+    "finished_utc": "2026-10-06T13:32:10+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-k-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-k-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 221172,
+    "sha256": "efb692dab053a15d2cbdfe6b3a8e98a985681f5e11c3bbd13914026b802e6bd6",
+    "started_utc": "2026-10-06T13:32:11+00:00",
+    "finished_utc": "2026-10-06T13:32:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-k-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-k-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1581744,
+    "sha256": "1273310196df903cc6e86f05586776fdeaffa492be6b035f6986063c28ecf7ec",
+    "started_utc": "2026-10-06T13:32:13+00:00",
+    "finished_utc": "2026-10-06T13:32:17+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-l",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-l.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "86391488dc16dfd491d29f2e4211513bce031ea7a2db98742962532c966487c1",
+    "started_utc": "2026-10-06T13:32:18+00:00",
+    "finished_utc": "2026-10-06T13:32:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-l-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-l-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7723,
+    "sha256": "09f5e7c3c4081a3057932156b9beb59c1f9c2d4088bac3669404d1c407f506b0",
+    "started_utc": "2026-10-06T13:32:20+00:00",
+    "finished_utc": "2026-10-06T13:32:21+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-l-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-l-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 225715,
+    "sha256": "8cb482395146a3ec544cbf23cf39d4a45b8c560f34ccd19214bf245473b28da8",
+    "started_utc": "2026-10-06T13:32:22+00:00",
+    "finished_utc": "2026-10-06T13:32:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-l-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-l-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1624212,
+    "sha256": "cde26a6d1fc6b2902e507f0287f9f0bb90c49d55460a330182df43fc982095c5",
+    "started_utc": "2026-10-06T13:32:24+00:00",
+    "finished_utc": "2026-10-06T13:32:29+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-m",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-m.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "d179462e4950e625e2add77127734843725bb2cdd2cfcc30ee251f321bc914a5",
+    "started_utc": "2026-10-06T13:32:30+00:00",
+    "finished_utc": "2026-10-06T13:32:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-m-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-m-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7761,
+    "sha256": "8597c48c1089fa678f136db7218a8f2b71005fe2cfa685fd4a5934a3fd8358c5",
+    "started_utc": "2026-10-06T13:32:32+00:00",
+    "finished_utc": "2026-10-06T13:32:33+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-m-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-m-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 273808,
+    "sha256": "c9261626d46575d4b9282492bbeb31ea9a5e55170e1f6d1aea2f2a9a6a56594c",
+    "started_utc": "2026-10-06T13:32:47+00:00",
+    "finished_utc": "2026-10-06T13:32:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-m-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-m-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1986000,
+    "sha256": "27eb2d6c4e198e5e9d1ca59d1942d673fcbb3aad1d2d60cead56e2c5b1ca9aaf",
+    "started_utc": "2026-10-06T13:33:04+00:00",
+    "finished_utc": "2026-10-06T13:33:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-n",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-n.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "998f47dda4360f8f47ed8e8db5052e7567f67df043b0a7215cfcda73b1884cc9",
+    "started_utc": "2026-10-06T13:33:09+00:00",
+    "finished_utc": "2026-10-06T13:33:10+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-n-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-n-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7691,
+    "sha256": "876f223bddc8e1d5ae9ecc5e049810a7177d57c0c5b9e575fabfe92d0339ed46",
+    "started_utc": "2026-10-06T13:33:11+00:00",
+    "finished_utc": "2026-10-06T13:33:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-n-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-n-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 186708,
+    "sha256": "7e4d84bff3648281fbe846918257a37b5f99d9736bf17b5ecf46ace81d28b2d0",
+    "started_utc": "2026-10-06T13:33:13+00:00",
+    "finished_utc": "2026-10-06T13:33:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-n-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-n-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1337540,
+    "sha256": "3a7a056ed66fd21a1a28e6efc203ba64cd3437cf97386da367fc722757dcf25f",
+    "started_utc": "2026-10-06T13:33:45+00:00",
+    "finished_utc": "2026-10-06T13:33:48+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-o",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-o.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "8684741e029569f0d25defb52c127da9bb9a0d76abea0900abc86d4708cb6507",
+    "started_utc": "2026-10-06T13:33:49+00:00",
+    "finished_utc": "2026-10-06T13:33:50+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-o-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-o-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7732,
+    "sha256": "17b869b7892e8832fc8b4978d37dd54989341f72f5aa5bf722df81817256a315",
+    "started_utc": "2026-10-06T13:33:51+00:00",
+    "finished_utc": "2026-10-06T13:33:52+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-o-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-o-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 225704,
+    "sha256": "9c87b191f6e5493982d74e1a2666ff522526324f79d8d610aa5f7be492f5073a",
+    "started_utc": "2026-10-06T13:33:53+00:00",
+    "finished_utc": "2026-10-06T13:33:55+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-o-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-o-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1699000,
+    "sha256": "60231356b25897e29171b834ad60f6c9ef05d6662895224618c1413f9421fc8a",
+    "started_utc": "2026-10-06T13:33:56+00:00",
+    "finished_utc": "2026-10-06T13:34:00+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-p",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-p.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "9b138f415cfb3e61c091c1a297e15b2a768564fccdc8af7a941e940cce4e4757",
+    "started_utc": "2026-10-06T13:34:01+00:00",
+    "finished_utc": "2026-10-06T13:34:02+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-p-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-p-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7712,
+    "sha256": "c3ad84d4467a0f3f0cc234ce6551edf4231e6f2005f876e689013e22e9a4257b",
+    "started_utc": "2026-10-06T13:34:04+00:00",
+    "finished_utc": "2026-10-06T13:34:05+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-p-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-p-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 214439,
+    "sha256": "6d56a09498b8971d44b74d5ec4d4a347bf4859b27509cd9cdf4b66797d18cd59",
+    "started_utc": "2026-10-06T13:34:06+00:00",
+    "finished_utc": "2026-10-06T13:34:07+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-p-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-p-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1629819,
+    "sha256": "969c5d26a19a6087011e4e8d9a16d66c2a3c93ccf8b9b71fe64a98ffa5d1ef0c",
+    "started_utc": "2026-10-06T13:34:08+00:00",
+    "finished_utc": "2026-10-06T13:34:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00000658-q",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-q.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2160,
+    "sha256": "8b3b564367829be358b5e2224770791ed730961b4e08c874822f9ac4dfc5903c",
+    "started_utc": "2026-10-06T13:34:13+00:00",
+    "finished_utc": "2026-10-06T13:34:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-q-1",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-q-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7656,
+    "sha256": "60d4d72479b1d499b3ccbaacfd5162a60e960c56c3f5dc720dcaac7d5bae28c0",
+    "started_utc": "2026-10-06T13:34:16+00:00",
+    "finished_utc": "2026-10-06T13:34:16+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-q-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-q-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 125864,
+    "sha256": "4dcab0278845484bcca973f25e39746bf47f9548067598aa7fdf967332d3a0a7",
+    "started_utc": "2026-10-06T13:34:18+00:00",
+    "finished_utc": "2026-10-06T13:34:19+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000658-q-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00000658-q-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 788390,
+    "sha256": "dfdc41e018a9f82a4eb07998767eb5782ccd312d7e66e9dcd964e667564d4d64",
+    "started_utc": "2026-10-06T13:34:20+00:00",
+    "finished_utc": "2026-10-06T13:34:23+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001228-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001228-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7485,
+    "sha256": "a24cb17220dfb536dbcf6909bb64977a99d0550c81b1ab4378996e656d1d8ee4",
+    "started_utc": "2026-10-06T13:34:24+00:00",
+    "finished_utc": "2026-10-06T13:34:26+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001228-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001228-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 46822,
+    "sha256": "6cefeefd37b75cdea3bd1e7b6058b37b15c2c866620876d52c20128e1586867e",
+    "started_utc": "2026-10-06T13:34:28+00:00",
+    "finished_utc": "2026-10-06T13:34:29+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001228-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001228-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1038104,
+    "sha256": "3da9f9e2fa5f67d3d41ba9054c9b978f39861bfd44123c6c41073d9c2008d20a",
+    "started_utc": "2026-10-06T13:34:31+00:00",
+    "finished_utc": "2026-10-06T13:34:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001228-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001228-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 38648276,
+    "sha256": "19c8ccc3dafd13de68e93b2fabaf0a9c2e2fbef15d836e9bf44a4ad3f155d95b",
+    "started_utc": "2026-10-06T13:34:35+00:00",
+    "finished_utc": "2026-10-06T13:35:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001250-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5042,
+    "sha256": "78e9b7ed7cda8e1f6c4709004a2dce82a5c8d07b822e78f791b4b7e3da1a2aee",
+    "started_utc": "2026-10-06T13:35:37+00:00",
+    "finished_utc": "2026-10-06T13:35:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-3",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-3.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8692,
+    "sha256": "28eddb5130259f63d65ced9093585de1d58933357865d136a470a1bd2966c00a",
+    "started_utc": "2026-10-06T13:35:39+00:00",
+    "finished_utc": "2026-10-06T13:35:39+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-3/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-3.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1396113,
+    "sha256": "1b45b260ff6f79967c93846091530802fac84dac7e2f0b2b88f770cc949cd670",
+    "started_utc": "2026-10-06T13:35:41+00:00",
+    "finished_utc": "2026-10-06T13:35:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-3/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-3.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 13352577,
+    "sha256": "d0b1b124b1fb2e90b7096f5265b0394a33645cdda4e8c3eb2667c98dd67eca1a",
+    "started_utc": "2026-10-06T13:35:45+00:00",
+    "finished_utc": "2026-10-06T13:36:00+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 10038,
+    "sha256": "86cc0662c6fd12003fd16350f0fbb32043ee40bfe1362aa17dc7c9144b780451",
+    "started_utc": "2026-10-06T13:36:01+00:00",
+    "finished_utc": "2026-10-06T13:36:02+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1398304,
+    "sha256": "15344db4740e7ad105400aeb456c78630f44037c4512f5a80ee1770b4b9a1518",
+    "started_utc": "2026-10-06T13:36:03+00:00",
+    "finished_utc": "2026-10-06T13:36:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 13367308,
+    "sha256": "fdd54646478b3d0a675a130e2ecc4f60005cfc6a70f9eb2a4c4b585ab9bcaf13",
+    "started_utc": "2026-10-06T13:36:07+00:00",
+    "finished_utc": "2026-10-06T13:36:24+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 28484,
+    "sha256": "23957bfcf2b160837a9c1fbc5f1fd6b6627a1dd860eee919c3325c9503bcc1c5",
+    "started_utc": "2026-10-06T13:36:25+00:00",
+    "finished_utc": "2026-10-06T13:36:26+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2546506,
+    "sha256": "58fe32451da606ea24479b1efe8dc5162664c3785ce7fb400b2e8797ba5bf9a7",
+    "started_utc": "2026-10-06T13:36:27+00:00",
+    "finished_utc": "2026-10-06T13:36:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001250-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001250-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 51354358,
+    "sha256": "8f87ab90e28d29db69f6d976362c44f83bed532ab2b0235b2b07b381d9a49148",
+    "started_utc": "2026-10-06T13:37:51+00:00",
+    "finished_utc": "2026-10-06T13:38:42+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001259-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001259-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3842,
+    "sha256": "4025f175397315e3bac08d9fc20ecb64669d7be28c35a4d453d1449d3c43a512",
+    "started_utc": "2026-10-06T13:38:44+00:00",
+    "finished_utc": "2026-10-06T13:38:44+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001259-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00001259-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7414,
+    "sha256": "c95ceb175bb0a50a041396d8022af619758cffbad3f6edec00c96327feabf731",
+    "started_utc": "2026-10-06T13:38:46+00:00",
+    "finished_utc": "2026-10-06T13:38:47+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001259-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001259-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1633971,
+    "sha256": "62a634dfa201283faaf223d8e33e373a528a62aa88d6aa8d5742992b12b34cdb",
+    "started_utc": "2026-10-06T13:38:49+00:00",
+    "finished_utc": "2026-10-06T13:38:53+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001259-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001259-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 17690767,
+    "sha256": "461126cd4ced2e23a1869b8dda06a8fe35160fcdad9f3ae9b9de146331e89fe8",
+    "started_utc": "2026-10-06T13:38:54+00:00",
+    "finished_utc": "2026-10-06T13:39:15+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001259-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001259-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 24421,
+    "sha256": "349bb199788e04a92ea02add60dca10ed49b2106e66155296564fa89e480c356",
+    "started_utc": "2026-10-06T13:39:16+00:00",
+    "finished_utc": "2026-10-06T13:39:17+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001259-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001259-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 2348926,
+    "sha256": "67bd0536702ffab562c693c90858a730c2fe184ed37e9b9370adc04e5a0786fb",
+    "started_utc": "2026-10-06T13:39:18+00:00",
+    "finished_utc": "2026-10-06T13:39:22+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001259-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001259-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 31684561,
+    "sha256": "7a45b24e3a805cc7d2aff1bdc4a5a02f77b9b2da6e9da2c48e2bb1ad20564937",
+    "started_utc": "2026-10-06T13:39:23+00:00",
+    "finished_utc": "2026-10-06T13:39:54+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001264-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001264-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 3700,
+    "sha256": "9fa283ffb95ef7fcd0e4b2134b4d8d56bef4d3dc0347a529ad5f4cc377ba6c42",
+    "started_utc": "2026-10-06T13:39:55+00:00",
+    "finished_utc": "2026-10-06T13:39:55+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001264-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00001264-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7409,
+    "sha256": "f8ca95a4bba67371ba71f549234ed6460b035f774221f85325e021aa7b6f7a90",
+    "started_utc": "2026-10-06T13:39:57+00:00",
+    "finished_utc": "2026-10-06T13:39:57+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001264-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001264-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 472773,
+    "sha256": "71f737a6ec66bc74139160000c98ac89e4da795333cced406f5f8fe64c2ce694",
+    "started_utc": "2026-10-06T13:39:59+00:00",
+    "finished_utc": "2026-10-06T13:40:01+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001264-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001264-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 4974914,
+    "sha256": "3563b9f9330b3360580da695698df2e49bdd4c47fbb667d5e83f4e4f1a15918a",
+    "started_utc": "2026-10-06T13:40:02+00:00",
+    "finished_utc": "2026-10-06T13:40:09+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001264-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001264-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 26503,
+    "sha256": "2ba45ee89a051b06652b28b89087bc302b61188983232f4565f59b7b77e5d2d4",
+    "started_utc": "2026-10-06T13:40:10+00:00",
+    "finished_utc": "2026-10-06T13:40:11+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001264-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001264-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 825515,
+    "sha256": "634c4ac260028b6ca6ddb7147eed2ada25fb07340db996ee6e3fcec0648a2c76",
+    "started_utc": "2026-10-06T13:40:12+00:00",
+    "finished_utc": "2026-10-06T13:40:14+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001264-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001264-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 11310125,
+    "sha256": "28c4b56e9e7805cfc67891033ea08427df6c8b7b89245ea5034a99e0af56f8d5",
+    "started_utc": "2026-10-06T13:40:15+00:00",
+    "finished_utc": "2026-10-06T13:40:27+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001265-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001265-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 4113,
+    "sha256": "13e5ec01a536e2fefabf7e29ce765add358b44fb6578859d458e12c488a35fb7",
+    "started_utc": "2026-10-06T13:40:28+00:00",
+    "finished_utc": "2026-10-06T13:40:29+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001265-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00001265-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7910,
+    "sha256": "2419bad3ab63b35361d9ec3694aa70d940b6f95c3fc4bbbb6ffc19e3748e3d1c",
+    "started_utc": "2026-10-06T13:40:30+00:00",
+    "finished_utc": "2026-10-06T13:40:31+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001265-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001265-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 708781,
+    "sha256": "cde777132e0fed6e380c1871a22df4353be2d4c62371b847618ae9c20b2df4c4",
+    "started_utc": "2026-10-06T13:40:32+00:00",
+    "finished_utc": "2026-10-06T13:40:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001265-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001265-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7286711,
+    "sha256": "d9260cde06e759785cece93f786f992dfd3aa0ea475ba47844cc9160d4ca6aaf",
+    "started_utc": "2026-10-06T13:40:35+00:00",
+    "finished_utc": "2026-10-06T13:40:49+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001265-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001265-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8168,
+    "sha256": "644fd3a2348ae61ec6f3579b369e24031eebe0a689fdffa71b51fd94604b3eb5",
+    "started_utc": "2026-10-06T13:40:50+00:00",
+    "finished_utc": "2026-10-06T13:40:51+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001265-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001265-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 610528,
+    "sha256": "9227363a8dc5ad81f1a402226a8001008bbfaf0df9fa212bc40b5ba83a5bb57b",
+    "started_utc": "2026-10-06T13:40:52+00:00",
+    "finished_utc": "2026-10-06T13:40:54+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001265-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001265-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 8344463,
+    "sha256": "698974e91e6939ad6d30d1afe8a85322907c773588b285ecb31018ecd956041c",
+    "started_utc": "2026-10-06T13:40:55+00:00",
+    "finished_utc": "2026-10-06T13:41:04+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/experiments/urn:mavedb:00001262-a",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a.experiment.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 4009,
+    "sha256": "1a8914ce857b23e4f757561ac9993ca836b60a92f857b1b1c3d00ae7decaa047",
+    "started_utc": "2026-10-06T13:41:06+00:00",
+    "finished_utc": "2026-10-06T13:41:06+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-3",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-3.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7903,
+    "sha256": "2a5efb7627d02ee44c071bcb764629ae27debf198fd60ce07ecf10d9cde56bd9",
+    "started_utc": "2026-10-06T13:41:07+00:00",
+    "finished_utc": "2026-10-06T13:41:08+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-3/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-3.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 930260,
+    "sha256": "15fb39c473892348e0e3e8e4eb497b45a7db41685ceec18fbea3b63099a1e364",
+    "started_utc": "2026-10-06T13:41:09+00:00",
+    "finished_utc": "2026-10-06T13:41:12+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-3/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-3.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 9582057,
+    "sha256": "2626173c10681696a676deed0c5a37b335c48120ca5a9495503d0ebc3504def0",
+    "started_utc": "2026-10-06T13:41:13+00:00",
+    "finished_utc": "2026-10-06T13:41:32+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-2",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-2.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 7947,
+    "sha256": "5a7e88bb043979011bad6b4a4f98b34d3f9cc14d2c0e57a50a851c875fbb03b9",
+    "started_utc": "2026-10-06T13:41:33+00:00",
+    "finished_utc": "2026-10-06T13:41:34+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-2/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-2.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1012753,
+    "sha256": "506011f31c787d42a005a4bfec999f3cead312f88085d3a0dd2ff298ffbcd51d",
+    "started_utc": "2026-10-06T13:41:35+00:00",
+    "finished_utc": "2026-10-06T13:41:38+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-2/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-2.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 10629599,
+    "sha256": "8fe7cdee813d0e24c0268f6d2761b3cfad56a9a6bfb89939d985ea6ae65eb2ec",
+    "started_utc": "2026-10-06T13:41:39+00:00",
+    "finished_utc": "2026-10-06T13:41:59+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-1",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-1.scoreset.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 22741,
+    "sha256": "1d167e46d78a9f5cc6d5c5d7b05e315100a91ff9f21902e1a9874e767f883a9e",
+    "started_utc": "2026-10-06T13:42:00+00:00",
+    "finished_utc": "2026-10-06T13:42:01+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-1/scores",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-1.scores.csv",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 1318529,
+    "sha256": "82b521e7e1d3b05c1de53218f9b6ef2055ba9112cd516b6a1a1e2bc35f23588f",
+    "started_utc": "2026-10-06T13:42:03+00:00",
+    "finished_utc": "2026-10-06T13:42:05+00:00"
+  },
+  {
+    "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00001262-a-1/mapped-variants",
+    "file": "data/raw/mavedb/urn_mavedb_00001262-a-1.mapped.json",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 18070775,
+    "sha256": "eb01238973d86be69d2680ee1956daea63bf5b861131b0241512ba34a014777b",
+    "started_utc": "2026-10-06T13:42:06+00:00",
+    "finished_utc": "2026-10-06T13:42:20+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/submission_summary.txt.gz",
+    "file": "data/raw/submission_summary.txt.gz",
+    "http_status": 200,
+    "last_modified": "Sun, 04 Oct 2026 14:19:16 GMT",
+    "bytes": 403431412,
+    "sha256": "a41c56959799560796085bfd5fb4b04e8a0bddf7acedf259bca3fa8ded3d80ee",
+    "started_utc": "2026-10-06T16:30:50+00:00",
+    "finished_utc": "2026-10-06T16:31:28+00:00"
+  }
+]

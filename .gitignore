@@ -11,3 +11,4 @@ __pycache__/
 # local working material
 work/
 .remember/
+data/derived/exposure/development_positions.tsv

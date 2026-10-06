@@ -1,0 +1,393 @@
+{
+ "inputs": {
+  "data/raw/GCF_000001405.40_GRCh38.p14_genomic.gff.gz": "4920f0eae7e2197c50b67a201e06d657387137b49dd60f474b4f1d5b29334051",
+  "data/raw/mavedb/urn_mavedb_00000658-0-1.mapped.json": "ad21e997514d20594b4bb33cf289f6112bf77e9855b2331116388785772903f5",
+  "data/raw/mavedb/urn_mavedb_00000658-0-1.scores.csv": "4b1fa436b2567606bca099a4023685497e93c81949cf5ae00b0bf5c36d26ea48",
+  "data/raw/mavedb/urn_mavedb_00000658-a-1.mapped.json": "a37101cb25b1918f63381f93458414d73e2f4c5703a83cae68d9a0ef8a51c04f",
+  "data/raw/mavedb/urn_mavedb_00000658-a-1.scores.csv": "9ccde791bbea848a98cf65bb4ca9d394343d1cd5a2c11b95f78e0db0bde7aa11",
+  "data/raw/mavedb/urn_mavedb_00000658-b-1.mapped.json": "9610f905c300f1178aae5812403353d2f4b12d68b98d6a43d90c45ccd45785c8",
+  "data/raw/mavedb/urn_mavedb_00000658-b-1.scores.csv": "0e473510111fe38879bd437447e026c3ac72182a550d3e9617fd257d4d17e692",
+  "data/raw/mavedb/urn_mavedb_00000658-c-1.mapped.json": "1af6c897368513f56f2c25e2a6e3885a06b49d87f1fae697311e8fe8b0efbdd4",
+  "data/raw/mavedb/urn_mavedb_00000658-c-1.scores.csv": "03edce36b047138410afd5103ba76c9eafb17d110d25bcc5fd7931fbdb1cfb6e",
+  "data/raw/mavedb/urn_mavedb_00000658-d-1.mapped.json": "2171d7ad033da3e92f925502def9948fe7cd5be95555bad1ac4638b452069bdd",
+  "data/raw/mavedb/urn_mavedb_00000658-d-1.scores.csv": "a3c116892497c6e87a869ef6891841c902d6ece51ca0e0e1c46d21c658c71e83",
+  "data/raw/mavedb/urn_mavedb_00000658-e-1.mapped.json": "fe51fadf1e8fbf334fa9aeee16a7d22e8a23ac4ed537ac982f237a73671f17c6",
+  "data/raw/mavedb/urn_mavedb_00000658-e-1.scores.csv": "87c7e531a5ae919dc5147c5634c65ba0382b9c627f9939364a1b1fd569c86828",
+  "data/raw/mavedb/urn_mavedb_00000658-f-1.mapped.json": "45fa28bb3a505a2f564297e62e12f16cc1e2bdc084b9f2c5df734df7ed909fcd",
+  "data/raw/mavedb/urn_mavedb_00000658-f-1.scores.csv": "d40032dc14777305c51ae8cca1c757d8634bf79fb4229747c2c0ff6371b2a007",
+  "data/raw/mavedb/urn_mavedb_00000658-g-1.mapped.json": "ab6bbb06f18a8726c54468466c0d5bc29b97a43651842fa8d9ad3c5c0f9b030d",
+  "data/raw/mavedb/urn_mavedb_00000658-g-1.scores.csv": "3345f586afb3ede458c2cf93b4714f9b9e077ba9a911376046e0010081c61d9e",
+  "data/raw/mavedb/urn_mavedb_00000658-h-1.mapped.json": "12b2eb2024e8ca2cc423009728221cc9a4d2fbac840ac653226bfa5cffe36512",
+  "data/raw/mavedb/urn_mavedb_00000658-h-1.scores.csv": "ea28b829e23f839d7124c2061def0afeebcb23ea6d4f472e391da740103a03af",
+  "data/raw/mavedb/urn_mavedb_00000658-i-1.mapped.json": "6a5e8ce24f840098fae0c24ad6c0bc400c7a72cb9dac6062e6012a287dd255a3",
+  "data/raw/mavedb/urn_mavedb_00000658-i-1.scores.csv": "20611fbc3b1a7142b3dbf04dc3d5d425ad5f9a2d0b628a99a2b7001bf0aa7881",
+  "data/raw/mavedb/urn_mavedb_00000658-j-1.mapped.json": "ef286b2f04a09d48e8fff0dfc185d568c614246bc984bad540dda40ed4455bcf",
+  "data/raw/mavedb/urn_mavedb_00000658-j-1.scores.csv": "d75eb503db1eccf83f14da968d4d53f985191bacab418ee41a43893cd613629b",
+  "data/raw/mavedb/urn_mavedb_00000658-k-1.mapped.json": "1273310196df903cc6e86f05586776fdeaffa492be6b035f6986063c28ecf7ec",
+  "data/raw/mavedb/urn_mavedb_00000658-k-1.scores.csv": "efb692dab053a15d2cbdfe6b3a8e98a985681f5e11c3bbd13914026b802e6bd6",
+  "data/raw/mavedb/urn_mavedb_00000658-l-1.mapped.json": "cde26a6d1fc6b2902e507f0287f9f0bb90c49d55460a330182df43fc982095c5",
+  "data/raw/mavedb/urn_mavedb_00000658-l-1.scores.csv": "8cb482395146a3ec544cbf23cf39d4a45b8c560f34ccd19214bf245473b28da8",
+  "data/raw/mavedb/urn_mavedb_00000658-m-1.mapped.json": "27eb2d6c4e198e5e9d1ca59d1942d673fcbb3aad1d2d60cead56e2c5b1ca9aaf",
+  "data/raw/mavedb/urn_mavedb_00000658-m-1.scores.csv": "c9261626d46575d4b9282492bbeb31ea9a5e55170e1f6d1aea2f2a9a6a56594c",
+  "data/raw/mavedb/urn_mavedb_00000658-n-1.mapped.json": "3a7a056ed66fd21a1a28e6efc203ba64cd3437cf97386da367fc722757dcf25f",
+  "data/raw/mavedb/urn_mavedb_00000658-n-1.scores.csv": "7e4d84bff3648281fbe846918257a37b5f99d9736bf17b5ecf46ace81d28b2d0",
+  "data/raw/mavedb/urn_mavedb_00000658-o-1.mapped.json": "60231356b25897e29171b834ad60f6c9ef05d6662895224618c1413f9421fc8a",
+  "data/raw/mavedb/urn_mavedb_00000658-o-1.scores.csv": "9c87b191f6e5493982d74e1a2666ff522526324f79d8d610aa5f7be492f5073a",
+  "data/raw/mavedb/urn_mavedb_00000658-p-1.mapped.json": "969c5d26a19a6087011e4e8d9a16d66c2a3c93ccf8b9b71fe64a98ffa5d1ef0c",
+  "data/raw/mavedb/urn_mavedb_00000658-p-1.scores.csv": "6d56a09498b8971d44b74d5ec4d4a347bf4859b27509cd9cdf4b66797d18cd59",
+  "data/raw/mavedb/urn_mavedb_00000658-q-1.mapped.json": "dfdc41e018a9f82a4eb07998767eb5782ccd312d7e66e9dcd964e667564d4d64",
+  "data/raw/mavedb/urn_mavedb_00000658-q-1.scores.csv": "4dcab0278845484bcca973f25e39746bf47f9548067598aa7fdf967332d3a0a7",
+  "data/raw/mavedb/urn_mavedb_00000662-0-1.mapped.json": "8f43b9bc3443534a852df037557e280d93d591dd60818d94878c307f07758ed3",
+  "data/raw/mavedb/urn_mavedb_00000662-0-1.scores.csv": "c3db0a827c86ad73967258745dd5d5263227a0c1fff62d243de450408962d20e",
+  "data/raw/mavedb/urn_mavedb_00000662-a-2.mapped.json": "f3a89c8278c7c6a9297bbccfd9f015a70b6bcc304e8a36da350fb5915766f883",
+  "data/raw/mavedb/urn_mavedb_00000662-a-2.scores.csv": "4117ec263777211adbe36301f30d5d8623f45bbc25be16a5327f51133d8cb8bc",
+  "data/raw/mavedb/urn_mavedb_00000662-b-1.mapped.json": "f34d853e38bebb70eb8114355e76a2a31551c8f7bbe89bb40186d6a1ca19b317",
+  "data/raw/mavedb/urn_mavedb_00000662-b-1.scores.csv": "58351d675b6d2189bd6be6fe71c2decf2bac9a318bf7e40ddc58e1f13a6b76ba",
+  "data/raw/mavedb/urn_mavedb_00000662-c-1.mapped.json": "53a9ae6e46101fed258cd3d3e475fe72fe3021a0c9ff5e5c02998f8df2c0aa59",
+  "data/raw/mavedb/urn_mavedb_00000662-c-1.scores.csv": "d4a2c8a2e2b1ff32cc464c4e69c1e7678714f5cdad1c9f02e8132a4ee848c8b6",
+  "data/raw/mavedb/urn_mavedb_00000662-d-1.mapped.json": "a1223137cdd3f2cad3cfce434bd705c96c3ee1eed915a8ce0a2ed5d4f9daacf4",
+  "data/raw/mavedb/urn_mavedb_00000662-d-1.scores.csv": "491586428afc066a395b07a73bfcf09d7c9c2556290cb7f052b84331d8dfed13",
+  "data/raw/mavedb/urn_mavedb_00000662-e-1.mapped.json": "eaf8ee252c0dca2fe90554a551ad29c0bccd3f47105c82bf9ec929975a2f71a1",
+  "data/raw/mavedb/urn_mavedb_00000662-e-1.scores.csv": "0f2d52e86718f38af1cf4b99877139d59da30371fdfe173839fce6684524e749",
+  "data/raw/mavedb/urn_mavedb_00000662-f-1.mapped.json": "11bfba88c01043e919844a3fa864a01068a3f759182e99f9b209782f0301f440",
+  "data/raw/mavedb/urn_mavedb_00000662-f-1.scores.csv": "e0ab6cf28113f4eda25dbe08c9cbac1b627ebe03fc4384cbf3eed2bf9fe3cbd8",
+  "data/raw/mavedb/urn_mavedb_00000662-g-1.mapped.json": "813826f7311c735d829cf6680d20b70671803c0f954e3f38344408683dc9b605",
+  "data/raw/mavedb/urn_mavedb_00000662-g-1.scores.csv": "ce29138a9bbe44cb8d8395bf6a80c5fe6141c47842209e2bbff8fb511757643c",
+  "data/raw/mavedb/urn_mavedb_00000662-h-1.mapped.json": "48c3df3d028bd8acc2442756b896a7174d17d5b2ae063546154f88b72ee7aa51",
+  "data/raw/mavedb/urn_mavedb_00000662-h-1.scores.csv": "d9b08eacf4e2d96badc3eb7b090845e20ca026dd2d38faa3bef63764126cdbd3",
+  "data/raw/mavedb/urn_mavedb_00000662-i-1.mapped.json": "0087f5970dd192a8be59c7bb33b5841e03c8e0cdd52a0dba2a781cc36f13b985",
+  "data/raw/mavedb/urn_mavedb_00000662-i-1.scores.csv": "e8beb3064ae1a9cbad6fd97cc1d5f61e626c2ccb3f31b66a2939520e666fee38",
+  "data/raw/mavedb/urn_mavedb_00000662-j-1.mapped.json": "2b434acbd821625d0af83eb98e453862a12af085f143676947ab271a9fb0129c",
+  "data/raw/mavedb/urn_mavedb_00000662-j-1.scores.csv": "877b6177a944271e0f35325e1dd6391ff9b790d580aff09abcf47e8062c4f9dd",
+  "data/raw/mavedb/urn_mavedb_00000662-k-1.mapped.json": "9118c990e8a9c1952dc84934a21d77fe7064781e18b520003e58560fa6853895",
+  "data/raw/mavedb/urn_mavedb_00000662-k-1.scores.csv": "acdfe198434e922e3ada1500ce85a6f1e23c106d5d8c7a16308a75177a47f013",
+  "data/raw/mavedb/urn_mavedb_00000662-l-1.mapped.json": "4d80ee0a5dc4708f1e468c98c9e368194e2c99f3146059ba4c122cf3e3269375",
+  "data/raw/mavedb/urn_mavedb_00000662-l-1.scores.csv": "b07bb84cc27532da97c8905d7df5367a2069887556810a80968113f776b65ea9",
+  "data/raw/mavedb/urn_mavedb_00000662-m-1.mapped.json": "f472c98eb1fde7d369619ffbd3f8933cc99f1f22df8bc428f6f21bb3dcdc0786",
+  "data/raw/mavedb/urn_mavedb_00000662-m-1.scores.csv": "979a3c751bc149f2dbbbce2c7d8d47ffa037a61c8d43c4f222599ed5a8e869d9",
+  "data/raw/mavedb/urn_mavedb_00000662-n-1.mapped.json": "80418bc34a0aa2bf6d34291d196b30b0fa4ab25ce34c82a9829fa2bdc36f69ec",
+  "data/raw/mavedb/urn_mavedb_00000662-n-1.scores.csv": "e9ea9827b30c9cee9d9a93d261f82ff4ce4ea80d386198e33a8441df70774926",
+  "data/raw/mavedb/urn_mavedb_00000662-o-1.mapped.json": "ab0a85468b565cba62b5113a3e841de943333d3aeb3a6b56b9325265e8115971",
+  "data/raw/mavedb/urn_mavedb_00000662-o-1.scores.csv": "2cce352e1c00774ffa09f566b73613498a02be8ee5757b8e0cdc2c9493cfd0c9",
+  "data/raw/mavedb/urn_mavedb_00000662-p-1.mapped.json": "f86c5e9c3099faff0e5dfde8dcc33ed9bfecc003fde682a439d7a69880314cf6",
+  "data/raw/mavedb/urn_mavedb_00000662-p-1.scores.csv": "fcb4ea7609d304de56dacbbe71795014832c45b6438ef516fce7499ed0a4aee2",
+  "data/raw/mavedb/urn_mavedb_00000662-q-1.mapped.json": "528e25038c9ca7ab21c1e6cc34efac8e11db65ed644b5fa5fa1d2f4f27601b62",
+  "data/raw/mavedb/urn_mavedb_00000662-q-1.scores.csv": "024741662d1b1c1e0512301faa0a061877438de7e4c5a7b4f98277f51d09115d",
+  "data/raw/mavedb/urn_mavedb_00000662-r-1.mapped.json": "a9a1f9749d87d53cbda655693dfc6169b07455e8083fb01cb4521e582cb37a9e",
+  "data/raw/mavedb/urn_mavedb_00000662-r-1.scores.csv": "a49f752d16b145019562d39a93d8e6f0d494e3d7a1d8735dfcfb4fc37c0a9287",
+  "data/raw/mavedb/urn_mavedb_00000673-0-1.mapped.json": "f22e20368ba0d30c76e2ef6adc108aefd67f7bfc963d3a7254c3f0d612e276a3",
+  "data/raw/mavedb/urn_mavedb_00000673-0-1.scores.csv": "d9bea586b8cf64e20ca9b2c77595fc3c4f7c4483d17f75a43e6bca84d7937ea9",
+  "data/raw/mavedb/urn_mavedb_00000673-a-2.mapped.json": "d0015c047b4ea2560d903710db1638539c42f95a718f5789e3c1c41b2b3036cd",
+  "data/raw/mavedb/urn_mavedb_00000673-a-2.scores.csv": "df5233d11c64107974570f02ce1f8e08d7fd638403d7c9c34f5728b88cdf1c0e",
+  "data/raw/mavedb/urn_mavedb_00000673-b-1.mapped.json": "d9e0d9d8dc6319eb715a8f9bc7a9df9b1d0fff662624e6ab1c0d6c81f4fe82c6",
+  "data/raw/mavedb/urn_mavedb_00000673-b-1.scores.csv": "be121aadba03c40a2b514fcebfedff7a6a2d219c5ecf4e97269ca1ddb7806740",
+  "data/raw/mavedb/urn_mavedb_00000673-c-1.mapped.json": "e7bfb90efa05f42b1c482a605b165f462fdaa54c576af9cbe294346cd4a36f1b",
+  "data/raw/mavedb/urn_mavedb_00000673-c-1.scores.csv": "0bfa39f46373e136a1b6bf77339a3e742fea1da21d95937b238f60df90113847",
+  "data/raw/mavedb/urn_mavedb_00000673-d-1.mapped.json": "b81b0b9750ef06ac86dc9c46421c8a068c87567cceb14c4cc9e79e971f5a08ab",
+  "data/raw/mavedb/urn_mavedb_00000673-d-1.scores.csv": "657e7aebf3723a2c7139cbf1472ba29d75b3804e39af5691d5aee8c06f65c1f7",
+  "data/raw/mavedb/urn_mavedb_00000673-e-1.mapped.json": "ec6176602be43f410055b7d2738fe3d2b141b8f7c92ca5c8fc66008b4b64bcd6",
+  "data/raw/mavedb/urn_mavedb_00000673-e-1.scores.csv": "6029b25ed6cfd1b80425b037de177bc5bcf0a16af786e12a6eb60a99591a5b9d",
+  "data/raw/mavedb/urn_mavedb_00000673-f-1.mapped.json": "deea746cc512efd298a518c33edf753b741a81e791e4ead58d2a419609d791ff",
+  "data/raw/mavedb/urn_mavedb_00000673-f-1.scores.csv": "a05af2d7b10bf2e4f7494c55d5348dc7b28257f2508d650e9962f7874dd4615d",
+  "data/raw/mavedb/urn_mavedb_00000673-g-1.mapped.json": "7370dd73329108e6220c898b76fec986bdfe08ad06eea29cee727ea1702e0d29",
+  "data/raw/mavedb/urn_mavedb_00000673-g-1.scores.csv": "8dd28043a72bf250c13e4e297def2df87f5890adfd0af7aef9993ace023d4de1",
+  "data/raw/mavedb/urn_mavedb_00000673-h-1.mapped.json": "adb30576773b8fffffccd32237a4d3aba998bddb532d92cfe8f26848b86ad46d",
+  "data/raw/mavedb/urn_mavedb_00000673-h-1.scores.csv": "5efd0f85d4118c7c2abf92441c202b29a882c676cdcd3f094c4ffa0d8f611e7c",
+  "data/raw/mavedb/urn_mavedb_00000673-i-1.mapped.json": "ea22e13bab8130323169670367e78580452b82431a7937807266d3919b4bfd00",
+  "data/raw/mavedb/urn_mavedb_00000673-i-1.scores.csv": "639f6426f5403bfa075139f7ab10b1424762a3e06f013d82c75ec966b4f0b10c",
+  "data/raw/mavedb/urn_mavedb_00000675-a-1.mapped.json": "345264fabcbbc360bda1318451a327a641c8d4b49063af84993e84c36b5aacd6",
+  "data/raw/mavedb/urn_mavedb_00000675-a-1.scores.csv": "ae18add4440db00e0c9e94f8924130436307ab7bc4b8bceec091a9a5e87f17b7",
+  "data/raw/mavedb/urn_mavedb_00001225-a-1.mapped.json": "d3a4d7888f3cbb57d3d012033dc84485b29b7da0f182413c88196efaed79fca8",
+  "data/raw/mavedb/urn_mavedb_00001225-a-1.scores.csv": "b799cd0cecb74d391e2e23c07ccf68cbf2512f168e76c2586693cea1a04938b2",
+  "data/raw/mavedb/urn_mavedb_00001228-a-1.mapped.json": "19c8ccc3dafd13de68e93b2fabaf0a9c2e2fbef15d836e9bf44a4ad3f155d95b",
+  "data/raw/mavedb/urn_mavedb_00001228-a-1.scores.csv": "3da9f9e2fa5f67d3d41ba9054c9b978f39861bfd44123c6c41073d9c2008d20a",
+  "data/raw/mavedb/urn_mavedb_00001250-a-1.mapped.json": "8f87ab90e28d29db69f6d976362c44f83bed532ab2b0235b2b07b381d9a49148",
+  "data/raw/mavedb/urn_mavedb_00001250-a-1.scores.csv": "58fe32451da606ea24479b1efe8dc5162664c3785ce7fb400b2e8797ba5bf9a7",
+  "data/raw/mavedb/urn_mavedb_00001250-a-2.mapped.json": "fdd54646478b3d0a675a130e2ecc4f60005cfc6a70f9eb2a4c4b585ab9bcaf13",
+  "data/raw/mavedb/urn_mavedb_00001250-a-2.scores.csv": "15344db4740e7ad105400aeb456c78630f44037c4512f5a80ee1770b4b9a1518",
+  "data/raw/mavedb/urn_mavedb_00001250-a-3.mapped.json": "d0b1b124b1fb2e90b7096f5265b0394a33645cdda4e8c3eb2667c98dd67eca1a",
+  "data/raw/mavedb/urn_mavedb_00001250-a-3.scores.csv": "1b45b260ff6f79967c93846091530802fac84dac7e2f0b2b88f770cc949cd670",
+  "data/raw/mavedb/urn_mavedb_00001259-a-1.mapped.json": "7a45b24e3a805cc7d2aff1bdc4a5a02f77b9b2da6e9da2c48e2bb1ad20564937",
+  "data/raw/mavedb/urn_mavedb_00001259-a-1.scores.csv": "67bd0536702ffab562c693c90858a730c2fe184ed37e9b9370adc04e5a0786fb",
+  "data/raw/mavedb/urn_mavedb_00001259-a-2.mapped.json": "461126cd4ced2e23a1869b8dda06a8fe35160fcdad9f3ae9b9de146331e89fe8",
+  "data/raw/mavedb/urn_mavedb_00001259-a-2.scores.csv": "62a634dfa201283faaf223d8e33e373a528a62aa88d6aa8d5742992b12b34cdb",
+  "data/raw/mavedb/urn_mavedb_00001262-a-1.mapped.json": "eb01238973d86be69d2680ee1956daea63bf5b861131b0241512ba34a014777b",
+  "data/raw/mavedb/urn_mavedb_00001262-a-1.scores.csv": "82b521e7e1d3b05c1de53218f9b6ef2055ba9112cd516b6a1a1e2bc35f23588f",
+  "data/raw/mavedb/urn_mavedb_00001262-a-2.mapped.json": "8fe7cdee813d0e24c0268f6d2761b3cfad56a9a6bfb89939d985ea6ae65eb2ec",
+  "data/raw/mavedb/urn_mavedb_00001262-a-2.scores.csv": "506011f31c787d42a005a4bfec999f3cead312f88085d3a0dd2ff298ffbcd51d",
+  "data/raw/mavedb/urn_mavedb_00001262-a-3.mapped.json": "2626173c10681696a676deed0c5a37b335c48120ca5a9495503d0ebc3504def0",
+  "data/raw/mavedb/urn_mavedb_00001262-a-3.scores.csv": "15fb39c473892348e0e3e8e4eb497b45a7db41685ceec18fbea3b63099a1e364",
+  "data/raw/mavedb/urn_mavedb_00001264-a-1.mapped.json": "28c4b56e9e7805cfc67891033ea08427df6c8b7b89245ea5034a99e0af56f8d5",
+  "data/raw/mavedb/urn_mavedb_00001264-a-1.scores.csv": "634c4ac260028b6ca6ddb7147eed2ada25fb07340db996ee6e3fcec0648a2c76",
+  "data/raw/mavedb/urn_mavedb_00001264-a-2.mapped.json": "3563b9f9330b3360580da695698df2e49bdd4c47fbb667d5e83f4e4f1a15918a",
+  "data/raw/mavedb/urn_mavedb_00001264-a-2.scores.csv": "71f737a6ec66bc74139160000c98ac89e4da795333cced406f5f8fe64c2ce694",
+  "data/raw/mavedb/urn_mavedb_00001265-a-1.mapped.json": "698974e91e6939ad6d30d1afe8a85322907c773588b285ecb31018ecd956041c",
+  "data/raw/mavedb/urn_mavedb_00001265-a-1.scores.csv": "9227363a8dc5ad81f1a402226a8001008bbfaf0df9fa212bc40b5ba83a5bb57b",
+  "data/raw/mavedb/urn_mavedb_00001265-a-2.mapped.json": "d9260cde06e759785cece93f786f992dfd3aa0ea475ba47844cc9160d4ca6aaf",
+  "data/raw/mavedb/urn_mavedb_00001265-a-2.scores.csv": "cde777132e0fed6e380c1871a22df4353be2d4c62371b847618ae9c20b2df4c4",
+  "data/raw/mavedb/urn_mavedb_00001279-a-1.mapped.json": "9b457073f4c1930ec9eeff2b800d6d0b67123b05ec0076051c6ca101882a9f49",
+  "data/raw/mavedb/urn_mavedb_00001279-a-1.scores.csv": "4e1798c8cd5564221faeb247c5fa2102a147c13fa246b5fc1349e9873135e6d8"
+ },
+ "merged_intervals": 13,
+ "studies": [
+  {
+   "gene": "BRCA1",
+   "gene_id": "672",
+   "missing": [
+    "mavedb/urn_mavedb_00000097-0-1.scoreset.json"
+   ],
+   "post_mapped_forms": {},
+   "score_set_urns": [],
+   "score_sets": 0,
+   "study": "Findlay 2018",
+   "unpositioned": 0,
+   "used": "gene region"
+  },
+  {
+   "gene": "BRCA2",
+   "gene_id": "675",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 18810,
+    "none": 2067
+   },
+   "score_set_urns": [
+    "urn:mavedb:00001225-a-1",
+    "urn:mavedb:00001279-a-1"
+   ],
+   "score_sets": 2,
+   "study": "Huang 2025",
+   "unpositioned": 1378,
+   "used": "gene region"
+  },
+  {
+   "gene": "BAP1",
+   "gene_id": "8314",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 58041,
+    "none": 14390
+   },
+   "score_set_urns": [
+    "urn:mavedb:00000662-0-1",
+    "urn:mavedb:00000662-a-2",
+    "urn:mavedb:00000662-b-1",
+    "urn:mavedb:00000662-c-1",
+    "urn:mavedb:00000662-d-1",
+    "urn:mavedb:00000662-e-1",
+    "urn:mavedb:00000662-f-1",
+    "urn:mavedb:00000662-g-1",
+    "urn:mavedb:00000662-h-1",
+    "urn:mavedb:00000662-i-1",
+    "urn:mavedb:00000662-j-1",
+    "urn:mavedb:00000662-k-1",
+    "urn:mavedb:00000662-l-1",
+    "urn:mavedb:00000662-m-1",
+    "urn:mavedb:00000662-n-1",
+    "urn:mavedb:00000662-o-1",
+    "urn:mavedb:00000662-p-1",
+    "urn:mavedb:00000662-q-1",
+    "urn:mavedb:00000662-r-1"
+   ],
+   "score_sets": 19,
+   "study": "Waters 2024",
+   "unpositioned": 7540,
+   "used": "gene region"
+  },
+  {
+   "gene": "RAD51C",
+   "gene_id": "5889",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 30272,
+    "none": 7566
+   },
+   "score_set_urns": [
+    "urn:mavedb:00000673-0-1",
+    "urn:mavedb:00000673-a-2",
+    "urn:mavedb:00000673-b-1",
+    "urn:mavedb:00000673-c-1",
+    "urn:mavedb:00000673-d-1",
+    "urn:mavedb:00000673-e-1",
+    "urn:mavedb:00000673-f-1",
+    "urn:mavedb:00000673-g-1",
+    "urn:mavedb:00000673-h-1",
+    "urn:mavedb:00000673-i-1"
+   ],
+   "score_sets": 10,
+   "study": "Olvera-Leon 2024",
+   "unpositioned": 3680,
+   "used": "gene region"
+  },
+  {
+   "gene": "VHL",
+   "gene_id": "7428",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 4973,
+    "none": 1831
+   },
+   "score_set_urns": [
+    "urn:mavedb:00000675-a-1"
+   ],
+   "score_sets": 1,
+   "study": "Buckley 2024",
+   "unpositioned": 574,
+   "used": "gene region"
+  },
+  {
+   "gene": "DDX3X",
+   "gene_id": "1654",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 52238,
+    "none": 13851
+   },
+   "score_set_urns": [
+    "urn:mavedb:00000658-0-1",
+    "urn:mavedb:00000658-a-1",
+    "urn:mavedb:00000658-b-1",
+    "urn:mavedb:00000658-c-1",
+    "urn:mavedb:00000658-d-1",
+    "urn:mavedb:00000658-e-1",
+    "urn:mavedb:00000658-f-1",
+    "urn:mavedb:00000658-g-1",
+    "urn:mavedb:00000658-h-1",
+    "urn:mavedb:00000658-i-1",
+    "urn:mavedb:00000658-j-1",
+    "urn:mavedb:00000658-k-1",
+    "urn:mavedb:00000658-l-1",
+    "urn:mavedb:00000658-m-1",
+    "urn:mavedb:00000658-n-1",
+    "urn:mavedb:00000658-o-1",
+    "urn:mavedb:00000658-p-1",
+    "urn:mavedb:00000658-q-1",
+    "urn:mavedb:00001228-a-1"
+   ],
+   "score_sets": 19,
+   "study": "Radford 2023",
+   "unpositioned": 2124,
+   "used": "gene region"
+  },
+  {
+   "gene": "RNU4-2",
+   "gene_id": "26834",
+   "missing": [],
+   "post_mapped_forms": {},
+   "score_set_urns": [],
+   "score_sets": 0,
+   "study": "De Jonghe 2026",
+   "unpositioned": 0,
+   "used": "gene region"
+  },
+  {
+   "gene": "ATM",
+   "gene_id": "472",
+   "missing": [],
+   "post_mapped_forms": {},
+   "score_set_urns": [],
+   "score_sets": 0,
+   "study": "Lee 2025",
+   "unpositioned": 0,
+   "used": "gene region"
+  },
+  {
+   "gene": "BRCA1",
+   "gene_id": "672",
+   "missing": [],
+   "post_mapped_forms": {},
+   "score_set_urns": [],
+   "score_sets": 0,
+   "study": "Dace 2025",
+   "unpositioned": 0,
+   "used": "gene region"
+  },
+  {
+   "gene": "BARD1",
+   "gene_id": "580",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 50201,
+    "none": 5563
+   },
+   "score_set_urns": [
+    "urn:mavedb:00001250-a-1",
+    "urn:mavedb:00001250-a-2",
+    "urn:mavedb:00001250-a-3"
+   ],
+   "score_sets": 3,
+   "study": "Woo 2025",
+   "unpositioned": 5563,
+   "used": "gene region"
+  },
+  {
+   "gene": "PALB2",
+   "gene_id": "79728",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 32435,
+    "none": 1442
+   },
+   "score_set_urns": [
+    "urn:mavedb:00001259-a-1",
+    "urn:mavedb:00001259-a-2"
+   ],
+   "score_sets": 2,
+   "study": "Tejura 2026 PALB2",
+   "unpositioned": 1442,
+   "used": "gene region"
+  },
+  {
+   "gene": "XRCC2",
+   "gene_id": "7516",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 10639,
+    "none": 574
+   },
+   "score_set_urns": [
+    "urn:mavedb:00001264-a-1",
+    "urn:mavedb:00001264-a-2"
+   ],
+   "score_sets": 2,
+   "study": "Tejura 2026 XRCC2",
+   "unpositioned": 574,
+   "used": "gene region"
+  },
+  {
+   "gene": "SFPQ",
+   "gene_id": "6421",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 10014,
+    "none": 1385
+   },
+   "score_set_urns": [
+    "urn:mavedb:00001265-a-1",
+    "urn:mavedb:00001265-a-2"
+   ],
+   "score_sets": 2,
+   "study": "Tejura 2026 SFPQ",
+   "unpositioned": 1385,
+   "used": "gene region"
+  },
+  {
+   "gene": "CTCF",
+   "gene_id": "10664",
+   "missing": [],
+   "post_mapped_forms": {
+    "Allele": 24409,
+    "none": 3837
+   },
+   "score_set_urns": [
+    "urn:mavedb:00001262-a-1",
+    "urn:mavedb:00001262-a-2",
+    "urn:mavedb:00001262-a-3"
+   ],
+   "score_sets": 3,
+   "study": "Tejura 2026 CTCF",
+   "unpositioned": 3837,
+   "used": "gene region"
+  }
+ ]
+}

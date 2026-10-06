@@ -1,0 +1,19 @@
+##Overview of interpretation, phenotypes, observations, and methods reported in each current submission 
+##Explanation of the columns in this report
+#VariationID:                   the identifier assigned by ClinVar and used to build the URL, namely https://ncbi.nlm.nih.gov/clinvar/VariationID
+#ClinicalSignificance:          the germline classification on this submitted record
+#DateLastEvaluated:             the last date the classification on this record was evaluated by the submitter
+#Description:                   an optional free text description comment describing the rationale for the classification
+#SubmittedPhenotypeInfo:        the name(s) or identifier(s) submitted as the condition for the classification 
+#ReportedPhenotypeInfo:         the MedGen identifier/name combinations that the submitted condition for the classification maps to. 'na' means there is no public identifer in MedGen for the condition.
+#ReviewStatus:                  the level of review for this submitted record; see http//www.ncbi.nlm.nih.gov/clinvar/docs/variation_report/#review_status
+#CollectionMethod:              the method by which the submitter collected the data for the classification; see https://www.ncbi.nlm.nih.gov/clinvar/docs/spreadsheet/#collection
+#OriginCounts:                  the allele origin reported by the submitter and the number of observations for each origin. ‘na’ means that the number of observations was not provided by the submitter.
+#Submitter:                     the submitter of this record
+#SCV:                            the accession and current version assigned by ClinVar to this submitted record
+#SubmittedGeneSymbol:           the gene symbol reported in this submitted record
+#ExplanationOfInterpretation:   more details if the germline classification (ClinicalSignificance) is 'other' or 'drug response'
+#SomaticClinicalImpact:         the somatic classification of clinical impact on this submitted record
+#Oncogenicity:                  the somatic classification of oncogenicity on this submitted record
+#ContributesToAggregateClassification: indicate if the SCV contributes to the aggregate classification
+#VariationID	ClinicalSignificance	DateLastEvaluated	Description	SubmittedPhenotypeInfo	ReportedPhenotypeInfo	ReviewStatus	CollectionMethod	OriginCounts	Submitter	SCV	SubmittedGeneSymbol	ExplanationOfInterpretation	SomaticClinicalImpact	Oncogenicity	ContributesToAggregateClassification

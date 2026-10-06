@@ -1,0 +1,7 @@
+{
+ "inputs": {
+  "data/raw/organization_summary.txt": "33fbc59af60622dba0d231e978c6fee46642a16bf5a192f5ce072a60ab3a880a"
+ },
+ "rule": "submitter rule (source table section 5)",
+ "submitter_file": "development_submitters.txt"
+}

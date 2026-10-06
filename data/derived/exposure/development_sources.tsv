@@ -1,0 +1,7 @@
+source	status	evidence
+saturation genome editing	complete	evidence/saturation_genome_editing.json
+TraitGym Mendelian	complete	evidence/traitgym_mendelian.json
+TraitGym Complex	complete	evidence/traitgym_complex.json
+ncVarDB	complete	evidence/ncvardb.json
+GREGoR	submitter rule	evidence/gregor.json
+complex-trait benchmark	not excluded	evidence/complex_trait_benchmark.json

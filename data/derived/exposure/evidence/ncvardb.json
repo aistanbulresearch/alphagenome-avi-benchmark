@@ -1,0 +1,9 @@
+{
+ "inputs": {
+  "data/raw/ncvardb/ncVar_benign.tsv": "66da187661e4a08ae9cc624b8ccf1d2ce3da1fb73bff9e84efce5626a20ab17c",
+  "data/raw/ncvardb/ncVar_benign.vcf": "4c117df24e8cf9399337c31db5c1f6f29a55929f648a88db2985ea5f912248fe",
+  "data/raw/ncvardb/ncVar_pathogenic.tsv": "2f2fc0d893be3443e702adaddfeffc09c432895e22d8e4ce7cc4d477ac2bb5c8",
+  "data/raw/ncvardb/ncVar_pathogenic.vcf": "aadb20f82b4b670a1c1175959f5ac31ef502cd6254162626fb5ebb7489892516"
+ },
+ "merged_intervals": 7906
+}
