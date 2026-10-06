@@ -1,0 +1,13 @@
+# raw downloads and large files
+data/raw/
+*.gz
+*.parquet
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# local working material
+work/
+.remember/
