@@ -100,18 +100,18 @@ def local_fetch(path: Path) -> Callable:
     return fetch
 
 
+WHOLE_CHUNK = 4_000_000     # compressed bytes: a chunk holding several targets is read once when smaller
+
+
 def lookup_all(variants: list, url: str, index: gr.TabixIndex, contig_of: Callable, parse: Callable,
                fetch: Callable, threads: int) -> list:
+    """[(variant, parsed record or None)]. Positions that share a small tabix chunk are served by one
+    read of the whole chunk; other positions are searched one by one."""
     by_pos = defaultdict(list)
     for v in variants:
         by_pos[(v["chrom"], int(v["pos"]))].append(v)
 
-    def one(key):
-        chrom, pos = key
-        contig = contig_of(chrom)
-        if contig not in index.names:
-            return [(v, None) for v in by_pos[key]]
-        records = gf.with_retry(lambda: gr.search(url, index, chrom, pos, fetch, contig=contig))
+    def match(key, records):
         out = []
         for v in by_pos[key]:
             hit = None
@@ -120,8 +120,38 @@ def lookup_all(variants: list, url: str, index: gr.TabixIndex, contig_of: Callab
             out.append((v, hit))
         return out
 
+    groups, singles = defaultdict(list), []
+    for key in sorted(by_pos):
+        contig = contig_of(key[0])
+        chunks = gr.chunks_for(index, contig, key[1]) if contig in index.names else []
+        if len(chunks) == 1 and (chunks[0][1] >> 16) - (chunks[0][0] >> 16) <= WHOLE_CHUNK:
+            groups[(contig, chunks[0])].append(key)
+        else:
+            singles.append(key)
+    for g in [g for g, keys in groups.items() if len(keys) == 1]:
+        singles += groups.pop(g)
+
+    def whole(item):
+        (contig, chunk), keys = item
+        text = gf.with_retry(lambda: gr.read_chunk(url, chunk, fetch)).decode("utf-8", "replace")
+        at = defaultdict(list)
+        for line in text.split("\n"):
+            parts = line.split("\t", 8)
+            if len(parts) > 4 and parts[0] == contig:
+                at[int(parts[1])].append(parts)
+        return [x for key in keys for x in match(key, at.get(key[1], []))]
+
+    def one(key):
+        chrom, pos = key
+        contig = contig_of(chrom)
+        if contig not in index.names:
+            return [(v, None) for v in by_pos[key]]
+        return match(key, gf.with_retry(lambda: gr.search(url, index, chrom, pos, fetch, contig=contig)))
+
     with ThreadPoolExecutor(threads) as pool:
-        return [x for chunk in pool.map(one, sorted(by_pos)) for x in chunk]
+        out = [x for chunk in pool.map(whole, groups.items()) for x in chunk]
+        out += [x for chunk in pool.map(one, singles) for x in chunk]
+    return out
 
 
 def variants_to_score() -> list:

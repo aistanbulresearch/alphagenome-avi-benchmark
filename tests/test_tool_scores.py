@@ -1,6 +1,7 @@
 """Score parsers and the lookup over a synthetic tabix file (no real scores)."""
 import sys
 import unittest
+import unittest.mock
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
@@ -45,6 +46,12 @@ class Lookup(unittest.TestCase):
                     {"chrom": "22", "pos": "10", "ref": "A", "alt": "G", "variation_id": "4"}]
         got = {v["variation_id"]: h for v, h in ts.lookup_all(variants, "u", index, lambda c: f"chr{c}", parse, fetch, 2)}
         self.assertEqual(got, {"1": {"x": "T"}, "2": None, "3": None, "4": None})
+        variants.append({"chrom": "21", "pos": "4000", "ref": "A", "alt": "G", "variation_id": "5"})
+        for limit in (0, ts.WHOLE_CHUNK):                     # searched one by one, or one whole-chunk read
+            with unittest.mock.patch.object(ts, "WHOLE_CHUNK", limit):
+                got = {v["variation_id"]: h for v, h in ts.lookup_all(variants, "u", index, lambda c: f"chr{c}",
+                                                                      parse, fetch, 2)}
+            self.assertEqual(got, {"1": {"x": "T"}, "2": None, "3": None, "4": None, "5": {"x": "G"}})
 
 
 if __name__ == "__main__":
