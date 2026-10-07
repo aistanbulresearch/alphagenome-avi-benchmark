@@ -13,3 +13,4 @@ work/
 .remember/
 data/derived/exposure/development_positions.tsv
 data/derived/scores/
+.venv/

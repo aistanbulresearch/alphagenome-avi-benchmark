@@ -1,0 +1,4 @@
+alphagenome==0.9.0
+numpy
+pandas
+pyarrow

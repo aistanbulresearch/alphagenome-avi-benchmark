@@ -1,0 +1,195 @@
+{
+ "rows": "new",
+ "chromosomes": {
+  "1": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr1.vcf.bgz",
+   "index_sha256": "47abee9290f161b9b7d38153e0ca977e34bb1ab8b5b0efac58820318de024f7d",
+   "etag": "\"11c62331b0a654fce6a9cd43838de648\"",
+   "last_modified": "Wed, 01 May 2024 00:00:54 GMT",
+   "positions": 12753,
+   "variants": 12976,
+   "note": "rows recovered from the run of 2026-10-06 22:37 UTC; index and ETag read 2026-10-07"
+  },
+  "2": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr2.vcf.bgz",
+   "index_sha256": "620be193119df0afcd1f734ae9321a03e36fcf1d8eda5f11d4a2dc11753d1463",
+   "etag": "\"563a8fe6f148621169b0215ac9f19602\"",
+   "last_modified": "Wed, 01 May 2024 00:00:52 GMT",
+   "positions": 11994,
+   "variants": 12166,
+   "note": "rows recovered from the run of 2026-10-06 22:37 UTC; index and ETag read 2026-10-07"
+  },
+  "3": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr3.vcf.bgz",
+   "index_sha256": "e2561b6ffd4c87ea49c3340136c8cc63da3eec4ca6443a5ff0004d81d518d10a",
+   "etag": "\"c44f1661bafc15685f1eee593b4886ea\"",
+   "last_modified": "Wed, 01 May 2024 00:00:52 GMT",
+   "positions": 7671,
+   "variants": 7807,
+   "note": "rows recovered from the run of 2026-10-06 22:37 UTC; index and ETag read 2026-10-07"
+  },
+  "4": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr4.vcf.bgz",
+   "index_sha256": "cdefbab7ac767dad8a647aac35c59790b881822ad0e45874c4e944dd9fffec9c",
+   "etag": "\"e6d438b84539c6adad5bc67d6febb33b\"",
+   "last_modified": "Wed, 01 May 2024 00:00:51 GMT",
+   "positions": 4975,
+   "variants": 5041,
+   "note": "rows recovered from the run of 2026-10-06 22:37 UTC; index and ETag read 2026-10-07"
+  },
+  "5": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr5.vcf.bgz",
+   "index_sha256": "c5c5bafa32aa03146d7ff490d8b3ed744d0d0a669733a305ed4a969170de4e1c",
+   "etag": "\"d226db0e0055b5e87e72f4b63158664a\"",
+   "last_modified": "Wed, 01 May 2024 00:00:52 GMT",
+   "positions": 6109,
+   "variants": 6265,
+   "note": "rows recovered from the run of 2026-10-06 22:37 UTC; index and ETag read 2026-10-07"
+  },
+  "6": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr6.vcf.bgz",
+   "index_sha256": "9d4abc0a90af29aaa5a056480cedccf2c75a0b86ab4d999cadf8e6081f64add4",
+   "etag": "\"2820f13a2439ebbdf55066a0c320cdb5\"",
+   "last_modified": "Wed, 01 May 2024 00:00:53 GMT",
+   "positions": 5757,
+   "variants": 5849,
+   "note": "rows recovered from the run of 2026-10-06 22:37 UTC; index and ETag read 2026-10-07"
+  },
+  "7": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr7.vcf.bgz",
+   "index_sha256": "21433c5f61b3dd93a7f37e8375fc36575f905df9614a2a86c71405d80e8de105",
+   "etag": "\"d1d50e4fa082246a5787eee76c036189\"",
+   "last_modified": "Wed, 01 May 2024 00:00:53 GMT",
+   "positions": 7083,
+   "variants": 7221
+  },
+  "8": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr8.vcf.bgz",
+   "index_sha256": "bf7a0b6987caf9aafb1e31828d4bc7d72597f952c2dd9ec7b84121d8f02a1b73",
+   "etag": "\"195f2825e94c9b5e43b34bb2b1ab5c7b\"",
+   "last_modified": "Wed, 01 May 2024 00:00:49 GMT",
+   "positions": 4232,
+   "variants": 4294
+  },
+  "9": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr9.vcf.bgz",
+   "index_sha256": "9de931a6877a5ab6a819e321b0d55bb7c35acee43d6cb4e64539e982368db797",
+   "etag": "\"1c739fb01fd9de816e3fddc958668627\"",
+   "last_modified": "Wed, 01 May 2024 00:00:55 GMT",
+   "positions": 7246,
+   "variants": 7488
+  },
+  "10": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr10.vcf.bgz",
+   "index_sha256": "f6afcc1698cf44f5ce503305f8cc2074384cce99482b4ad472b654c4e81f2eba",
+   "etag": "\"e2f174f150b5d709d5d7349ac241c438\"",
+   "last_modified": "Wed, 01 May 2024 00:00:51 GMT",
+   "positions": 6543,
+   "variants": 6833
+  },
+  "11": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr11.vcf.bgz",
+   "index_sha256": "ae3c6bdcbbe2f5de72e9f4167907802a36854c49c227d8b11ca0840beab70bb9",
+   "etag": "\"b8651f2e5a0aafa23d7fc3406b35bc69\"",
+   "last_modified": "Wed, 01 May 2024 00:00:55 GMT",
+   "positions": 6798,
+   "variants": 6906
+  },
+  "12": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr12.vcf.bgz",
+   "index_sha256": "9a2e0f3e5d63b25217c5a9b2b65bfa6328834c9d485a37a41c8c03638e518a4f",
+   "etag": "\"62795bafd326eae566ef49781a26bc91\"",
+   "last_modified": "Wed, 01 May 2024 00:00:51 GMT",
+   "positions": 6391,
+   "variants": 6533
+  },
+  "13": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr13.vcf.bgz",
+   "index_sha256": "a331c2ccf3b500918380f0d90a0119cfa9ba4ffead663a29d062b66678effbcc",
+   "etag": "\"92244327bee6d45973f6077a8134ccd9\"",
+   "last_modified": "Wed, 01 May 2024 00:00:51 GMT",
+   "positions": 1923,
+   "variants": 1944
+  },
+  "14": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr14.vcf.bgz",
+   "index_sha256": "c714b095f658b081b54424a84579aefa79f8563521e2ef6dde5c6c468bea4d77",
+   "etag": "\"f7a8344b03a4162cb71cdb628dd1e15b\"",
+   "last_modified": "Wed, 01 May 2024 00:00:55 GMT",
+   "positions": 4783,
+   "variants": 4864
+  },
+  "15": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr15.vcf.bgz",
+   "index_sha256": "3863029e62e6fc36cf755458941392cec37702b3f5275aebfa344de2760349c5",
+   "etag": "\"40c8ab829f973688d2ef891ce5acabb7\"",
+   "last_modified": "Wed, 01 May 2024 00:00:52 GMT",
+   "positions": 4785,
+   "variants": 4873
+  },
+  "16": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr16.vcf.bgz",
+   "index_sha256": "6817a10dd86d006f98e78ebabf05cf6f464451af256d06cef4196325e957605c",
+   "etag": "\"58a5f920fc191b2069126c41278cc077\"",
+   "last_modified": "Wed, 01 May 2024 00:00:51 GMT",
+   "positions": 7677,
+   "variants": 7841
+  },
+  "17": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr17.vcf.bgz",
+   "index_sha256": "386a46c3ad2c7d7b139a6e8c4d4342433163486189f3ec324429fc4c48f2b68d",
+   "etag": "\"aa48657f45d8db7711c69fbf71a25cdc\"",
+   "last_modified": "Wed, 01 May 2024 00:00:52 GMT",
+   "positions": 8112,
+   "variants": 8281
+  },
+  "18": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr18.vcf.bgz",
+   "index_sha256": "df4cb36b1db77242949ac3dac5c93ec4509d01533b43790597a5a83ade5f3b7b",
+   "etag": "\"80dd729bc61be464c964d3a3bfb0f41a\"",
+   "last_modified": "Wed, 01 May 2024 00:00:54 GMT",
+   "positions": 2345,
+   "variants": 2376
+  },
+  "19": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr19.vcf.bgz",
+   "index_sha256": "e2faa47269d027bba09ff06162fde71b0f35fb52001206664f30e3099ebc300a",
+   "etag": "\"1853ca4993ceb25bd6f3a4554173f7cf\"",
+   "last_modified": "Wed, 01 May 2024 00:00:51 GMT",
+   "positions": 7512,
+   "variants": 7612
+  },
+  "20": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr20.vcf.bgz",
+   "index_sha256": "850a95e1581905ba0b16e2e0559859ec3d30d01af1e1cdb587ed6a835acd7e25",
+   "etag": "\"09263d3c29b822760c61607c6398f5c4\"",
+   "last_modified": "Wed, 01 May 2024 00:00:56 GMT",
+   "positions": 3327,
+   "variants": 3383
+  },
+  "21": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr21.vcf.bgz",
+   "index_sha256": "9849caec8b2c3d7865fd260f065c356a4c1bda242cdb03293de1d7d5094ef379",
+   "etag": "\"2ec2d9876d61fc9c5b1e84ab6841b62e\"",
+   "last_modified": "Wed, 01 May 2024 00:00:52 GMT",
+   "positions": 1383,
+   "variants": 1409
+  },
+  "22": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr22.vcf.bgz",
+   "index_sha256": "bfad1ec8d48204275e91237a96bac62a40f1ada6c753cc5cbf89a534b79363f5",
+   "etag": "\"df15a5ea8ae2e3090eae112f548c74ef\"",
+   "last_modified": "Wed, 01 May 2024 00:00:51 GMT",
+   "positions": 2942,
+   "variants": 2973
+  },
+  "X": {
+   "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chrX.vcf.bgz",
+   "index_sha256": "207022e0d1156df7c74b5208e66590e87331def2e638454a885f516273b34f23",
+   "etag": "\"a5288ced0c2fe893fcfae4d2022b9cd9\"",
+   "last_modified": "Wed, 01 May 2024 00:00:54 GMT",
+   "positions": 5384,
+   "variants": 5476
+  }
+ }
+}

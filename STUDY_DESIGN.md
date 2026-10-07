@@ -105,7 +105,7 @@ Small regions are reported with their intervals. Wide intervals are a result, no
 
 | Tool | Score used | Source |
 |---|---|---|
-| AVI | raw score (the Phred-scaled score is a monotone transform with the same ranks) | AlphaGenome downloads, SNV Tabix file |
+| AVI | raw score of the `AVI_SCORE` scorer, with the calibrated score the API returns | AlphaGenome Atlas API (same precomputed scores as the AVI SNV download) |
 | SpliceAI | maximum of the four delta scores; masked, distance 50; the maximum over gene entries | Ensembl MANE v1.4 precomputed file, masked |
 | CADD v1.7 | PHRED score | whole-genome SNV file |
 | Pangolin | maximum absolute splice score change, masked, distance 50 | local run |
