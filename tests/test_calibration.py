@@ -34,6 +34,17 @@ class Calibration(unittest.TestCase):
         self.assertEqual(t["supporting"][1], 0.2)               # upper <= 1/2.406 = 0.416 at 0.1 and 0.2
         self.assertEqual(c.thresholds(grid, lower, np.array([0.3, 0.5, 0.1, 0.1, 0.1]))["supporting"][1], 0.1)
 
+    def test_bounds_without_nan_when_windows_lack_benign(self):
+        # pathogenic-only top of the score range: lr+ is infinite in many replicates there
+        rng = np.random.default_rng(3)
+        s = np.concatenate([rng.normal(0, 1, 2000), 6 + rng.random(150)])
+        y = np.concatenate([np.zeros(2000, int), np.ones(150, int)])
+        grid = c.grid_points(s)
+        lower, upper = c.bootstrap_bounds(s, y, grid, c.windows(s, grid), replicates=200)
+        self.assertFalse(np.isnan(lower).any())
+        self.assertFalse(np.isnan(upper).any())
+        self.assertTrue(np.isinf(lower[-1]))
+
     def test_calibrate_runs_and_lr_on_test(self):
         rng = np.random.default_rng(1)
         s = np.concatenate([rng.normal(2, 1, 600), rng.normal(0, 1, 3000)])

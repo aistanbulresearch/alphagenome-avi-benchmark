@@ -58,7 +58,8 @@ def bootstrap_bounds(scores: np.ndarray, labels: np.ndarray, grid: np.ndarray, h
     for r in range(replicates):
         idx = rng.integers(0, n, n)
         reps[r] = local_lr(scores[idx], labels[idx], grid, half)
-    return np.quantile(reps, 0.05, axis=0), np.quantile(reps, 0.95, axis=0)
+    # no interpolation: an infinite lr+ (no B/LB in the window) must not turn a bound into NaN
+    return np.quantile(reps, 0.05, axis=0, method="lower"), np.quantile(reps, 0.95, axis=0, method="higher")
 
 
 def thresholds(grid: np.ndarray, lower: np.ndarray, upper: np.ndarray) -> dict:
