@@ -51,6 +51,18 @@ class Part1(unittest.TestCase):
         pair = {d["pair"]: d for d in diffs}["AVI - SpliceAI"]
         self.assertGreater(pair["difference"], 0)
 
+    def test_sampling_weights_recover_full_set_auprc(self):
+        v = table(6000, 5)
+        mask = pd.Series(True, index=v.index)
+        full = {r["tool"]: r for r in pa.discrimination(v, mask, ["AVI"], 5)[0]}["AVI"]
+        rng = np.random.default_rng(9)
+        keep = (v["y"] == 1) | (rng.random(len(v)) < 0.2)
+        s = v[keep].copy()
+        s["w_AVI"] = np.where(s["y"] == 1, 1.0, (v["y"] == 0).sum() / (s["y"] == 0).sum())
+        weighted = {r["tool"]: r for r in pa.discrimination(s, pd.Series(True, index=s.index), ["AVI"], 5)[0]}["AVI"]
+        self.assertAlmostEqual(weighted["auprc"], full["auprc"], delta=0.03)
+        self.assertAlmostEqual(weighted["pos_fraction"], full["pos_fraction"], delta=0.01)
+
     def test_coverage(self):
         v = table()
         c = pa.coverage(v, {"all": pd.Series(True, index=v.index)}, ["AVI", "CADD"])

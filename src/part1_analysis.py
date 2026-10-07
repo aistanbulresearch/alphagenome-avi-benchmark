@@ -19,7 +19,7 @@ import part1_data as pdata
 from paths import ROOT
 
 OUT = ROOT / "results" / "part1"
-PAIRS = [("AVI", "SpliceAI"), ("AVI", "CADD"), ("AVI", "SpliceAI 4999"), ("AVI", "phyloP 100-way"),
+PAIRS = [("AVI", "SpliceAI"), ("AVI", "CADD"), ("AVI", "SpliceAI 4999"), ("AVI", "Pangolin"), ("AVI", "phyloP 100-way"),
          ("AVI", "phastCons 470-way"), ("AVI", "phyloP 241-way")]
 
 
@@ -32,8 +32,19 @@ def coverage(v: pd.DataFrame, set_masks: dict, tools: list) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def base_weights(d: pd.DataFrame, tools: tuple) -> np.ndarray:
+    """Design weights of a variant: the inverse B/LB sampling fraction for tools scored on a sample
+    (column w_<tool>), else 1."""
+    w = np.ones(len(d))
+    for t in tools:
+        if f"w_{t}" in d.columns:
+            w = w * d[f"w_{t}"].fillna(1.0).to_numpy()
+    return w
+
+
 def discrimination(v: pd.DataFrame, mask: pd.Series, tools: list, reps: int) -> tuple[list, list]:
-    """Per tool: AUROC, AUPRC with intervals; per pair: AUROC difference with interval (common variants)."""
+    """Per tool: AUROC, AUPRC with intervals; per pair: AUROC difference with interval (common variants).
+    Tools scored on a B/LB sample carry inverse-sampling weights, so AUPRC refers to the full set."""
     sub = v[mask]
     rows, diffs = [], []
     for t in tools:
@@ -42,16 +53,16 @@ def discrimination(v: pd.DataFrame, mask: pd.Series, tools: list, reps: int) -> 
         if y.sum() == 0 or (1 - y).sum() == 0:
             rows.append({"tool": t, "n_pos": int(y.sum()), "n_neg": int((1 - y).sum())})
             continue
-        prep = m._order(s)
+        prep, base = m._order(s), base_weights(d, (t,))
         boots_roc, boots_pr = [], []
         for w in m.cluster_weights(m.clusters_of(d["gene_id"].tolist()), reps):
-            boots_roc.append(m.auroc(s, y, w, prep))
-            boots_pr.append(m.auprc(s, y, w, prep))
+            boots_roc.append(m.auroc(s, y, w * base, prep))
+            boots_pr.append(m.auprc(s, y, w * base, prep))
         rows.append({"tool": t, "n_pos": int(y.sum()), "n_neg": int((1 - y).sum()),
                      "genes_pos": int(d.loc[d["y"] == 1, "gene_id"].nunique()),
-                     "pos_fraction": float(y.mean()),
-                     "auroc": m.auroc(s, y, prepared=prep), "auroc_ci": m.interval(boots_roc),
-                     "auprc": m.auprc(s, y, prepared=prep), "auprc_ci": m.interval(boots_pr)})
+                     "pos_fraction": float((base * y).sum() / base.sum()),
+                     "auroc": m.auroc(s, y, base, prep), "auroc_ci": m.interval(boots_roc),
+                     "auprc": m.auprc(s, y, base, prep), "auprc_ci": m.interval(boots_pr)})
     for a, b in PAIRS:
         if a not in tools or b not in tools:
             continue
@@ -60,11 +71,11 @@ def discrimination(v: pd.DataFrame, mask: pd.Series, tools: list, reps: int) -> 
         if y.sum() == 0 or (1 - y).sum() == 0:
             continue
         sa, sb = d[a].to_numpy(), d[b].to_numpy()
-        pa, pb = m._order(sa), m._order(sb)
-        boots = [m.auroc(sa, y, w, pa) - m.auroc(sb, y, w, pb)
+        pa, pb, base = m._order(sa), m._order(sb), base_weights(d, (a, b))
+        boots = [m.auroc(sa, y, w * base, pa) - m.auroc(sb, y, w * base, pb)
                  for w in m.cluster_weights(m.clusters_of(d["gene_id"].tolist()), reps)]
         diffs.append({"pair": f"{a} - {b}", "n_pos": int(y.sum()), "n_neg": int((1 - y).sum()),
-                      "difference": m.auroc(sa, y, prepared=pa) - m.auroc(sb, y, prepared=pb),
+                      "difference": m.auroc(sa, y, base, pa) - m.auroc(sb, y, base, pb),
                       "ci": m.interval(boots)})
     return rows, diffs
 

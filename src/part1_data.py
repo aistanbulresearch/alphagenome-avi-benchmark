@@ -22,6 +22,7 @@ TOOLS = {                      # name: (file, column); higher score = more patho
     "SpliceAI masked": ("spliceai_masked.tsv.gz", "spliceai_max"),
     "SpliceAI 4999": ("spliceai_d4999.tsv.gz", "spliceai_max"),
     "CADD": ("cadd.tsv.gz", "cadd_phred"),
+    "Pangolin": ("pangolin.tsv.gz", "pangolin_max"),
     "phyloP 100-way": ("conservation.tsv.gz", "phyloP100"),
     "phastCons 470-way": ("conservation.tsv.gz", "phastCons470"),
     "phyloP 241-way": ("conservation.tsv.gz", "phyloP241"),
@@ -68,7 +69,29 @@ def load() -> pd.DataFrame:
     v["y"] = (v["label"] == "P/LP").astype(int)
     v["stars_n"] = pd.to_numeric(v["stars"], errors="coerce")
     v["calibration"] = v["variation_id"].isin(calib)
-    return v.reset_index(drop=True)
+    return add_sampling_weights(v.reset_index(drop=True))
+
+
+def add_sampling_weights(v: pd.DataFrame) -> pd.DataFrame:
+    """Pangolin was run on every main-set P/LP and a region-stratified B/LB sample: each sampled B/LB
+    variant gets weight (main-set B/LB in its region) / (sampled B/LB in its region)."""
+    path = VARIANTS / "pangolin_sample.tsv"
+    if "Pangolin" not in v.columns or not path.exists():
+        return v
+    sample = set(pd.read_csv(path, sep="\t", dtype=str)["variation_id"])
+    main = sets(v)["main"]
+    in_sample = v["variation_id"].isin(sample)
+    w = pd.Series(np.nan, index=v.index)
+    w[in_sample & (v["y"] == 1)] = 1.0
+    for region in v.loc[in_sample, "region"].unique():
+        full = (main & (v["y"] == 0) & (v["region"] == region)).sum()
+        drawn = (in_sample & (v["y"] == 0) & (v["region"] == region)).sum()
+        if drawn:
+            w[in_sample & (v["y"] == 0) & (v["region"] == region)] = full / drawn
+    v = v.copy()
+    v["w_Pangolin"] = w
+    v.loc[~in_sample, "Pangolin"] = np.nan          # outside the sample the design weights are undefined
+    return v
 
 
 def tools_present(v: pd.DataFrame) -> list:
