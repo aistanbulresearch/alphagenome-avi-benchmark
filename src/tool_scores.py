@@ -5,15 +5,16 @@ read (src/gnomad_remote.py): AVI from the local copy of the AlphaGenome download
 from their public servers by byte ranges.
 
     AVI       AVI SNV scores (AlphaGenome downloads), raw score and Phred-scaled score
-    SpliceAI  Ensembl MANE v1.4 precomputed file, masked, distance 50: maximum of DS_AG, DS_AL, DS_DG,
-              DS_DL over the gene entries of the allele
+    SpliceAI  Ensembl MANE v1.4 precomputed files, distance 50: maximum of DS_AG, DS_AL, DS_DG, DS_DL
+              over the gene entries of the allele; raw scores (the form of the ClinGen thresholds) as
+              `spliceai`, masked scores as `spliceai_masked`
     CADD      v1.7 whole-genome SNV file: RawScore and PHRED
 
 Output: data/derived/scores/<tool>.tsv.gz (variation_id, chrom, pos, ref, alt, score columns) and
 <tool>_source.json. SpliceAI and CADD scores are not redistributed; data/derived/scores/ is not in git.
 
 Usage:
-    python src/tool_scores.py --tool {avi,spliceai,cadd} [--avi-file <path to .bgz>] [--threads 24]
+    python src/tool_scores.py --tool {avi,spliceai,spliceai_masked,cadd} [--avi-file <path>] [--threads 24]
 """
 from __future__ import annotations
 
@@ -35,8 +36,9 @@ import gnomad_remote as gr
 from paths import DERIVED
 
 OUT = DERIVED / "scores"
-SPLICEAI = ("https://ftp.ensembl.org/pub/data_files/homo_sapiens/GRCh38/variation_plugins/"
-            "spliceai_scores.masked.snv.ensembl_mane_v1.4.grch38.vcf.gz")
+_ENSEMBL = "https://ftp.ensembl.org/pub/data_files/homo_sapiens/GRCh38/variation_plugins/"
+SPLICEAI = {"spliceai": _ENSEMBL + "spliceai_scores.raw.snv.ensembl_mane_v1.4.grch38.vcf.gz",
+            "spliceai_masked": _ENSEMBL + "spliceai_scores.masked.snv.ensembl_mane_v1.4.grch38.vcf.gz"}
 CADD = "https://krishna.gs.washington.edu/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz"
 
 
@@ -123,15 +125,16 @@ def lookup_all(variants: list, url: str, index: gr.TabixIndex, contig_of: Callab
 
 
 def variants_to_score() -> list:
-    """The rows annotated with gnomAD frequencies (study regions, new labels), SNVs only for AVI is
-    decided by the caller."""
+    """Every row of every set, retrieved in one pass: the new-label rows of the study regions and the
+    calibration sample (src/calibration_sample.py)."""
     with gzip.open(gf.VARIANTS, "rt", encoding="utf-8", newline="") as h:
-        return [r for r in csv.DictReader(h, delimiter="\t") if gf.selected(r, "new")]
+        return [r for r in csv.DictReader(h, delimiter="\t")
+                if gf.selected(r, "new") or gf.selected(r, "calibration")]
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--tool", required=True, choices=("avi", "spliceai", "cadd"))
+    ap.add_argument("--tool", required=True, choices=("avi", "spliceai", "spliceai_masked", "cadd"))
     ap.add_argument("--avi-file", type=Path)
     ap.add_argument("--threads", type=int, default=24)
     a = ap.parse_args(argv)
@@ -143,11 +146,11 @@ def main(argv: list[str] | None = None) -> int:
             header = next(line for line in h if not line.startswith("##")).rstrip("\n").split("\t")
         parse, columns = parse_avi(header), ("avi_raw", "avi_phred")
     else:
-        url = SPLICEAI if a.tool == "spliceai" else CADD
+        url = SPLICEAI.get(a.tool, CADD)
         fetch = gr.fetch_range
         tbi = gf.with_retry(lambda: urllib.request.urlopen(url + ".tbi", timeout=120).read())
-        parse = parse_spliceai if a.tool == "spliceai" else parse_cadd
-        columns = ("spliceai_max",) if a.tool == "spliceai" else ("cadd_raw", "cadd_phred")
+        parse = parse_spliceai if a.tool in SPLICEAI else parse_cadd
+        columns = ("spliceai_max",) if a.tool in SPLICEAI else ("cadd_raw", "cadd_phred")
     index = gr.parse_tbi(tbi)
     chr_prefix = index.names[0].startswith("chr")
     contig_of = (lambda c: f"chr{c}") if chr_prefix else (lambda c: c)

@@ -91,9 +91,13 @@ Small regions are reported with their intervals. Wide intervals are a result, no
 **Supporting analyses**, each reported in full next to the main one:
 
 - all frequencies;
+- rare variants present in gnomAD only (absence can reflect low coverage);
 - training chromosomes;
 - at least two stars;
-- the all-labels set;
+- the stricter exclusion of variants inside longer unknown older records (column `inside_long_unknown_record`), so that the result does not depend on that data-cleaning choice;
+- by whether any ClinVar submission of the variant mentions a splicing predictor (`data/derived/variants/submission_flags.tsv.gz`; presence of fixed terms only, no values), because labels that rest on SpliceAI favour SpliceAI;
+- deep and near intronic SNVs scored with SpliceAI run locally with a ±4,999-base window (pseudoexon-creating variants can lie beyond the 50-base window of the precomputed scores), if the local run is feasible;
+- the calibration sample (below), which represents the labelled variants outside the new-label set;
 - small indels, for tools other than AVI (AVI publishes SNV scores only).
 
 **Regions.**
@@ -106,7 +110,7 @@ Small regions are reported with their intervals. Wide intervals are a result, no
 | Tool | Score used | Source |
 |---|---|---|
 | AVI | raw score of the `AVI_SCORE` scorer, with the calibrated score the API returns | AlphaGenome Atlas API (same precomputed scores as the AVI SNV download) |
-| SpliceAI | maximum of the four delta scores; masked, distance 50; the maximum over gene entries | Ensembl MANE v1.4 precomputed file, masked |
+| SpliceAI | maximum of the four delta scores, raw (unmasked), distance 50; the maximum over gene entries. Masked scores as a secondary form | Ensembl MANE v1.4 precomputed files |
 | CADD v1.7 | PHRED score | whole-genome SNV file |
 | Pangolin | maximum absolute splice score change, masked, distance 50 | local run |
 | phyloP | 100-way vertebrate, per position | UCSC bigWig |
@@ -114,6 +118,8 @@ Small regions are reported with their intervals. Wide intervals are a result, no
 | Distance baseline | distance to the nearest exon boundary (from the HGVS offset), smaller = more likely pathogenic | variant list |
 
 - **Missing scores:** a variant a tool cannot score is counted in a coverage table. Comparisons between two tools use the variants both tools score.
+- **One retrieval:** the scores of every set (new labels and calibration sample) are retrieved in one pass, so no set is shaped after another set's scores are seen.
+- **AVI source check:** before the main retrieval, the API's raw values are compared with the downloadable AVI file on a fixed sample of positions outside the study sets.
 - **AVI's own inputs:** AVI against phastCons 470-way and Cactus 241-way phyloP is reported as "what AVI adds beyond its conservation inputs".
 
 **Discrimination.**
@@ -125,9 +131,10 @@ Small regions are reported with their intervals. Wide intervals are a result, no
 **Clinical evidence strength.**
 
 - **Method:** the ClinGen calibration of Pejaver et al. (2022), using its local posterior probability and a prior of 0.0441. Score thresholds are derived for supporting, moderate and strong pathogenic evidence, and for the corresponding benign levels. The posterior targets are those of Pejaver et al. 2022, Table 1.
-- **Where thresholds come from:** they are derived on the all-labels set with the main-set variants removed, using intronic and UTR variants that are rare and have at least one star. Synonymous variants are not calibrated.
+- **Where thresholds come from:** they are derived on a calibration sample of the labelled variants outside the new-label set. It contains non-canonical intronic and UTR variants with at least one star, then restricted to rare ones. Every P/LP variant is included, plus 40,000 B/LB variants drawn at random, stratified by region and chromosome group (seed 20261007; list in `data/derived/variants/calibration_sample.tsv`, committed before any score). The calibration weights the classes to the prior, so the B/LB sampling fraction does not change the posterior.
+- **Not calibrated:** canonical ±1/±2 sites, which are evidence for a loss-of-function criterion rather than a predictor criterion, and synonymous variants.
 - **How they are tested:** on the main set, as the positive and negative likelihood ratios at each threshold, with gene-bootstrap 95% intervals.
-- **Published thresholds:** SpliceAI's ClinGen thresholds (Walker et al. 2023: at least 0.2 for PP3, at most 0.1 for BP4) are tested on the main set as published.
+- **Published thresholds:** SpliceAI's ClinGen thresholds (Walker et al. 2023: at least 0.2 for PP3, at most 0.1 for BP4) are tested on the main set. Walker et al. defined them on the raw maximum delta score with a ±4,999-base window; our main SpliceAI score is raw with a 50-base window, and the difference is stated.
 
 ## 5. Part 2: experimental splicing measurements
 
