@@ -1,5 +1,6 @@
 """Pangolin run locally on the main set (new labels, untouched + validation chromosomes, rare, at least one
-star, MANE-named) of the non-canonical intronic and UTR regions.
+star, MANE-named) of the non-canonical intronic and UTR regions: every P/LP variant and a random B/LB
+sample of 4,000 stratified by region (seed 20261007; list in data/derived/variants/pangolin_sample.tsv).
 
 Follows pangolin.py of github.com/tkzeng/Pangolin (defaults: distance 50, masked): genes are GENCODE v38
 `gene` features overlapping the variant; annotated splice sites are the exon ends of Ensembl_canonical
@@ -34,6 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 VARIANTS = ROOT / "data" / "derived" / "variants" / "clinvar_variants.tsv.gz"
 GNOMAD = ROOT / "data" / "derived" / "variants" / "gnomad_v4.1_joint.tsv.gz"
 OUT = ROOT / "data" / "derived" / "scores" / "pangolin.tsv.gz"
+SAMPLE = ROOT / "data" / "derived" / "variants" / "pangolin_sample.tsv"
 D = 50
 FLANK = 5000
 MAIN_REGIONS = ("donor_region", "acceptor_region", "near_intronic", "deep_intronic", "utr5", "utr3")
@@ -126,8 +128,14 @@ def main(argv: list[str] | None = None) -> int:
     from pyfaidx import Fasta
     import pangolin_check
     fa, ann, models = Fasta(str(a.fasta)), read_annotation(a.gtf), load_models()
-    rows = pangolin_check.main_set_rows(VARIANTS, GNOMAD, MAIN_REGIONS)
-    pangolin_check.self_check(fa, ann, models, rows)
+    main_rows = pangolin_check.main_set_rows(VARIANTS, GNOMAD, MAIN_REGIONS)
+    rows = pangolin_check.sample(main_rows)
+    with open(SAMPLE, "w", encoding="utf-8", newline="") as h:
+        w = csv.writer(h, delimiter="\t", lineterminator="\n")
+        w.writerow(("variation_id", "label", "region"))
+        w.writerows((r["variation_id"], r["label"], r["region"]) for r in rows)
+    print("main set", len(main_rows), "sample", len(rows), flush=True)
+    pangolin_check.self_check(fa, ann, models, main_rows)
     print("self-check passed", flush=True)
 
     best = {}

@@ -11,6 +11,8 @@ from pathlib import Path
 import numpy as np
 
 RARE = 0.001
+SEED = 20261007
+BENIGN_SAMPLE = 4000
 
 
 def main_set_rows(variants: Path, gnomad: Path, regions: tuple) -> list:
@@ -31,6 +33,30 @@ def main_set_rows(variants: Path, gnomad: Path, regions: tuple) -> list:
             if not present or f is None or f < RARE:
                 out.append(r)
     return out
+
+
+def sample(rows: list, benign: int = BENIGN_SAMPLE, seed: int = SEED) -> list:
+    """All P/LP rows and a random B/LB sample stratified by region (proportional, largest remainder).
+    Pangolin runs at several seconds per variant on CPU, so the B/LB class is sampled; AUROC is unbiased
+    under class-wise random sampling within regions."""
+    import random
+    from collections import defaultdict
+    pathogenic = [r for r in rows if r["label"] == "P/LP"]
+    strata = defaultdict(list)
+    for r in rows:
+        if r["label"] == "B/LB":
+            strata[r["region"]].append(r)
+    total = sum(len(v) for v in strata.values())
+    quotas = {k: len(v) * benign / total for k, v in strata.items()}
+    counts = {k: int(q) for k, q in quotas.items()}
+    for k in sorted(quotas, key=lambda k: (-(quotas[k] - counts[k]), k))[: benign - sum(counts.values())]:
+        counts[k] += 1
+    rng = random.Random(seed)
+    chosen = []
+    for k in sorted(strata):
+        pool = sorted(strata[k], key=lambda r: int(r["variation_id"]))
+        chosen += rng.sample(pool, min(counts[k], len(pool)))
+    return sorted(pathogenic + chosen, key=lambda r: int(r["variation_id"]))
 
 
 def self_check(fa, ann, models, rows: list) -> None:
