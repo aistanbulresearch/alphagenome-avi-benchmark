@@ -19,7 +19,8 @@ import part1_data as pdata
 from paths import ROOT
 
 OUT = ROOT / "results" / "part1"
-PAIRS = [("AVI", "SpliceAI"), ("AVI", "CADD"), ("AVI", "SpliceAI 4999")]
+PAIRS = [("AVI", "SpliceAI"), ("AVI", "CADD"), ("AVI", "SpliceAI 4999"), ("AVI", "phyloP 100-way"),
+         ("AVI", "phastCons 470-way"), ("AVI", "phyloP 241-way")]
 
 
 def coverage(v: pd.DataFrame, set_masks: dict, tools: list) -> pd.DataFrame:

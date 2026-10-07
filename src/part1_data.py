@@ -22,6 +22,9 @@ TOOLS = {                      # name: (file, column); higher score = more patho
     "SpliceAI masked": ("spliceai_masked.tsv.gz", "spliceai_max"),
     "SpliceAI 4999": ("spliceai_d4999.tsv.gz", "spliceai_max"),
     "CADD": ("cadd.tsv.gz", "cadd_phred"),
+    "phyloP 100-way": ("conservation.tsv.gz", "phyloP100"),
+    "phastCons 470-way": ("conservation.tsv.gz", "phastCons470"),
+    "phyloP 241-way": ("conservation.tsv.gz", "phyloP241"),
 }
 
 
