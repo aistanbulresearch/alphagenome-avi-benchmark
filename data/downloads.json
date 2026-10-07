@@ -4578,5 +4578,165 @@
     "sha256": "c1dd87068c254eb53d944f71e51d1311964fce8de24d6fc0effc9c61c01527d4",
     "started_utc": "2026-10-07T09:57:43+00:00",
     "finished_utc": "2026-10-07T09:59:46+00:00"
+  },
+  {
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_38/gencode.v38.annotation.gtf.gz",
+    "file": "data/raw/gencode.v38.annotation.gtf.gz",
+    "http_status": 200,
+    "last_modified": "Fri, 12 Mar 2021 15:41:07 GMT",
+    "bytes": 46556621,
+    "sha256": "22020df0d3356e965868f4b193e89fa13e838b950a574349f7fcd461ac01c050",
+    "started_utc": "2026-10-07T14:39:00+00:00",
+    "finished_utc": "2026-10-07T14:39:17+00:00"
+  },
+  {
+    "url": "https://zenodo.org/api/records/7803918/files/POU1F1_SpliceEffects.xls/content",
+    "file": "data/raw/part2/kitzman/POU1F1_SpliceEffects.xls",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 553984,
+    "sha256": "8ac23835b9075b818ae2e1622674e8f8639865f45ad5e5d977ed6efe9e0bf47b",
+    "started_utc": "2026-10-07T15:28:11+00:00",
+    "finished_utc": "2026-10-07T15:28:11+00:00"
+  },
+  {
+    "url": "https://zenodo.org/api/records/7803918/files/WT1_SpliceEfects.xlsx/content",
+    "file": "data/raw/part2/kitzman/WT1_SpliceEfects.xlsx",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 83231,
+    "sha256": "97ef8042b022cb16e9c7a88b2bc2cff2c251a6c859ffaedb3294febc31198d3e",
+    "started_utc": "2026-10-07T15:28:12+00:00",
+    "finished_utc": "2026-10-07T15:28:12+00:00"
+  },
+  {
+    "url": "https://zenodo.org/api/records/7803918/files/FormatManual.xlsx/content",
+    "file": "data/raw/part2/kitzman/FormatManual.xlsx",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 11331,
+    "sha256": "f743419c5ef9a5424342b306884f5f9e7803977a5a8bb647e66e17c9b01330fb",
+    "started_utc": "2026-10-07T15:28:13+00:00",
+    "finished_utc": "2026-10-07T15:28:13+00:00"
+  },
+  {
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-018-05748-7/MediaObjects/41467_2018_5748_MOESM3_ESM.pdf",
+    "file": "data/raw/part2/mst1r_braun2018/41467_2018_5748_MOESM3_ESM.pdf",
+    "http_status": 200,
+    "last_modified": "Mon, 04 Dec 2023 18:17:13 GMT",
+    "bytes": 259642,
+    "sha256": "70a909d4745011eadf82f8b9f61f9ad6fa07d67ce36cc9a1383a4031001ea1d8",
+    "started_utc": "2026-10-07T15:38:06+00:00",
+    "finished_utc": "2026-10-07T15:38:07+00:00"
+  },
+  {
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-31818-y/MediaObjects/41467_2022_31818_MOESM3_ESM.pdf",
+    "file": "data/raw/part2/cd19_cortes_lopez2022/41467_2022_31818_MOESM3_ESM.pdf",
+    "http_status": 200,
+    "last_modified": "Mon, 04 Dec 2023 14:18:29 GMT",
+    "bytes": 187831,
+    "sha256": "89fa082ac2b575f74fe139a59c7764f0a4f5b4d7500874e04403a2a9a9ad9770",
+    "started_utc": "2026-10-07T15:38:07+00:00",
+    "finished_utc": "2026-10-07T15:38:08+00:00"
+  },
+  {
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-018-05748-7/MediaObjects/41467_2018_5748_MOESM6_ESM.xlsx",
+    "file": "data/raw/part2/mst1r_braun2018/41467_2018_5748_MOESM6_ESM.xlsx",
+    "http_status": 200,
+    "last_modified": "Mon, 04 Dec 2023 18:17:14 GMT",
+    "bytes": 5116844,
+    "sha256": "51a2cebc8644b0fe3b934af92269df8ea2be4ea68c6dad41d125fc91cb84f125",
+    "started_utc": "2026-10-07T15:39:43+00:00",
+    "finished_utc": "2026-10-07T15:39:44+00:00"
+  },
+  {
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-31818-y/MediaObjects/41467_2022_31818_MOESM5_ESM.xlsx",
+    "file": "data/raw/part2/cd19_cortes_lopez2022/41467_2022_31818_MOESM5_ESM.xlsx",
+    "http_status": 200,
+    "last_modified": "Mon, 04 Dec 2023 14:18:29 GMT",
+    "bytes": 27656,
+    "sha256": "e85a454d1b34276720f5d7efddcd11a7371ca0ab1b0c5aad085470665bb31133",
+    "started_utc": "2026-10-07T15:39:46+00:00",
+    "finished_utc": "2026-10-07T15:39:46+00:00"
+  },
+  {
+    "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-31818-y/MediaObjects/41467_2022_31818_MOESM6_ESM.xlsx",
+    "file": "data/raw/part2/cd19_cortes_lopez2022/41467_2022_31818_MOESM6_ESM.xlsx",
+    "http_status": 200,
+    "last_modified": "Mon, 04 Dec 2023 14:18:28 GMT",
+    "bytes": 1628986,
+    "sha256": "32317d82e7434ce4ee0c68c8a7b97e04159be4c0f8e6b3e07bd41460e504b1cd",
+    "started_utc": "2026-10-07T15:39:48+00:00",
+    "finished_utc": "2026-10-07T15:39:48+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE307nnn/GSE307247/suppl/GSE307247_column_descriptions_metadata.tsv.gz",
+    "file": "data/raw/part2/compass/GSE307247_column_descriptions_metadata.tsv.gz",
+    "http_status": 200,
+    "last_modified": "Fri, 20 Mar 2026 04:18:55 GMT",
+    "bytes": 1617,
+    "sha256": "4a9ee91dbab3852df4acc1c8ffeeb69f0410474af71451a47c07e261f4a4987d",
+    "started_utc": "2026-10-07T15:43:16+00:00",
+    "finished_utc": "2026-10-07T15:43:16+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE307nnn/GSE307247/suppl/GSE307247_Processed_PSIs_All_Cells.csv.gz",
+    "file": "data/raw/part2/compass/GSE307247_Processed_PSIs_All_Cells.csv.gz",
+    "http_status": 200,
+    "last_modified": "Fri, 20 Mar 2026 17:18:12 GMT",
+    "bytes": 36222316,
+    "sha256": "c5ec382ce6a54097fe15eda70a5738f891dbe831fab5242cf5ff3671f3c2cd07",
+    "started_utc": "2026-10-07T15:43:18+00:00",
+    "finished_utc": "2026-10-07T15:43:23+00:00"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE307nnn/GSE307247/soft/GSE307247_family.soft.gz",
+    "file": "data/raw/part2/compass/GSE307247_family.soft.gz",
+    "http_status": 200,
+    "last_modified": "Sat, 03 Oct 2026 04:22:20 GMT",
+    "bytes": 4429,
+    "sha256": "d006c632683f709954ec4e6140c903a7174147347214f67de5efb135846b1649",
+    "started_utc": "2026-10-07T15:43:24+00:00",
+    "finished_utc": "2026-10-07T15:43:24+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/skoplik/ESL_MPRA_2025/67791aa433bf66ac0b7b095ede01d650c5de9cb1/Data_Pre-Processing/st_final_with_snp_and_coords_05_30_25.csv.gz",
+    "file": "data/raw/part2/compass/github_67791aa/st_final_with_snp_and_coords_05_30_25.csv.gz",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 6469114,
+    "sha256": "9f69dec8642352b0b4775a3bfad886a6e08a50402992889dfbca2c3c1334b961",
+    "started_utc": "2026-10-07T15:47:14+00:00",
+    "finished_utc": "2026-10-07T15:47:16+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/skoplik/ESL_MPRA_2025/67791aa433bf66ac0b7b095ede01d650c5de9cb1/Data_Pre-Processing/supertable.tsv.gz",
+    "file": "data/raw/part2/compass/github_67791aa/supertable.tsv.gz",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 5120145,
+    "sha256": "b48c2216e220f78cbe6476946c05cf9dde63386688dc77f39bbe0a8afd9dceae",
+    "started_utc": "2026-10-07T15:47:17+00:00",
+    "finished_utc": "2026-10-07T15:47:18+00:00"
+  },
+  {
+    "url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/23/2026.05.22.727141/DC6/embed/media-6.zip?download=true",
+    "file": "data/raw/part2/opensplice/Supplementary_Table4_media-6.zip",
+    "http_status": 200,
+    "last_modified": "Tue, 26 May 2026 23:32:46 GMT",
+    "bytes": 73096239,
+    "sha256": "df4c26c25cebe70bc2943661f5afea7f5da499fcda2b687a6aef3e4b4ea7016a",
+    "started_utc": "2026-10-07T15:53:28+00:00",
+    "finished_utc": "2026-10-07T15:53:36+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/KosuriLab/MFASS/9a8e4f27106be52aeb11acad27f95f5cded663a8/processed_data/snv/snv_data_clean.txt",
+    "file": "data/raw/part2/mfass/github_9a8e4f2/snv_data_clean.txt",
+    "http_status": 200,
+    "last_modified": null,
+    "bytes": 41445250,
+    "sha256": "a637ca0e307e66ff48811ec7efa22b9ce453bc7883b04f0cacb867f7283132d8",
+    "started_utc": "2026-10-07T15:56:32+00:00",
+    "finished_utc": "2026-10-07T15:56:37+00:00"
   }
 ]

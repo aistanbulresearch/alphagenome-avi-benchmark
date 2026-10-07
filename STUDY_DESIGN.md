@@ -154,6 +154,42 @@ Each dataset's own threshold for "splice-altering" is taken from its publication
 - AUROC for splice-altering versus not, per dataset and pooled, with dataset-level intervals.
 - Rank correlation with the measured effect size.
 
+### 5.3 Analysis plan, fixed before any Part 2 score is retrieved
+
+The harmonised table is `data/derived/part2/assay_variants.tsv.gz`, built by `src/part2_data.py`. Sources, licences, authors' thresholds and mapping notes are in `data/part2/sources.md`.
+
+**Main datasets**, all saturation or random libraries:
+- POU1F1 exon 2 and WT1 exon 9 minigene assays;
+- MST1R exon 11 (model-inferred single-mutation effects; the 131 median-based estimates without a test are excluded);
+- CD19 exons 1–3;
+- COMPASS (random-SNV and ExAC subsets);
+- OpenSplice.
+
+**Comparison dataset:** MFASS, which AlphaGenome and Pangolin report results on. It is reported separately.
+
+**Excluded from the main analysis:**
+- variants of the Part 1 new-label set (they are counted in Part 1);
+- variants at positions of the developers' benchmark data (`data/derived/exposure/development_positions.tsv`, as in Part 1). This removes, among others, the OpenSplice exons in the saturation-genome-editing genes; those are reported separately.
+
+**Labels:**
+- The authors' calls or thresholds are used, splice-altering versus not.
+- "Intermediate" variants (POU1F1, WT1) are left out of the binary metrics and reported as counts.
+
+**Variants:**
+- SNVs for all tools.
+- Small indels for SpliceAI and CADD only, as a secondary table (AVI publishes SNV scores only).
+
+**Scores:**
+- AVI, SpliceAI (raw and masked, distance 50), CADD and phyloP 100-way, as in Part 1, at the genomic position of each variant.
+- Pangolin, run locally, on the four single-exon datasets (POU1F1, WT1, MST1R, CD19).
+- Minigene assays measure the variant in a construct, while the tools score the genomic context; this is stated as a limitation.
+
+**Metrics:**
+- Per dataset: AUROC and AUPRC, and Spearman correlation of the score with the absolute measured effect size.
+- 95% intervals: for single-gene datasets the bootstrap resamples variants; for COMPASS, OpenSplice and MFASS it resamples genes (2,000 replicates, seed 20261007).
+- Paired AUROC difference, AVI minus SpliceAI and AVI minus each other tool, per dataset.
+- Pooled: a random-effects meta-analysis (DerSimonian–Laird) of the per-dataset paired differences, with datasets as units.
+
 ## 6. Repository contents
 
 The repository holds research material only:
