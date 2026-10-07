@@ -1,0 +1,8 @@
+{
+ "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr21.vcf.bgz",
+ "index_sha256": "9849caec8b2c3d7865fd260f065c356a4c1bda242cdb03293de1d7d5094ef379",
+ "etag": "\"2ec2d9876d61fc9c5b1e84ab6841b62e\"",
+ "last_modified": "Wed, 01 May 2024 00:00:52 GMT",
+ "positions": 638,
+ "variants": 644
+}

@@ -42,7 +42,8 @@
   "records_with_a_span_over_limit": 186,
   "grch37_positions_not_converted": 2,
   "grch37_positions_partly_converted": 0,
-  "candidates_blocked": 818
+  "candidates_blocked": 818,
+  "candidates_inside_a_longer_record": 586332
  },
  "counts": [
   {
