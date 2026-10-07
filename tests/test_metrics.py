@@ -57,6 +57,13 @@ class Metrics(unittest.TestCase):
             self.assertEqual(len(set(w[3:])), 1)
             self.assertEqual(sum({c: wi for c, wi in zip(clusters, w)}.values()), 3)
 
+    def test_interval_with_infinite_values(self):
+        lo, hi = m.interval([1.0, 2.0, 3.0] * 40 + [float("inf")] * 10)
+        self.assertFalse(np.isnan(lo) or np.isnan(hi))
+        self.assertEqual(hi, float("inf"))
+        lo, hi = m.interval(list(np.linspace(0, 1, 101)))
+        self.assertAlmostEqual(lo, 0.025)                    # finite values: unchanged interpolation
+
     def test_clusters_of(self):
         c = m.clusters_of(["101", "", "-1", "101", "5;6"])
         self.assertEqual(c[0], c[3])

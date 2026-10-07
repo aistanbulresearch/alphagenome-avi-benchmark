@@ -73,6 +73,8 @@ def interval(values: list, level: float = 0.95) -> tuple[float, float]:
     if len(v) == 0:
         return float("nan"), float("nan")
     a = (1 - level) / 2
+    if np.isinf(v).any():                 # e.g. a likelihood ratio with no B/LB beyond the threshold
+        return float(np.quantile(v, a, method="lower")), float(np.quantile(v, 1 - a, method="higher"))
     return float(np.quantile(v, a)), float(np.quantile(v, 1 - a))
 
 
