@@ -96,7 +96,7 @@ Small regions are reported with their intervals. Wide intervals are a result, no
 - at least two stars;
 - the stricter exclusion of variants inside longer unknown older records (column `inside_long_unknown_record`), so that the result does not depend on that data-cleaning choice;
 - by whether any ClinVar submission of the variant mentions a splicing predictor (`data/derived/variants/submission_flags.tsv.gz`; presence of fixed terms only, no values), because labels that rest on SpliceAI favour SpliceAI;
-- deep and near intronic SNVs scored with SpliceAI run locally with a ±4,999-base window (pseudoexon-creating variants can lie beyond the 50-base window of the precomputed scores), if the local run is feasible;
+- deep intronic SNVs scored with SpliceAI 1.3.1 run locally (raw, ±4,999-base window, the form of the ClinGen thresholds), because pseudoexon-creating variants can have their partner site beyond the 50-base window of the precomputed scores;
 - the calibration sample (below), which represents the labelled variants outside the new-label set;
 - small indels, for tools other than AVI (AVI publishes SNV scores only).
 

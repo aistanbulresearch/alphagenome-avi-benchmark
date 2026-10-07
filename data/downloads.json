@@ -4568,5 +4568,15 @@
     "sha256": "a41c56959799560796085bfd5fb4b04e8a0bddf7acedf259bca3fa8ded3d80ee",
     "started_utc": "2026-10-06T16:30:50+00:00",
     "finished_utc": "2026-10-06T16:31:28+00:00"
+  },
+  {
+    "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz",
+    "file": "data/raw/hg38.fa.gz",
+    "http_status": 200,
+    "last_modified": "Thu, 16 Jan 2014 05:14:12 GMT",
+    "bytes": 983659424,
+    "sha256": "c1dd87068c254eb53d944f71e51d1311964fce8de24d6fc0effc9c61c01527d4",
+    "started_utc": "2026-10-07T09:57:43+00:00",
+    "finished_utc": "2026-10-07T09:59:46+00:00"
   }
 ]
