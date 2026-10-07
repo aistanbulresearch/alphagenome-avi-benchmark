@@ -45,6 +45,19 @@ class Calibration(unittest.TestCase):
         self.assertFalse(np.isnan(upper).any())
         self.assertTrue(np.isinf(lower[-1]))
 
+    def test_level_intervals_and_interval_lr(self):
+        thr = {"supporting": (0.2, 0.1), "moderate": (0.4, 0.02), "strong": (0.8, None), "very_strong": (None, None)}
+        iv = c.level_intervals(thr)
+        self.assertIn(("supporting", "ge", 0.2, 0.4), iv)
+        self.assertIn(("strong", "ge", 0.8, float("inf")), iv)
+        self.assertIn(("supporting", "le", 0.02, 0.1), iv)
+        self.assertIn(("moderate", "le", float("-inf"), 0.02), iv)
+        s = np.array([0.1, 0.3, 0.3, 0.9, 0.9, 0.05, 0.3])
+        y = np.array([1, 1, 1, 1, 1, 0, 0])
+        # supporting interval [0.2, 0.4): P 2/5, B 1/2 -> 0.8; cumulative >= 0.2: P 4/5, B 1/2 -> 1.6
+        self.assertAlmostEqual(c.interval_lr(s, y, 0.2, 0.4, "ge"), 0.8)
+        self.assertAlmostEqual(c.likelihood_ratio(s, y, 0.2, "ge"), 1.6)
+
     def test_calibrate_runs_and_lr_on_test(self):
         rng = np.random.default_rng(1)
         s = np.concatenate([rng.normal(2, 1, 600), rng.normal(0, 1, 3000)])

@@ -93,14 +93,23 @@ def calibration_tables(v: pd.DataFrame, set_masks: dict, tools: list, reps: int,
         tv = v[test & v[t].notna()]
         s, y = tv[t].to_numpy(), tv["y"].to_numpy()
         clusters = m.clusters_of(tv["gene_id"].tolist())
-        evaluated = {}
+        evaluated = {"interval": {}, "cumulative": {}}
+        # main test (ClinGen logic): each level within its own score interval
+        for lvl, side, lo, hi in cal.level_intervals(res["thresholds"]):
+            boots = [cal.interval_lr(s, y, lo, hi, side, w) for w in m.cluster_weights(clusters, reps)]
+            hit = (s >= lo) & (s < hi) if side == "ge" else (s > lo) & (s <= hi)
+            evaluated["interval"][f"{lvl} {'pathogenic' if side == 'ge' else 'benign'}"] = {
+                "interval": [lo, hi], "lr": cal.interval_lr(s, y, lo, hi, side), "ci": m.interval(boots),
+                "n_pos": int(hit[y == 1].sum()), "n_neg": int(hit[y == 0].sum()),
+                "fraction_pos": float(hit[y == 1].mean()), "fraction_neg": float(hit[y == 0].mean())}
+        # supplementary: everything beyond each threshold; the published single-level SpliceAI rules
         checks = [(lvl, "ge", p) for lvl, (p, _) in res["thresholds"].items() if p is not None]
         checks += [(lvl, "le", b) for lvl, (_, b) in res["thresholds"].items() if b is not None]
         if t == "SpliceAI":
             checks += [("published PP3 (>=0.2)", "ge", 0.2), ("published BP4 (<=0.1)", "le", 0.1)]
         for lvl, side, thr in checks:
             boots = [cal.likelihood_ratio(s, y, thr, side, w) for w in m.cluster_weights(clusters, reps)]
-            evaluated[f"{lvl} {'pathogenic' if side == 'ge' else 'benign'}"] = {
+            evaluated["cumulative"][f"{lvl} {'pathogenic' if side == 'ge' else 'benign'}"] = {
                 "threshold": thr, "lr": cal.likelihood_ratio(s, y, thr, side), "ci": m.interval(boots),
                 "fraction_pos_meeting": float(((s >= thr) if side == "ge" else (s <= thr))[y == 1].mean()),
                 "fraction_neg_meeting": float(((s >= thr) if side == "ge" else (s <= thr))[y == 0].mean())}

@@ -104,4 +104,30 @@ def likelihood_ratio(scores: np.ndarray, labels: np.ndarray, t: float, side: str
     return float(p / b) if b > 0 else float("inf")
 
 
-__all__ = ["PRIOR", "LEVELS", "calibrate", "likelihood_ratio", "thresholds", "local_lr", "windows", "grid_points"]
+def interval_lr(scores: np.ndarray, labels: np.ndarray, lo: float, hi: float, side: str,
+                weights: np.ndarray | None = None) -> float:
+    """LR of a score interval on a test set: pathogenic side lo <= s < hi, benign side lo < s <= hi."""
+    w = np.ones(len(scores)) if weights is None else weights.astype(float)
+    hit = (scores >= lo) & (scores < hi) if side == "ge" else (scores > lo) & (scores <= hi)
+    p = (w * hit * (labels == 1)).sum() / max((w * (labels == 1)).sum(), 1e-12)
+    b = (w * hit * (labels == 0)).sum() / max((w * (labels == 0)).sum(), 1e-12)
+    return float(p / b) if b > 0 else (float("inf") if p > 0 else float("nan"))
+
+
+def level_intervals(thresholds: dict) -> list:
+    """[(level, side, lo, hi)]: each evidence level is the score interval between its threshold and the
+    next stronger defined threshold (ClinGen: a variant gets the level of the interval it falls in)."""
+    order = list(LEVELS)
+    out = []
+    path = [(lvl, thresholds[lvl][0]) for lvl in order if thresholds[lvl][0] is not None]
+    for i, (lvl, lo) in enumerate(path):
+        hi = path[i + 1][1] if i + 1 < len(path) else float("inf")
+        out.append((lvl, "ge", lo, hi))
+    ben = [(lvl, thresholds[lvl][1]) for lvl in order if thresholds[lvl][1] is not None]
+    for i, (lvl, hi) in enumerate(ben):
+        lo = ben[i + 1][1] if i + 1 < len(ben) else float("-inf")
+        out.append((lvl, "le", lo, hi))
+    return out
+
+
+__all__ = ["PRIOR", "LEVELS", "calibrate", "likelihood_ratio", "interval_lr", "level_intervals", "thresholds", "local_lr", "windows", "grid_points"]

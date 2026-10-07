@@ -73,7 +73,8 @@ class Part1(unittest.TestCase):
         v = table(3000, 2)
         out = pa.calibration_tables(v, pdata.sets(v), ["AVI", "SpliceAI"], 20, 50)
         self.assertIn("SpliceAI", out)
-        self.assertIn("published PP3 (>=0.2) pathogenic", out["SpliceAI"]["evaluated_on_main"])
+        self.assertIn("published PP3 (>=0.2) pathogenic", out["SpliceAI"]["evaluated_on_main"]["cumulative"])
+        self.assertTrue(out["AVI"]["evaluated_on_main"]["interval"])
         self.assertGreater(out["AVI"]["derivation"]["n_pos"], 0)
 
 
