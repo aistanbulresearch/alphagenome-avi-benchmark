@@ -167,6 +167,7 @@ class Build(unittest.TestCase):
         self.assertEqual(r["11"]["variant_type"], "small_indel")
         self.assertEqual(r["6"]["chromosome_group"], "excluded")
         self.assertEqual((r["1"]["chrom"], r["1"]["pos"], r["1"]["label"]), ("3", "1001", "P/LP"))
+        self.assertEqual(r["1"]["inside_long_unknown_record"], "no")
 
     def test_summary(self):
         s = self.summary
@@ -189,7 +190,10 @@ class UnknownRecordSpan(unittest.TestCase):
             out = index.block_unmatched()
         self.assertEqual(cands["1"].unresolved, "unresolved historical identity (same position)")
         self.assertIsNone(cands["2"].unresolved)                       # inside a 5,001-base record only
+        self.assertTrue(cands["2"].near_long_unknown)                  # flagged for the sensitivity analysis
+        self.assertFalse(cands["1"].near_long_unknown)
         self.assertEqual(out["records_with_a_span_over_limit"], 1)
+        self.assertEqual(out["candidates_inside_a_longer_record"], 1)
 
 
 if __name__ == "__main__":

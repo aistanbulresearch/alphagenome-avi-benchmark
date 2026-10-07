@@ -157,6 +157,7 @@ class Candidate:
     seen: set = field(default_factory=set)
     seen_strict: set = field(default_factory=set)     # sources that saw a strict term (not only unknown)
     max_exposure_stars: int = -1
+    near_long_unknown: bool = False       # inside an unknown older record longer than MAX_UNKNOWN_SPAN
 
 
 @dataclass
@@ -331,11 +332,15 @@ class ExposureIndex:
         record of at most MAX_UNKNOWN_SPAN bases (a small variant that may be the same variant under an
         older identifier; a long structural record says nothing about a small variant inside it):
         GRCh38 positions directly; GRCh37 positions against the candidate's GRCh37 rows and, through
-        `lift` (GRCh37 span -> list of GRCh38 spans), against its GRCh38 span. Returns counts."""
+        `lift` (GRCh37 span -> list of GRCh38 spans), against its GRCh38 span. Candidates inside a longer
+        unknown record are flagged (`near_long_unknown`) for a sensitivity analysis that blocks them too.
+        Returns counts."""
         unknown = self.unmatched()
         small = lambda p: p[2] - p[1] + 1 <= MAX_UNKNOWN_SPAN  # noqa: E731
         spans38 = [p for u in unknown.values() for p in u["pos38"] if small(p)]
         spans37 = [p for u in unknown.values() for p in u["pos37"] if small(p)]
+        long38 = [p for u in unknown.values() for p in u["pos38"] if not small(p)]
+        long37 = [p for u in unknown.values() for p in u["pos37"] if not small(p)]
         long_records = sum(1 for u in unknown.values()
                            if any(not small(p) for p in u["pos38"] | u["pos37"]))
         unlifted = partly = 0
@@ -348,20 +353,27 @@ class ExposureIndex:
                     unlifted += 1
                 elif covered < p[2] - p[1] + 1:
                     partly += 1
+        if lift is not None:
+            for p in long37:
+                long38.extend(lift(p))
         idx38, idx37 = PositionIndex(spans38), PositionIndex(spans37)
+        lidx38, lidx37 = PositionIndex(long38), PositionIndex(long37)
         reason = "unresolved historical identity (same position)"
         for c in self.candidates.values():
-            hit = idx38.overlaps(*key_span(c.record.key))
-            hit = hit or any(idx37.overlaps(*k) for k in [key_span(k) for k in c.keys37] + list(c.spans37))
+            spans = [key_span(k) for k in c.keys37] + list(c.spans37)
+            hit = idx38.overlaps(*key_span(c.record.key)) or any(idx37.overlaps(*k) for k in spans)
             if hit and c.unresolved is None:
                 c.unresolved = reason
+            if lidx38.overlaps(*key_span(c.record.key)) or any(lidx37.overlaps(*k) for k in spans):
+                c.near_long_unknown = True
         blocked = sum(1 for c in self.candidates.values() if c.unresolved == reason)
         placed = sum(1 for u in unknown.values() if u["pos38"] or u["pos37"])
         return {"unknown_records": len(unknown), "placed": placed, "unplaced": len(unknown) - placed,
                 "records_with_a_span_over_limit": long_records,
                 "grch37_positions_not_converted": unlifted if lift is not None else None,
                 "grch37_positions_partly_converted": partly if lift is not None else None,
-                "candidates_blocked": blocked}
+                "candidates_blocked": blocked,
+                "candidates_inside_a_longer_record": sum(c.near_long_unknown for c in self.candidates.values())}
 
 
 class PositionIndex:

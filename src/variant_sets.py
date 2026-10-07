@@ -43,7 +43,8 @@ FILES = {
 SUBMITTER_SOURCE = "development submitters"
 COLUMNS = ("variation_id", "allele_id", "chrom", "pos", "ref", "alt", "gene_id", "label", "stars",
            "review_status", "name", "chromosome_group", "variant_type", "family", "region", "intron_offset",
-           "mane_select", "new_label", "exclusion", "development_material", "labelled_before_in")
+           "mane_select", "new_label", "exclusion", "development_material", "labelled_before_in",
+           "inside_long_unknown_record")
 
 
 def read_submitter_vids(summary: Path, names_file: Path, flow: Counter) -> set:
@@ -109,6 +110,7 @@ def row(c: idx.Candidate, mane: set) -> dict:
         "new_label": "no" if reason else "yes", "exclusion": reason,
         "development_material": c.development or "",
         "labelled_before_in": ",".join(sorted(c.seen)),
+        "inside_long_unknown_record": "yes" if c.near_long_unknown else "no",
     }
 
 
