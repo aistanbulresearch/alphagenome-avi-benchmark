@@ -36,6 +36,9 @@ VARIANTS = ROOT / "data" / "derived" / "variants" / "clinvar_variants.tsv.gz"
 GNOMAD = ROOT / "data" / "derived" / "variants" / "gnomad_v4.1_joint.tsv.gz"
 OUT = ROOT / "data" / "derived" / "scores" / "pangolin.tsv.gz"
 SAMPLE = ROOT / "data" / "derived" / "variants" / "pangolin_sample.tsv"
+PART2_TABLE = ROOT / "data" / "derived" / "part2" / "assay_variants.tsv.gz"
+PART2_OUT = ROOT / "data" / "derived" / "scores" / "part2_pangolin.tsv.gz"
+PART2_DATASETS = ("kitzman_pou1f1_ex2", "kitzman_wt1_ex9", "braun2018_mst1r_ex11", "cortes_lopez2022_cd19")
 D = 50
 FLANK = 5000
 MAIN_REGIONS = ("donor_region", "acceptor_region", "near_intronic", "deep_intronic", "utr5", "utr3")
@@ -124,17 +127,24 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--fasta", required=True, type=Path)
     ap.add_argument("--gtf", required=True, type=Path)
     ap.add_argument("--batch", type=int, default=16)
+    ap.add_argument("--part2", action="store_true", help="the SNVs of the four single-exon Part 2 datasets")
     a = ap.parse_args(argv)
     from pyfaidx import Fasta
     import pangolin_check
     fa, ann, models = Fasta(str(a.fasta)), read_annotation(a.gtf), load_models()
-    main_rows = pangolin_check.main_set_rows(VARIANTS, GNOMAD, MAIN_REGIONS)
-    rows = pangolin_check.sample(main_rows)
-    with open(SAMPLE, "w", encoding="utf-8", newline="") as h:
-        w = csv.writer(h, delimiter="\t", lineterminator="\n")
-        w.writerow(("variation_id", "label", "region"))
-        w.writerows((r["variation_id"], r["label"], r["region"]) for r in rows)
-    print("main set", len(main_rows), "sample", len(rows), flush=True)
+    if a.part2:
+        main_rows = rows = pangolin_check.part2_rows(PART2_TABLE, PART2_DATASETS)
+        out, id_column = PART2_OUT, "allele"
+        print("part 2 alleles", len(rows), flush=True)
+    else:
+        main_rows = pangolin_check.main_set_rows(VARIANTS, GNOMAD, MAIN_REGIONS)
+        rows = pangolin_check.sample(main_rows)
+        out, id_column = OUT, "variation_id"
+        with open(SAMPLE, "w", encoding="utf-8", newline="") as h:
+            w = csv.writer(h, delimiter="\t", lineterminator="\n")
+            w.writerow(("variation_id", "label", "region"))
+            w.writerows((r["variation_id"], r["label"], r["region"]) for r in rows)
+        print("main set", len(main_rows), "sample", len(rows), flush=True)
     pangolin_check.self_check(fa, ann, models, main_rows)
     print("self-check passed", flush=True)
 
@@ -168,10 +178,10 @@ def main(argv: list[str] | None = None) -> int:
             pending = []
         if n_row % 500 == 0 or n_row == len(rows):
             print(f"{n_row}/{len(rows)} {time.time() - started:.0f} s", flush=True)
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    with gzip.open(OUT, "wt", encoding="utf-8", newline="") as h:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(out, "wt", encoding="utf-8", newline="") as h:
         w = csv.writer(h, delimiter="\t", lineterminator="\n")
-        w.writerow(("variation_id", "chrom", "pos", "ref", "alt", "pangolin_max", "gene"))
+        w.writerow((id_column, "chrom", "pos", "ref", "alt", "pangolin_max", "gene"))
         for r in rows:
             s = best.get(r["variation_id"])
             w.writerow((r["variation_id"], r["chrom"], r["pos"], r["ref"], r["alt"],

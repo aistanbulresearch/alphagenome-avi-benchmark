@@ -35,6 +35,20 @@ def main_set_rows(variants: Path, gnomad: Path, regions: tuple) -> list:
     return out
 
 
+def part2_rows(table: Path, datasets: tuple) -> list:
+    """Distinct SNV alleles (main rows) of the given Part 2 datasets, with variation_id = the allele key."""
+    seen, out = set(), []
+    with gzip.open(table, "rt", encoding="utf-8", newline="") as h:
+        for r in csv.DictReader(h, delimiter="\t"):
+            if r["dataset"] in datasets and r["use"] == "main" and r["variant_type"] == "SNV":
+                key = f"{r['chrom']}:{r['pos']}:{r['ref']}:{r['alt']}"
+                if key not in seen:
+                    seen.add(key)
+                    out.append({"variation_id": key, "chrom": r["chrom"], "pos": r["pos"], "ref": r["ref"],
+                                "alt": r["alt"]})
+    return out
+
+
 def sample(rows: list, benign: int = BENIGN_SAMPLE, seed: int = SEED) -> list:
     """All P/LP rows and a random B/LB sample stratified by region (proportional, largest remainder).
     Pangolin runs at several seconds per variant on CPU, so the B/LB class is sampled; AUROC is unbiased
