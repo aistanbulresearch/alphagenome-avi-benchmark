@@ -7,6 +7,9 @@ up in the gnomAD v4.1 joint sites VCF of its chromosome through the remote tabix
     data/derived/variants/gnomad_v4.1_joint.tsv.gz   one row per annotated variant
     data/derived/variants/gnomad_v4.1_joint_sources.json   per chromosome: URL, index SHA-256, ETag
 
+Each chromosome is first written to its own file under data/derived/variants/gnomad_parts/ (with its
+source record); a rerun skips finished chromosomes, so an interrupted run resumes.
+
 Alleles are compared after the same trimming that the ClinVar keys use (src/clinvar_records.py).
 
 Usage:
@@ -33,6 +36,7 @@ from paths import DERIVED
 VARIANTS = DERIVED / "variants" / "clinvar_variants.tsv.gz"
 OUT = DERIVED / "variants" / "gnomad_v4.1_joint.tsv.gz"
 SOURCES = DERIVED / "variants" / "gnomad_v4.1_joint_sources.json"
+PARTS = DERIVED / "variants" / "gnomad_parts"
 CHROMS = [str(i) for i in range(1, 23)] + ["X"]
 COLUMNS = ("variation_id", "chrom", "pos", "ref", "alt", "in_gnomad", "filter") + gr.FIELDS
 
@@ -47,24 +51,30 @@ def selected(row: dict, rows: str) -> bool:
     return rows == "all" or row["new_label"] == "yes"
 
 
-def with_retry(call, attempts: int = 6):
-    """Retry network errors and truncated responses with exponential back-off."""
+def with_retry(call, attempts: int = 16):
+    """Retry network errors and truncated responses with back-off (up to about 12 minutes in all)."""
     for i in range(attempts):
         try:
             return call()
         except (OSError, ValueError):
             if i == attempts - 1:
                 raise
-            time.sleep(2 ** i)
+            time.sleep(min(60, 2 ** i))
 
 
 def annotate_chromosome(chrom: str, variants: list, threads: int) -> tuple[list, dict]:
     url = gr.vcf_url(chrom)
-    with urllib.request.urlopen(url + ".tbi", timeout=120) as resp:
-        tbi = resp.read()
-    head = urllib.request.Request(url, method="HEAD")
-    with urllib.request.urlopen(head, timeout=120) as resp:
-        etag, modified = resp.headers.get("ETag"), resp.headers.get("Last-Modified")
+
+    def get_index():
+        with urllib.request.urlopen(url + ".tbi", timeout=120) as resp:
+            return resp.read()
+
+    def get_head():
+        with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=120) as resp:
+            return resp.headers.get("ETag"), resp.headers.get("Last-Modified")
+
+    tbi = with_retry(get_index)
+    etag, modified = with_retry(get_head)
     index = gr.parse_tbi(tbi)
     by_pos = defaultdict(list)
     for v in variants:
@@ -95,6 +105,20 @@ def annotate_chromosome(chrom: str, variants: list, threads: int) -> tuple[list,
     return rows, source
 
 
+def merge(chroms: list, rows: str) -> None:
+    """Concatenate the per-chromosome files into OUT and their source records into SOURCES."""
+    sources = {}
+    with gzip.open(OUT, "wt", encoding="utf-8", newline="") as out:
+        writer = csv.DictWriter(out, COLUMNS, delimiter="\t", lineterminator="\n")
+        writer.writeheader()
+        for chrom in chroms:
+            with gzip.open(PARTS / f"chr{chrom}.tsv.gz", "rt", encoding="utf-8", newline="") as h:
+                writer.writerows(csv.DictReader(h, delimiter="\t"))
+            sources[chrom] = json.loads((PARTS / f"chr{chrom}.json").read_text(encoding="utf-8"))
+    SOURCES.write_text(json.dumps({"rows": rows, "chromosomes": sources}, indent=1) + "\n",
+                       encoding="utf-8", newline="\n")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--rows", choices=("new", "all"), default="new")
@@ -105,20 +129,22 @@ def main(argv: list[str] | None = None) -> int:
         for row in csv.DictReader(h, delimiter="\t"):
             if selected(row, a.rows):
                 per_chrom[row["chrom"]].append(row)
-    sources = {}
-    with gzip.open(OUT, "wt", encoding="utf-8", newline="") as h:
-        writer = csv.DictWriter(h, COLUMNS, delimiter="\t", lineterminator="\n")
-        writer.writeheader()
-        for chrom in CHROMS:
-            if not per_chrom[chrom]:
-                continue
-            t0 = time.time()
-            rows, sources[chrom] = annotate_chromosome(chrom, per_chrom[chrom], a.threads)
+    PARTS.mkdir(parents=True, exist_ok=True)
+    for chrom in CHROMS:
+        part, meta = PARTS / f"chr{chrom}.tsv.gz", PARTS / f"chr{chrom}.json"
+        if not per_chrom[chrom] or (part.exists() and meta.exists()):
+            continue
+        t0 = time.time()
+        rows, source = annotate_chromosome(chrom, per_chrom[chrom], a.threads)
+        tmp = part.with_suffix(".tmp")
+        with gzip.open(tmp, "wt", encoding="utf-8", newline="") as h:
+            writer = csv.DictWriter(h, COLUMNS, delimiter="\t", lineterminator="\n")
+            writer.writeheader()
             writer.writerows(sorted(rows, key=lambda r: (int(r["pos"]), r["variation_id"])))
-            h.flush()
-            print(f"chr{chrom}\t{len(rows)} variants\t{time.time() - t0:.0f} s", flush=True)
-    SOURCES.write_text(json.dumps({"rows": a.rows, "chromosomes": sources}, indent=1) + "\n",
-                       encoding="utf-8", newline="\n")
+        tmp.replace(part)
+        meta.write_text(json.dumps(source, indent=1) + "\n", encoding="utf-8", newline="\n")
+        print(f"chr{chrom}\t{len(rows)} variants\t{time.time() - t0:.0f} s", flush=True)
+    merge([c for c in CHROMS if per_chrom[c]], a.rows)
     return 0
 
 
