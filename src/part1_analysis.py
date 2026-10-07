@@ -113,6 +113,34 @@ def calibration_tables(v: pd.DataFrame, set_masks: dict, tools: list, reps: int,
                 "threshold": thr, "lr": cal.likelihood_ratio(s, y, thr, side), "ci": m.interval(boots),
                 "fraction_pos_meeting": float(((s >= thr) if side == "ge" else (s <= thr))[y == 1].mean()),
                 "fraction_neg_meeting": float(((s >= thr) if side == "ge" else (s <= thr))[y == 0].mean())}
+        # supplementary: the same intervals within each region of the main set
+        by_region = {}
+        for rname, rmask in pdata.regions(v).items():
+            if rname in ("intronic >=3 bp (main)", "canonical", "synonymous", "5' UTR", "3' UTR"):
+                continue
+            rv = v[test & v[t].notna() & rmask]
+            rs, ry = rv[t].to_numpy(), rv["y"].to_numpy()
+            rc = m.clusters_of(rv["gene_id"].tolist())
+            rows = {}
+            for lvl, side, lo, hi in cal.level_intervals(res["thresholds"]):
+                hit = (rs >= lo) & (rs < hi) if side == "ge" else (rs > lo) & (rs <= hi)
+                boots = [cal.interval_lr(rs, ry, lo, hi, side, w) for w in m.cluster_weights(rc, reps)]
+                rows[f"{lvl} {'pathogenic' if side == 'ge' else 'benign'}"] = {
+                    "lr": cal.interval_lr(rs, ry, lo, hi, side), "ci": m.interval(boots),
+                    "n_pos": int(hit[ry == 1].sum()), "n_neg": int(hit[ry == 0].sum())}
+            by_region[rname] = {"n_pos": int(ry.sum()), "n_neg": int((1 - ry).sum()), "levels": rows}
+        evaluated["interval_by_region"] = by_region
+        # supplementary: thresholds for other priors (targets by the rule of Pejaver et al.)
+        prior_sens = {}
+        for prior in (0.01, 0.0441, 0.10):
+            lv = cal.levels_for_prior(prior)
+            th = cal.thresholds_from_curve(res["curve"], lv)
+            prior_sens[str(prior)] = {"targets": lv, "thresholds": th,
+                                      "fraction_pos_at_least_supporting": float((s >= th["supporting"][0])[y == 1].mean())
+                                      if th["supporting"][0] is not None else None,
+                                      "fraction_neg_benign_supporting": float((s <= th["supporting"][1])[y == 0].mean())
+                                      if th["supporting"][1] is not None else None}
+        evaluated["prior_sensitivity"] = prior_sens
         out[t] = {"derivation": {k: res[k] for k in ("n_pos", "n_neg", "thresholds")},
                   "curve": res["curve"], "test_n_pos": int(y.sum()), "test_n_neg": int((1 - y).sum()),
                   "evaluated_on_main": evaluated}

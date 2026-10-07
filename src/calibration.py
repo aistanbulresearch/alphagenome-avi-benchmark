@@ -62,10 +62,10 @@ def bootstrap_bounds(scores: np.ndarray, labels: np.ndarray, grid: np.ndarray, h
     return np.quantile(reps, 0.05, axis=0, method="lower"), np.quantile(reps, 0.95, axis=0, method="higher")
 
 
-def thresholds(grid: np.ndarray, lower: np.ndarray, upper: np.ndarray) -> dict:
-    """{level: (pathogenic threshold or None, benign threshold or None)}."""
+def thresholds(grid: np.ndarray, lower: np.ndarray, upper: np.ndarray, levels: dict | None = None) -> dict:
+    """{level: (pathogenic threshold or None, benign threshold or None)} for the given LR targets."""
     out = {}
-    for name, lr in LEVELS.items():
+    for name, lr in (levels or LEVELS).items():
         ok_p = lower >= lr
         path = None
         for i in range(len(grid)):
@@ -104,6 +104,22 @@ def likelihood_ratio(scores: np.ndarray, labels: np.ndarray, t: float, side: str
     return float(p / b) if b > 0 else float("inf")
 
 
+def levels_for_prior(prior: float) -> dict:
+    """ClinGen likelihood-ratio targets for another prior, by the rule behind Pejaver et al. (2022):
+    LR = c^(1/8), c^(1/4), c^(1/2), c for supporting to very strong, with c the smallest value at which
+    the weakest 'likely pathogenic' combination (exponent 6/8) reaches a posterior of 0.90, i.e.
+    c = (9 (1 - prior) / prior)^(4/3). This gives c = 350 at prior 0.1 (Tavtigian et al. 2018) and
+    1,131 at 0.0441 (the paper reports 1,124)."""
+    big_c = (9 * (1 - prior) / prior) ** (4 / 3)
+    return {"supporting": big_c ** 0.125, "moderate": big_c ** 0.25, "strong": big_c ** 0.5, "very_strong": big_c}
+
+
+def thresholds_from_curve(curve: dict, levels: dict) -> dict:
+    """Thresholds for other level targets from a stored curve (grid and one-sided bootstrap bounds)."""
+    grid, lower, upper = (np.asarray(curve[k], dtype=float) for k in ("grid", "lower", "upper"))
+    return thresholds(grid, lower, upper, levels)
+
+
 def interval_lr(scores: np.ndarray, labels: np.ndarray, lo: float, hi: float, side: str,
                 weights: np.ndarray | None = None) -> float:
     """LR of a score interval on a test set: pathogenic side lo <= s < hi, benign side lo < s <= hi."""
@@ -130,4 +146,4 @@ def level_intervals(thresholds: dict) -> list:
     return out
 
 
-__all__ = ["PRIOR", "LEVELS", "calibrate", "likelihood_ratio", "interval_lr", "level_intervals", "thresholds", "local_lr", "windows", "grid_points"]
+__all__ = ["PRIOR", "LEVELS", "calibrate", "likelihood_ratio", "interval_lr", "level_intervals", "levels_for_prior", "thresholds_from_curve", "thresholds", "local_lr", "windows", "grid_points"]

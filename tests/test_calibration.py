@@ -58,6 +58,20 @@ class Calibration(unittest.TestCase):
         self.assertAlmostEqual(c.interval_lr(s, y, 0.2, 0.4, "ge"), 0.8)
         self.assertAlmostEqual(c.likelihood_ratio(s, y, 0.2, "ge"), 1.6)
 
+    def test_levels_for_prior(self):
+        self.assertAlmostEqual(c.levels_for_prior(0.10)["very_strong"], 350, delta=1)          # Tavtigian 2018
+        self.assertAlmostEqual(c.levels_for_prior(0.10)["supporting"], 2.08, delta=0.01)
+        self.assertAlmostEqual(c.levels_for_prior(0.0441)["very_strong"], 1124, delta=12)      # Pejaver 2022
+        self.assertAlmostEqual(c.levels_for_prior(0.0441)["supporting"], 2.406, delta=0.01)
+        self.assertGreater(c.levels_for_prior(0.01)["supporting"], c.levels_for_prior(0.0441)["supporting"])
+
+    def test_thresholds_from_curve_restores_levels(self):
+        curve = {"grid": [0.1, 0.2, 0.3], "lower": [1.0, 3.0, 10.0], "upper": [2.0, 5.0, 20.0]}
+        th = c.thresholds_from_curve(curve, {"supporting": 2.0, "moderate": 8.0, "strong": 100.0, "very_strong": 1e6})
+        self.assertEqual(th["supporting"][0], 0.2)
+        self.assertEqual(th["moderate"][0], 0.3)
+        self.assertEqual(c.LEVELS["supporting"], 2.406)                                      # unchanged afterwards
+
     def test_calibrate_runs_and_lr_on_test(self):
         rng = np.random.default_rng(1)
         s = np.concatenate([rng.normal(2, 1, 600), rng.normal(0, 1, 3000)])
