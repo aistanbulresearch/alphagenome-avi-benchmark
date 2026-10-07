@@ -1,0 +1,9 @@
+{
+ "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr1.vcf.bgz",
+ "index_sha256": "47abee9290f161b9b7d38153e0ca977e34bb1ab8b5b0efac58820318de024f7d",
+ "etag": "\"11c62331b0a654fce6a9cd43838de648\"",
+ "last_modified": "Wed, 01 May 2024 00:00:54 GMT",
+ "positions": 12753,
+ "variants": 12976,
+ "note": "rows recovered from the run of 2026-10-06 22:37 UTC; index and ETag read 2026-10-07"
+}

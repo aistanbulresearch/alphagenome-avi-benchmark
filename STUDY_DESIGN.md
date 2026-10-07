@@ -49,8 +49,9 @@ AVI uses conservation scores and AlphaMissense as inputs. The conservation compa
   - It had no such classification in the 2025-06-15 release or in the earlier archives used for history (2024-07, 2025-07).
   - It has at least one review star.
 - **Excluded from the main set:**
-  - Variants at positions in benchmark datasets the developers used for training, selection or evaluation (saturation genome editing screens, TraitGym, ncVarDB).
+  - Variants at positions in benchmark datasets the developers used for training, selection or evaluation (saturation genome editing screens, TraitGym, ncVarDB; see `data/development_sources.md`).
   - Submissions from the organisation that supplied the developers' GREGoR cases.
+  - Variants at the position of an older strict ClinVar record of at most 50 bases whose identity cannot be linked to any current record (it may be the same variant under an older identifier).
 - **Comparison set ("all labels"):** all ClinVar-labelled variants of the same regions. The developers evaluated AVI on these labels. Results on this set are reported next to the main set and labelled accordingly.
 - **Chromosome groups:** results are broken down by the developers' training, validation and untouched chromosome groups.
 - **Rare variants:** variants that are common in gnomAD v4.1 are reported separately, because AVI was trained on population frequency.
@@ -79,6 +80,54 @@ Main reporting is by region. Neighbouring regions are pooled when a region is to
 - **Coverage:** the fraction of variants each tool can score.
 
 Small regions are reported with their intervals. Wide intervals are a result, not a reason to drop a region.
+
+### 4.4 Analysis plan, fixed before any score is retrieved
+
+**Main analysis set.** New labels; SNVs; at least one review star; the variant's HGVS name is on its gene's MANE Select transcript; untouched and validation chromosomes; rare in gnomAD v4.1.
+
+- **Rare:** the joint filtering allele frequency (`fafmax_faf95_max_joint`) is below 0.001, the threshold AVI's training used. If the variant is absent from gnomAD, or the field is empty, the joint allele frequency below 0.001 is used, and absence counts as rare.
+- **Why rare is the main set:** a variant that is common in the population is classified by its frequency, not by a predictor, and frequency is what AVI was trained on.
+
+**Supporting analyses**, each reported in full next to the main one:
+
+- all frequencies;
+- training chromosomes;
+- at least two stars;
+- the all-labels set;
+- small indels, for tools other than AVI (AVI publishes SNV scores only).
+
+**Regions.**
+
+- **Main comparison region:** intronic variants at least 3 bases from the exon, which pools the donor region, acceptor region, near intronic and deep intronic.
+- **Reported separately:** each of those four regions, canonical sites (±1, ±2), UTR (5' and 3' pooled, and each alone) and synonymous.
+
+**Scores.**
+
+| Tool | Score used | Source |
+|---|---|---|
+| AVI | raw score (the Phred-scaled score is a monotone transform with the same ranks) | AlphaGenome downloads, SNV Tabix file |
+| SpliceAI | maximum of the four delta scores; masked, distance 50; the maximum over gene entries | Ensembl MANE v1.4 precomputed file, masked |
+| CADD v1.7 | PHRED score | whole-genome SNV file |
+| Pangolin | maximum absolute splice score change, masked, distance 50 | local run |
+| phyloP | 100-way vertebrate, per position | UCSC bigWig |
+| AVI's conservation inputs | phastCons 470-way; Cactus 241-way phyloP | UCSC bigWig |
+| Distance baseline | distance to the nearest exon boundary (from the HGVS offset), smaller = more likely pathogenic | variant list |
+
+- **Missing scores:** a variant a tool cannot score is counted in a coverage table. Comparisons between two tools use the variants both tools score.
+- **AVI's own inputs:** AVI against phastCons 470-way and Cactus 241-way phyloP is reported as "what AVI adds beyond its conservation inputs".
+
+**Discrimination.**
+
+- **Metrics:** AUROC and AUPRC per tool, set and region. The P/LP fraction, which is AUPRC's baseline, is reported with each AUPRC.
+- **Main comparison:** the paired AUROC difference, AVI minus SpliceAI, in the main region of the main set. AVI is also compared with CADD in every region, and with SpliceAI in every intronic region.
+- **Intervals:** 95% intervals from 2,000 bootstrap replicates that resample genes (seed 20261007). Every difference is reported with its interval; no difference is selected for reporting by its size.
+
+**Clinical evidence strength.**
+
+- **Method:** the ClinGen calibration of Pejaver et al. (2022), using its local posterior probability and a prior of 0.0441. Score thresholds are derived for supporting, moderate and strong pathogenic evidence, and for the corresponding benign levels. The posterior targets are those of Pejaver et al. 2022, Table 1.
+- **Where thresholds come from:** they are derived on the all-labels set with the main-set variants removed, using intronic and UTR variants that are rare and have at least one star. Synonymous variants are not calibrated.
+- **How they are tested:** on the main set, as the positive and negative likelihood ratios at each threshold, with gene-bootstrap 95% intervals.
+- **Published thresholds:** SpliceAI's ClinGen thresholds (Walker et al. 2023: at least 0.2 for PP3, at most 0.1 for BP4) are tested on the main set as published.
 
 ## 5. Part 2: experimental splicing measurements
 

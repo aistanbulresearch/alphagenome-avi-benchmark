@@ -227,11 +227,13 @@ def scan_from(url: str, voffset: int, name: str, pos: int, fetch: Callable = fet
 
 
 def search(url: str, index: TabixIndex, chrom: str, pos: int, fetch: Callable = fetch_range,
-           max_probes: int = 30) -> list:
-    """Records at 1-based `pos`. Within the tabix chunk for the position, interpolation and bisection
-    over compressed offsets find a block whose first complete record lies before `pos`; the records
-    are then read forward from there."""
-    name = f"chr{chrom}"
+           max_probes: int = 30, contig: Optional[str] = None) -> list:
+    """Records at 1-based `pos` of any tab-separated, tabix-indexed file with the sequence name in the
+    first column and the position in the second (VCF, CADD TSV). `contig` is the sequence name as the
+    file writes it (default 'chr' + chrom). Within the tabix chunk for the position, interpolation and
+    bisection over compressed offsets find a block whose first complete record lies before `pos`; the
+    records are then read forward from there."""
+    name = contig or f"chr{chrom}"
     found = []
     for chunk in chunks_for(index, name, pos):
         lo, hi = chunk[0] >> 16, chunk[1] >> 16
