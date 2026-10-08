@@ -77,6 +77,14 @@ class Part1(unittest.TestCase):
         self.assertTrue(out["AVI"]["evaluated_on_main"]["interval"])
         self.assertGreater(out["AVI"]["derivation"]["n_pos"], 0)
 
+    def test_calibration_skips_tool_without_calibration_scores(self):
+        """A tool scored only on the main set (Pangolin) has nothing to derive thresholds from."""
+        v = table(3000, 2)
+        v["Pangolin"] = np.where(v["new_label"] == "yes", v["AVI"], np.nan)
+        out = pa.calibration_tables(v, pdata.sets(v), ["AVI", "Pangolin"], 20, 50)
+        self.assertIn("AVI", out)
+        self.assertNotIn("Pangolin", out)
+
 
 if __name__ == "__main__":
     unittest.main()

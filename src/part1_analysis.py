@@ -89,6 +89,8 @@ def calibration_tables(v: pd.DataFrame, set_masks: dict, tools: list, reps: int,
     out = {}
     for t in [x for x in tools if x not in ("SpliceAI 4999", "Distance")]:
         d = v[derive & v[t].notna()]
+        if d.empty:                     # scored on the main set only (Pangolin): nothing to derive from
+            continue
         res = cal.calibrate(d[t].to_numpy(), d["y"].to_numpy(), boot_reps)
         tv = v[test & v[t].notna()]
         s, y = tv[t].to_numpy(), tv["y"].to_numpy()
