@@ -50,6 +50,24 @@ def auprc(scores: np.ndarray, labels: np.ndarray, weights: np.ndarray | None = N
     return float((precision * pos_w).sum() / tp[-1])
 
 
+def sensitivity_at_specificity(scores: np.ndarray, labels: np.ndarray, specificity: float,
+                               weights: np.ndarray | None = None, prepared: tuple | None = None) -> float:
+    """Weighted share of positives at or above the lowest score threshold that keeps the share of
+    negatives at or above it within 1 - specificity (0 if even the top score breaks that)."""
+    w = np.ones(len(scores)) if weights is None else weights.astype(float)
+    order, group = prepared or _order(scores)
+    lab, ww = labels[order], w[order]
+    pos_w = np.bincount(group, weights=ww * (lab == 1))[::-1]      # descending score groups
+    neg_w = np.bincount(group, weights=ww * (lab == 0))[::-1]
+    if pos_w.sum() == 0 or neg_w.sum() == 0:
+        return float("nan")
+    ok = np.cumsum(neg_w) <= (1 - specificity) * neg_w.sum() + 1e-12
+    if not ok[0]:
+        return 0.0
+    last = len(ok) - 1 if ok.all() else int(np.argmin(ok)) - 1
+    return float(np.cumsum(pos_w)[last] / pos_w.sum())
+
+
 def cluster_weights(clusters: np.ndarray, replicates: int = REPLICATES, seed: int = SEED):
     """Yield, per replicate, the weight of each variant: how often its cluster was drawn."""
     uniq, inverse = np.unique(clusters, return_inverse=True)
@@ -78,4 +96,4 @@ def interval(values: list, level: float = 0.95) -> tuple[float, float]:
     return float(np.quantile(v, a)), float(np.quantile(v, 1 - a))
 
 
-__all__ = ["SEED", "REPLICATES", "auroc", "auprc", "cluster_weights", "clusters_of", "interval"]
+__all__ = ["SEED", "REPLICATES", "auroc", "auprc", "sensitivity_at_specificity", "cluster_weights", "clusters_of", "interval"]

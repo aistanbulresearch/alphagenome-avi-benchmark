@@ -50,6 +50,25 @@ class Metrics(unittest.TestCase):
         self.assertAlmostEqual(m.auprc(self.s, self.y), ap_direct(self.s, self.y, np.ones(60)))
         self.assertAlmostEqual(m.auprc(self.s, self.y, self.w), ap_direct(self.s, self.y, self.w))
 
+    def test_sensitivity_at_specificity(self):
+        def direct(s, y, w, spec):
+            neg, pos = sum(w[y == 0]), sum(w[y == 1])
+            best = 0.0
+            for t in sorted(set(s)):
+                if sum(w[(s >= t) & (y == 0)]) <= (1 - spec) * neg:
+                    best = sum(w[(s >= t) & (y == 1)]) / pos
+                    break
+            return best
+        for spec in (0.5, 0.8, 0.95, 0.99):
+            with self.subTest(spec=spec):
+                self.assertAlmostEqual(m.sensitivity_at_specificity(self.s, self.y, spec),
+                                       direct(self.s, self.y, np.ones(60), spec))
+                self.assertAlmostEqual(m.sensitivity_at_specificity(self.s, self.y, spec, self.w),
+                                       direct(self.s, self.y, self.w, spec))
+        s, y = np.array([0.1, 0.2, 0.9, 0.8]), np.array([0, 0, 1, 1])
+        self.assertEqual(m.sensitivity_at_specificity(s, y, 0.99), 1.0)
+        self.assertEqual(m.sensitivity_at_specificity(np.array([1.0, 0.5]), np.array([0, 1]), 0.99), 0.0)
+
     def test_cluster_weights(self):
         clusters = np.array(["a", "a", "b", "c", "c", "c"])
         for w in m.cluster_weights(clusters, replicates=20, seed=3):
