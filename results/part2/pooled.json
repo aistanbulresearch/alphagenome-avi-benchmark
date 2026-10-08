@@ -1,0 +1,126 @@
+{
+ "pooled": {
+  "AVI - SpliceAI": {
+   "estimate": -0.08852075594124206,
+   "ci": [
+    -0.12997639185556448,
+    -0.047065120026919656
+   ],
+   "tau2": 0.0023367519819227607,
+   "q": 49.869109593981776,
+   "k": 6,
+   "datasets": [
+    "braun2018_mst1r_ex11",
+    "compass",
+    "cortes_lopez2022_cd19",
+    "kitzman_pou1f1_ex2",
+    "kitzman_wt1_ex9",
+    "opensplice"
+   ]
+  },
+  "AVI - SpliceAI masked": {
+   "estimate": 0.0029065533876633503,
+   "ci": [
+    -0.020932697872713284,
+    0.026745804648039988
+   ],
+   "tau2": 0.0004847546413833331,
+   "q": 13.932996101600931,
+   "k": 6,
+   "datasets": [
+    "braun2018_mst1r_ex11",
+    "compass",
+    "cortes_lopez2022_cd19",
+    "kitzman_pou1f1_ex2",
+    "kitzman_wt1_ex9",
+    "opensplice"
+   ]
+  },
+  "AVI - CADD": {
+   "estimate": 0.01963247425074908,
+   "ci": [
+    -0.009606691166117506,
+    0.048871639667615666
+   ],
+   "tau2": 0.001162383464093184,
+   "q": 132.27407731031778,
+   "k": 6,
+   "datasets": [
+    "braun2018_mst1r_ex11",
+    "compass",
+    "cortes_lopez2022_cd19",
+    "kitzman_pou1f1_ex2",
+    "kitzman_wt1_ex9",
+    "opensplice"
+   ]
+  },
+  "AVI - phyloP 100-way": {
+   "estimate": 0.04135672456514991,
+   "ci": [
+    0.016879911762981904,
+    0.06583353736731792
+   ],
+   "tau2": 0.0007519432688811171,
+   "q": 62.86612664069476,
+   "k": 6,
+   "datasets": [
+    "braun2018_mst1r_ex11",
+    "compass",
+    "cortes_lopez2022_cd19",
+    "kitzman_pou1f1_ex2",
+    "kitzman_wt1_ex9",
+    "opensplice"
+   ]
+  },
+  "AVI - Pangolin": {
+   "estimate": -0.05970299830423147,
+   "ci": [
+    -0.11495566296656096,
+    -0.004450333641901984
+   ],
+   "tau2": 0.0023867774033185514,
+   "q": 17.42362930280622,
+   "k": 4,
+   "datasets": [
+    "braun2018_mst1r_ex11",
+    "cortes_lopez2022_cd19",
+    "kitzman_pou1f1_ex2",
+    "kitzman_wt1_ex9"
+   ]
+  }
+ },
+ "counts": {
+  "braun2018_mst1r_ex11": {
+   "variants": 1849,
+   "splice_altering": 875
+  },
+  "compass": {
+   "variants": 31975,
+   "splice_altering": 7063
+  },
+  "cortes_lopez2022_cd19": {
+   "variants": 3588,
+   "splice_altering": 178
+  },
+  "kitzman_pou1f1_ex2": {
+   "variants": 1034,
+   "splice_altering": 96
+  },
+  "kitzman_wt1_ex9": {
+   "variants": 485,
+   "splice_altering": 47
+  },
+  "mfass": {
+   "variants": 27127,
+   "splice_altering": 1039
+  },
+  "opensplice": {
+   "variants": 295405,
+   "splice_altering": 165549
+  },
+  "opensplice, developers' benchmark positions": {
+   "variants": 13993,
+   "splice_altering": 5936
+  }
+ }
+}
