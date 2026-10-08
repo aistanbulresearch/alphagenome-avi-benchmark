@@ -21,6 +21,19 @@ class Part2(unittest.TestCase):
         self.assertGreater(spread["tau2"], 0)
         self.assertLess(spread["ci"][0], spread["estimate"])
 
+    def test_heterogeneity_and_hartung_knapp(self):
+        est, se = [-0.2, 0.0, 0.3, -0.05], [0.02, 0.03, 0.02, 0.04]
+        r = p2.dersimonian_laird(est, se)
+        self.assertAlmostEqual(r["i2"], max(0.0, (r["q"] - 3) / r["q"]))
+        # Hartung-Knapp: same centre, t-based interval with the weighted residual variance
+        w = 1 / (np.asarray(se) ** 2 + r["tau2"])
+        q_hk = (w * (np.asarray(est) - r["estimate"]) ** 2).sum() / 3
+        half = 3.182446305284263 * (q_hk / w.sum()) ** 0.5            # t(0.975, 3)
+        self.assertAlmostEqual(r["ci_hartung_knapp"][0], r["estimate"] - half)
+        self.assertAlmostEqual(r["ci_hartung_knapp"][1], r["estimate"] + half)
+        same = p2.dersimonian_laird([0.1, 0.1, 0.1], [0.05, 0.05, 0.05])
+        self.assertEqual(same["i2"], 0.0)
+
     def test_pooled_skips_comparison_and_developer_datasets(self):
         diffs = []
         for ds, diff in (("compass", -0.1), ("opensplice", 0.5), ("mfass", 0.9), ("kitzman_wt1_ex9", -0.1)):

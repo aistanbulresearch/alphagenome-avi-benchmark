@@ -16,6 +16,7 @@ from collections import defaultdict
 
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 import metrics as m
 from paths import DERIVED, EXPOSURE, ROOT
@@ -134,17 +135,25 @@ def dataset_tables(d: pd.DataFrame, mask: pd.Series, name: str, tools: list, rep
 
 
 def dersimonian_laird(est: list, se: list) -> dict:
-    """Random-effects pooled estimate with 95% interval and tau^2."""
+    """Random-effects pooled estimate with 95% interval, tau^2, Q and I^2; plus the Hartung-Knapp interval
+    (t distribution with k-1 degrees of freedom and the weighted residual variance), which is wider and
+    better behaved when the number of datasets is small."""
     est, se = np.asarray(est, float), np.asarray(se, float)
+    k = len(est)
     w = 1 / se ** 2
     fixed = (w * est).sum() / w.sum()
     q = (w * (est - fixed) ** 2).sum()
-    tau2 = max(0.0, (q - (len(est) - 1)) / (w.sum() - (w ** 2).sum() / w.sum())) if len(est) > 1 else 0.0
+    tau2 = max(0.0, (q - (k - 1)) / (w.sum() - (w ** 2).sum() / w.sum())) if k > 1 else 0.0
     wr = 1 / (se ** 2 + tau2)
     pooled = (wr * est).sum() / wr.sum()
     se_p = (1 / wr.sum()) ** 0.5
-    return {"estimate": float(pooled), "ci": [float(pooled - 1.96 * se_p), float(pooled + 1.96 * se_p)],
-            "tau2": float(tau2), "q": float(q), "k": int(len(est))}
+    out = {"estimate": float(pooled), "ci": [float(pooled - 1.96 * se_p), float(pooled + 1.96 * se_p)],
+           "tau2": float(tau2), "q": float(q), "i2": float(max(0.0, (q - (k - 1)) / q)) if q > 0 else 0.0,
+           "k": int(k)}
+    if k > 1:
+        half = stats.t.ppf(0.975, k - 1) * ((wr * (est - pooled) ** 2).sum() / (k - 1) / wr.sum()) ** 0.5
+        out["ci_hartung_knapp"] = [float(pooled - half), float(pooled + half)]
+    return out
 
 
 def pooled_differences(diffs: list, main_sets: list, tools: list) -> dict:
