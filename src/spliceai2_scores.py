@@ -18,6 +18,7 @@ import argparse
 import csv
 import gzip
 import hashlib
+import http.client
 import json
 import os
 import sys
@@ -92,6 +93,8 @@ class Remote:
                 if e.code in (401, 403):
                     self.address(url, renew=True)
                 raise
+            except http.client.HTTPException as e:     # e.g. IncompleteRead: retried like a network error
+                raise OSError(f"HTTP read failed: {e!r}") from e
         return gf.with_retry(once)
 
 

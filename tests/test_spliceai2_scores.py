@@ -39,5 +39,32 @@ class Combine(unittest.TestCase):
         self.assertIsNone(s2.combine([row("A", "T", "+", 0, 0, 0, 0, 0)], "A", "G", self.cols))
 
 
+class FetchRetry(unittest.TestCase):
+    def test_incomplete_read_is_retried(self):
+        import http.client
+        from unittest import mock
+
+        calls = {"n": 0}
+
+        class Resp:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+            def read(self):
+                calls["n"] += 1
+                if calls["n"] == 1:
+                    raise http.client.IncompleteRead(b"", 10)
+                return b"x" * 10
+
+        remote = s2.Remote("t")
+        remote.signed["u"] = ("https://signed.example/f", 1e18)
+        with mock.patch("urllib.request.urlopen", return_value=Resp()), mock.patch("time.sleep"):
+            self.assertEqual(remote.fetch("u", 0, 10), b"x" * 10)
+        self.assertEqual(calls["n"], 2)
+
+
 if __name__ == "__main__":
     unittest.main()
