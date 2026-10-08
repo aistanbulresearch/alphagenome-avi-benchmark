@@ -24,6 +24,7 @@ import gzip
 import hashlib
 import json
 import sys
+import threading
 import time
 import urllib.request
 from collections import defaultdict
@@ -39,7 +40,9 @@ OUT = DERIVED / "scores"
 _ENSEMBL = "https://ftp.ensembl.org/pub/data_files/homo_sapiens/GRCh38/variation_plugins/"
 SPLICEAI = {"spliceai": _ENSEMBL + "spliceai_scores.raw.snv.ensembl_mane_v1.4.grch38.vcf.gz",
             "spliceai_masked": _ENSEMBL + "spliceai_scores.masked.snv.ensembl_mane_v1.4.grch38.vcf.gz"}
-CADD = "https://krishna.gs.washington.edu/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz"
+# The CADD mirror at the Kircher lab serves the same file (same index and bytes; checked 2026-10-08)
+# and is faster under parallel range requests than the primary host.
+CADD = "https://kircherlab.bihealth.org/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz"
 
 
 def spliceai_max(info: str, alt: str) -> str:
@@ -148,9 +151,22 @@ def lookup_all(variants: list, url: str, index: gr.TabixIndex, contig_of: Callab
             return [(v, None) for v in by_pos[key]]
         return match(key, gf.with_retry(lambda: gr.search(url, index, chrom, pos, fetch, contig=contig)))
 
+    total, done = len(groups) + len(singles), [0]
+    lock = threading.Lock()
+
+    def counted(fn):
+        def run(item):
+            result = fn(item)
+            with lock:
+                done[0] += 1
+                if done[0] % 500 == 0 or done[0] == total:
+                    print(f"progress {done[0]}/{total}", flush=True)
+            return result
+        return run
+
     with ThreadPoolExecutor(threads) as pool:
-        out = [x for chunk in pool.map(whole, groups.items()) for x in chunk]
-        out += [x for chunk in pool.map(one, singles) for x in chunk]
+        out = [x for chunk in pool.map(counted(whole), groups.items()) for x in chunk]
+        out += [x for chunk in pool.map(counted(one), singles) for x in chunk]
     return out
 
 
