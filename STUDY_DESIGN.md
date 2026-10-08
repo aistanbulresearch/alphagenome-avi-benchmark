@@ -122,6 +122,14 @@ Small regions are reported with their intervals. Wide intervals are a result, no
 - **AVI source check:** before the main retrieval, the API's raw values are compared with the downloadable AVI file on a fixed sample of positions outside the study sets.
 - **AVI's own inputs:** AVI against phastCons 470-way and Cactus 241-way phyloP is reported as "what AVI adds beyond its conservation inputs".
 
+**Added comparator: SpliceAI2.** SpliceAI2 (Jaganathan et al. 2026, unpublished manuscript; precomputed scores v2.0, GENCODE v48 protein-coding genes, GRCh38) was released after the Part 1 results. It is added as follows, fixed before any of its scores is retrieved:
+
+- **Place:** it is reported in the additional analyses whatever it shows; the main comparisons stay as planned above.
+- **Score:** `spliceai2_summary_score`, the developers' variant-level score (the largest predicted change over donor gain, donor loss, acceptor gain and acceptor loss; junction effects are not part of it), taking the maximum over the gene and strand entries of the allele, as for SpliceAI. If this score equals the largest of the four strongest delta scores (`*_delta_score_0`) on every retrieved row, one score is reported; otherwise the latter is a secondary score.
+- **Sets:** all Part 1 rows (new labels and calibration sample) and all Part 2 alleles, in one retrieval. The same metrics, regions, calibration and paired comparisons are used as for the other tools. SpliceAI2 reads a 196 kb context, so in comparisons it is set beside SpliceAI with the 4,999-base window as well as the 50-base form.
+- **Developer evaluations:** OpenSplice was among the developers' benchmarks, so for SpliceAI2 it is reported separately (scored with the same per-variant score as the other datasets, not the developers' exon-level formula). Its evaluation also used rare-disease variants from the Genomics England cohort; overlap with ClinVar submissions cannot be excluded.
+- **Terms:** the scores are for non-commercial research use and are not redistributed; readers obtain them from Illumina.
+
 **Discrimination.**
 
 - **Metrics:** AUROC and AUPRC per tool, set and region. The P/LP fraction, which is AUPRC's baseline, is reported with each AUPRC.
