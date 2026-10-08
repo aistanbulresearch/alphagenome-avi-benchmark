@@ -215,7 +215,7 @@ def scan_from(url: str, voffset: int, name: str, pos: int, fetch: Callable = fet
         carry = lines.pop()
         for line in lines:
             parts = line.decode("utf-8", "replace").split("\t", 8)
-            if len(parts) < 8 or parts[0] != name:
+            if len(parts) < 2 or parts[0] != name:          # VCF has 8+ columns, CADD has 6
                 continue
             p = int(parts[1])
             if p > pos:

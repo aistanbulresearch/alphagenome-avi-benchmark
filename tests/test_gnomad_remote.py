@@ -19,18 +19,25 @@ def bgzf_block(payload: bytes) -> bytes:
     return header + body + struct.pack("<II", zlib.crc32(payload), len(payload))
 
 
-def build(n_records: int, info_size: int = 900, block_payload: int = 4000):
+def build(n_records: int, info_size: int = 900, block_payload: int = 4000, cadd: bool = False):
     """A VCF of n records at positions 10, 20, ... on chr21 (two alleles at every 7th position),
-    split into BGZF blocks at arbitrary byte boundaries, and a tabix index with one chunk in a 128 kb bin."""
+    split into BGZF blocks at arbitrary byte boundaries, and a tabix index with one chunk in a 128 kb bin.
+    With `cadd` the records are six-column CADD lines on contig 21 instead."""
     lines = []
     for i in range(1, n_records + 1):
         pos = 10 * i
         info = f"AC_joint={i};AN_joint=1000;AF_joint={i / 1000};fafmax_faf95_max_joint=0.{i:04d};" + "X" * info_size
+        if cadd:
+            lines += [f"21\t{pos}\tA\t{alt}\t0.{i:05d}\t{i % 50}.{i % 10}" for alt in "CGT"]
+            continue
         lines.append(f"chr21\t{pos}\t.\tA\tG\t.\tPASS\t{info}")
         if i % 7 == 0:
             lines.append(f"chr21\t{pos}\t.\tA\tT\t.\tAC0\t{info}")
-    text = ("##fileformat=VCFv4.2\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\n" + "\n".join(lines) + "\n").encode()
-    first_record = text.index(b"chr21")
+    header = ("## CADD GRCh38-v1.7\n#Chrom\tPos\tRef\tAlt\tRawScore\tPHRED\n" if cadd
+              else "##fileformat=VCFv4.2\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\n")
+    contig = b"21" if cadd else b"chr21"
+    text = (header + "\n".join(lines) + "\n").encode()
+    first_record = text.index(b"\n" + contig + b"\t") + 1
     data, voff_first, coff = b"", None, 0
     for start in range(0, len(text), block_payload):
         payload = text[start:start + block_payload]
@@ -41,7 +48,7 @@ def build(n_records: int, info_size: int = 900, block_payload: int = 4000):
         coff += len(block)
     data += bgzf_block(b"")                                          # EOF block
     voff_end = coff << 16
-    names = b"chr21\x00"
+    names = contig + b"\x00"
     body = b"TBI\x01" + struct.pack("<iiiiiii", 1, 2, 1, 2, 0, ord("#"), 0) + struct.pack("<i", len(names)) + names
     body += struct.pack("<i", 1) + struct.pack("<Ii", 585, 1) + struct.pack("<QQ", voff_first, voff_end)
     body += struct.pack("<i", 2) + struct.pack("<QQ", voff_first, voff_first)
@@ -85,6 +92,23 @@ class Remote(unittest.TestCase):
         self.assertEqual(got[("A", "T")]["FILTER"], "AC0")
         self.assertIsNone(got[("A", "C")])
         self.assertEqual(gr.as_float(got[("A", "G")]["fafmax_faf95_max_joint"]), 0.0007)
+
+    def test_search_six_column_records(self):
+        """CADD lines have six columns; the forward scan must still stop at the position."""
+        data, tbi, text = build(3000, block_payload=4000, cadd=True)
+        index = gr.parse_tbi(tbi)
+        old = (gr.PROBE, gr.SCAN)
+        gr.PROBE, gr.SCAN = 3000, 6000
+        try:
+            for pos in (10, 7000, 29990, 15):
+                with self.subTest(pos=pos):
+                    got = sorted(r[3] for r in gr.search("u", index, "21", pos, lambda u, a, b: data[a:b],
+                                                         contig="21"))
+                    want = sorted(line.split("\t")[3] for line in text.decode().split("\n")
+                                  if line.startswith(f"21\t{pos}\t"))
+                    self.assertEqual(got, want)
+        finally:
+            gr.PROBE, gr.SCAN = old
 
     def test_reg2bins_level5(self):
         self.assertIn(4681 + (20000 >> 14), gr.reg2bins(20000, 20001))
