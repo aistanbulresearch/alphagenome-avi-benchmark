@@ -21,6 +21,17 @@ class Part2(unittest.TestCase):
         self.assertGreater(spread["tau2"], 0)
         self.assertLess(spread["ci"][0], spread["estimate"])
 
+    def test_pooled_skips_comparison_and_developer_datasets(self):
+        diffs = []
+        for ds, diff in (("compass", -0.1), ("opensplice", 0.5), ("mfass", 0.9), ("kitzman_wt1_ex9", -0.1)):
+            for pair in ("AVI - SpliceAI", "AVI - SpliceAI2"):
+                diffs.append({"dataset": ds, "pair": pair, "difference": diff, "se": 0.02})
+        main_sets = ["compass", "opensplice", "kitzman_wt1_ex9"]
+        out = p2.pooled_differences(diffs, main_sets, ["AVI", "SpliceAI", "SpliceAI2"])
+        self.assertEqual(out["AVI - SpliceAI"]["datasets"], ["compass", "opensplice", "kitzman_wt1_ex9"])
+        self.assertEqual(out["AVI - SpliceAI2"]["datasets"], ["compass", "kitzman_wt1_ex9"])
+        self.assertAlmostEqual(out["AVI - SpliceAI2"]["estimate"], -0.1)
+
     def test_development_hits(self):
         alleles = pd.DataFrame({"allele": ["1:100:A:G", "1:205:C:T", "2:50:G:A"], "chrom": ["1", "1", "2"],
                                 "pos": ["100", "205", "50"]})

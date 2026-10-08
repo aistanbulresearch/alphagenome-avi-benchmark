@@ -18,7 +18,7 @@ import metrics as m
 import part1_data as pdata
 from part1_analysis import OUT, base_weights
 
-COMPARATORS = ("SpliceAI", "SpliceAI 4999", "Pangolin", "CADD")
+COMPARATORS = ("SpliceAI", "SpliceAI 4999", "Pangolin", "SpliceAI2", "CADD")
 SETS = ("main", "predictor not mentioned")
 REGIONS = ("intronic >=3 bp (main)", "donor region", "acceptor region", "near intronic", "deep intronic", "UTR")
 SPECIFICITIES = (0.95, 0.99)

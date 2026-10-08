@@ -3,7 +3,6 @@ tool scores, joined by VariationID; plus the set and region definitions of STUDY
 """
 from __future__ import annotations
 
-import csv
 import gzip
 from pathlib import Path
 
@@ -23,6 +22,7 @@ TOOLS = {                      # name: (file, column); higher score = more patho
     "SpliceAI 4999": ("spliceai_d4999.tsv.gz", "spliceai_max"),
     "CADD": ("cadd.tsv.gz", "cadd_phred"),
     "Pangolin": ("pangolin.tsv.gz", "pangolin_max"),
+    "SpliceAI2": ("spliceai2.tsv.gz", "spliceai2_summary"),
     "phyloP 100-way": ("conservation.tsv.gz", "phyloP100"),
     "phastCons 470-way": ("conservation.tsv.gz", "phastCons470"),
     "phyloP 241-way": ("conservation.tsv.gz", "phyloP241"),

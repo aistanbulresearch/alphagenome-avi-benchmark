@@ -26,8 +26,11 @@ OUT = ROOT / "results" / "part2"
 TOOLS = {"AVI": ("part2_avi.tsv.gz", "avi_raw"), "SpliceAI": ("part2_spliceai.tsv.gz", "spliceai_max"),
          "SpliceAI masked": ("part2_spliceai_masked.tsv.gz", "spliceai_max"),
          "CADD": ("part2_cadd.tsv.gz", "cadd_phred"), "phyloP 100-way": ("part2_conservation.tsv.gz", "phyloP100"),
-         "Pangolin": ("part2_pangolin.tsv.gz", "pangolin_max")}
+         "Pangolin": ("part2_pangolin.tsv.gz", "pangolin_max"),
+         "SpliceAI2": ("part2_spliceai2.tsv.gz", "spliceai2_summary")}
 SINGLE_GENE = {"kitzman_pou1f1_ex2", "kitzman_wt1_ex9", "braun2018_mst1r_ex11", "cortes_lopez2022_cd19"}
+# Datasets a tool's developers evaluated it on: reported per dataset, left out of that tool's pooled estimate.
+DEVELOPER_EVALUATED = {"SpliceAI2": {"opensplice"}}
 
 
 def _read(path) -> pd.DataFrame:
@@ -144,6 +147,19 @@ def dersimonian_laird(est: list, se: list) -> dict:
             "tau2": float(tau2), "q": float(q), "k": int(len(est))}
 
 
+def pooled_differences(diffs: list, main_sets: list, tools: list) -> dict:
+    """Random-effects pooled AVI − tool AUROC differences over the main datasets, leaving out the datasets
+    the tool's developers evaluated it on."""
+    pooled = {}
+    for t in [t for t in tools if t != "AVI"]:
+        keep = [s for s in main_sets if s not in DEVELOPER_EVALUATED.get(t, set())]
+        x = [r for r in diffs if r["pair"] == f"AVI - {t}" and r["dataset"] in keep and r["se"] > 0]
+        if x:
+            pooled[f"AVI - {t}"] = {**dersimonian_laird([r["difference"] for r in x], [r["se"] for r in x]),
+                                    "datasets": [r["dataset"] for r in x]}
+    return pooled
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--replicates", type=int, default=m.REPLICATES)
@@ -159,13 +175,8 @@ def main(argv: list[str] | None = None) -> int:
         diffs += df
     pd.DataFrame(rows).to_csv(OUT / "discrimination.tsv", sep="\t", index=False)
     pd.DataFrame(diffs).to_csv(OUT / "paired_differences.tsv", sep="\t", index=False)
-    pooled = {}
     main_sets = [n for n in sets if n != "mfass" and not n.startswith("opensplice, ")]
-    for t in [t for t in tools if t != "AVI"]:
-        x = [r for r in diffs if r["pair"] == f"AVI - {t}" and r["dataset"] in main_sets and r["se"] > 0]
-        if x:
-            pooled[f"AVI - {t}"] = {**dersimonian_laird([r["difference"] for r in x], [r["se"] for r in x]),
-                                    "datasets": [r["dataset"] for r in x]}
+    pooled = pooled_differences(diffs, main_sets, tools)
     counts = {n: {"variants": int(mk.sum()), "splice_altering": int(d.loc[mk, "y"].sum())} for n, mk in sets.items()}
     (OUT / "pooled.json").write_text(json.dumps({"pooled": pooled, "counts": counts}, indent=1) + "\n",
                                      encoding="utf-8")
