@@ -1,0 +1,32 @@
+dataset	class	variants	splice_altering
+braun2018_mst1r_ex11	exonic	1352	581
+braun2018_mst1r_ex11	intronic 1-2	28	28
+braun2018_mst1r_ex11	intronic 3-50	469	266
+compass	exonic	15019	3765
+compass	intronic 1-2	622	488
+compass	intronic 3-50	11607	2573
+compass	intronic >50	4711	232
+compass	no exon	16	5
+cortes_lopez2022_cd19	exonic	1705	102
+cortes_lopez2022_cd19	intronic 1-2	26	13
+cortes_lopez2022_cd19	intronic 3-50	739	60
+cortes_lopez2022_cd19	intronic >50	1118	3
+kitzman_pou1f1_ex2	exonic	418	70
+kitzman_pou1f1_ex2	intronic 1-2	12	6
+kitzman_pou1f1_ex2	intronic 3-50	277	20
+kitzman_pou1f1_ex2	intronic >50	327	0
+kitzman_wt1_ex9	exonic	264	25
+kitzman_wt1_ex9	intronic 1-2	11	11
+kitzman_wt1_ex9	intronic 3-50	210	11
+mfass	exonic	14096	498
+mfass	intronic 1-2	204	171
+mfass	intronic 3-50	12767	370
+mfass	intronic >50	60	0
+opensplice	exonic	148483	85078
+opensplice	intronic 1-2	6165	5932
+opensplice	intronic 3-50	111116	62385
+opensplice	intronic >50	29641	12154
+opensplice, developers' benchmark positions	exonic	7129	3281
+opensplice, developers' benchmark positions	intronic 1-2	290	287
+opensplice, developers' benchmark positions	intronic 3-50	5185	2042
+opensplice, developers' benchmark positions	intronic >50	1389	326
