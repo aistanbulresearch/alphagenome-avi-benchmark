@@ -1,15 +1,20 @@
 dataset	class	variants	splice_altering
-braun2018_mst1r_ex11	exonic	1294	527
+braun2018_mst1r_ex11	exonic	377	266
 braun2018_mst1r_ex11	intronic 1-2	18	18
 braun2018_mst1r_ex11	intronic 3-50	431	229
-compass	exonic	14108	3597
-compass	intronic 1-2	648	520
-compass	intronic 3-50	12050	2718
+braun2018_mst1r_ex11	other exon	917	261
+compass	exonic	14077	3583
+compass	flank	14	8
+compass	intronic 1-2	645	517
+compass	intronic 3-50	12036	2711
 compass	intronic >50	5169	228
-cortes_lopez2022_cd19	exonic	1789	102
-cortes_lopez2022_cd19	intronic 1-2	26	13
-cortes_lopez2022_cd19	intronic 3-50	740	60
-cortes_lopez2022_cd19	intronic >50	1033	3
+compass	unmapped	34	16
+cortes_lopez2022_cd19	exonic	779	63
+cortes_lopez2022_cd19	flank	163	0
+cortes_lopez2022_cd19	intronic 1-2	20	13
+cortes_lopez2022_cd19	intronic 3-50	599	60
+cortes_lopez2022_cd19	intronic >50	1017	3
+cortes_lopez2022_cd19	other exon	1010	39
 kitzman_pou1f1_ex2	exonic	418	70
 kitzman_pou1f1_ex2	intronic 1-2	12	6
 kitzman_pou1f1_ex2	intronic 3-50	277	20
@@ -21,13 +26,14 @@ mfass	exonic	13979	487
 mfass	intronic 1-2	212	176
 mfass	intronic 3-50	12886	376
 mfass	intronic >50	50	0
-opensplice	exonic	136593	77372
-opensplice	intronic 1-2	6406	5144
-opensplice	intronic 3-50	118500	69268
-opensplice	intronic >50	33618	13505
+opensplice	exonic	143016	82351
+opensplice	flank	149	60
+opensplice	intronic 1-2	6333	6120
+opensplice	intronic 3-50	113601	63884
+opensplice	intronic >50	32018	12874
 opensplice	unmapped	288	260
-opensplice, developers' benchmark positions	exonic	6656	2970
-opensplice, developers' benchmark positions	intronic 1-2	293	201
-opensplice, developers' benchmark positions	intronic 3-50	5435	2341
-opensplice, developers' benchmark positions	intronic >50	1606	421
+opensplice, developers' benchmark positions	exonic	6940	3143
+opensplice, developers' benchmark positions	intronic 1-2	296	295
+opensplice, developers' benchmark positions	intronic 3-50	5224	2091
+opensplice, developers' benchmark positions	intronic >50	1530	404
 opensplice, developers' benchmark positions	unmapped	3	3
