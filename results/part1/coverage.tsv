@@ -5,6 +5,7 @@ main	SpliceAI masked	87666	87135
 main	SpliceAI 4999	87666	1633
 main	CADD	87666	87666
 main	Pangolin	87666	4461
+main	SpliceAI2	87666	87666
 main	phyloP 100-way	87666	87663
 main	phastCons 470-way	87666	87365
 main	phyloP 241-way	87666	87666
@@ -15,6 +16,7 @@ all frequencies	SpliceAI masked	91777	91221
 all frequencies	SpliceAI 4999	91777	2154
 all frequencies	CADD	91777	91777
 all frequencies	Pangolin	91777	4461
+all frequencies	SpliceAI2	91777	91777
 all frequencies	phyloP 100-way	91777	91771
 all frequencies	phastCons 470-way	91777	91445
 all frequencies	phyloP 241-way	91777	91776
@@ -25,6 +27,7 @@ present and rare	SpliceAI masked	59881	59524
 present and rare	SpliceAI 4999	59881	1368
 present and rare	CADD	59881	59881
 present and rare	Pangolin	59881	3103
+present and rare	SpliceAI2	59881	59881
 present and rare	phyloP 100-way	59881	59879
 present and rare	phastCons 470-way	59881	59661
 present and rare	phyloP 241-way	59881	59881
@@ -35,6 +38,7 @@ training chromosomes	SpliceAI masked	38268	37723
 training chromosomes	SpliceAI 4999	38268	939
 training chromosomes	CADD	38268	38268
 training chromosomes	Pangolin	38268	0
+training chromosomes	SpliceAI2	38268	38208
 training chromosomes	phyloP 100-way	38268	38268
 training chromosomes	phastCons 470-way	38268	38132
 training chromosomes	phyloP 241-way	38268	38261
@@ -45,6 +49,7 @@ two stars	SpliceAI masked	2869	2852
 two stars	SpliceAI 4999	2869	30
 two stars	CADD	2869	2869
 two stars	Pangolin	2869	156
+two stars	SpliceAI2	2869	2869
 two stars	phyloP 100-way	2869	2869
 two stars	phastCons 470-way	2869	2861
 two stars	phyloP 241-way	2869	2869
@@ -55,6 +60,7 @@ stricter exclusion	SpliceAI masked	58178	57839
 stricter exclusion	SpliceAI 4999	58178	938
 stricter exclusion	CADD	58178	58178
 stricter exclusion	Pangolin	58178	2915
+stricter exclusion	SpliceAI2	58178	58178
 stricter exclusion	phyloP 100-way	58178	58177
 stricter exclusion	phastCons 470-way	58178	57976
 stricter exclusion	phyloP 241-way	58178	58178
@@ -65,6 +71,7 @@ predictor mentioned	SpliceAI masked	1023	1013
 predictor mentioned	SpliceAI 4999	1023	48
 predictor mentioned	CADD	1023	1023
 predictor mentioned	Pangolin	1023	143
+predictor mentioned	SpliceAI2	1023	1023
 predictor mentioned	phyloP 100-way	1023	1022
 predictor mentioned	phastCons 470-way	1023	1023
 predictor mentioned	phyloP 241-way	1023	1023
@@ -75,6 +82,7 @@ predictor not mentioned	SpliceAI masked	86643	86122
 predictor not mentioned	SpliceAI 4999	86643	1585
 predictor not mentioned	CADD	86643	86643
 predictor not mentioned	Pangolin	86643	4318
+predictor not mentioned	SpliceAI2	86643	86643
 predictor not mentioned	phyloP 100-way	86643	86641
 predictor not mentioned	phastCons 470-way	86643	86342
 predictor not mentioned	phyloP 241-way	86643	86643
@@ -85,6 +93,7 @@ calibration sample	SpliceAI masked	26575	26273
 calibration sample	SpliceAI 4999	26575	0
 calibration sample	CADD	26575	26575
 calibration sample	Pangolin	26575	0
+calibration sample	SpliceAI2	26575	26549
 calibration sample	phyloP 100-way	26575	26575
 calibration sample	phastCons 470-way	26575	26377
 calibration sample	phyloP 241-way	26575	26575
