@@ -43,7 +43,13 @@ class Calibration(unittest.TestCase):
         lower, upper = c.bootstrap_bounds(s, y, grid, c.windows(s, grid), replicates=200)
         self.assertFalse(np.isnan(lower).any())
         self.assertFalse(np.isnan(upper).any())
-        self.assertTrue(np.isinf(lower[-1]))
+        # a window without B/LB: the bootstrap cannot vary the empty class, so the bound is the exact one
+        half = c.windows(s, grid)
+        inside = np.abs(s - grid[-1]) <= half[-1]
+        k_pos, k_neg = int(inside[y == 1].sum()), int(inside[y == 0].sum())
+        self.assertEqual(k_neg, 0)
+        self.assertTrue(np.isfinite(lower[-1]))
+        self.assertAlmostEqual(lower[-1], c.exact_lr_interval(k_pos, 150, 0, 2000, level=0.90)[0])
 
     def test_level_intervals_and_interval_lr(self):
         thr = {"supporting": (0.2, 0.1), "moderate": (0.4, 0.02), "strong": (0.8, None), "very_strong": (None, None)}
@@ -57,6 +63,22 @@ class Calibration(unittest.TestCase):
         # supporting interval [0.2, 0.4): P 2/5, B 1/2 -> 0.8; cumulative >= 0.2: P 4/5, B 1/2 -> 1.6
         self.assertAlmostEqual(c.interval_lr(s, y, 0.2, 0.4, "ge"), 0.8)
         self.assertAlmostEqual(c.likelihood_ratio(s, y, 0.2, "ge"), 1.6)
+
+    def test_exact_bounds_with_a_zero_count(self):
+        from scipy import stats
+        # 9 of 455 P/LP and 0 of 28,556 B/LB in the interval: finite lower bound, infinite upper bound
+        lo, hi = c.exact_lr_interval(9, 455, 0, 28556)
+        p_lo = stats.beta.ppf(0.0125, 9, 447)
+        q_hi = stats.beta.ppf(0.9875, 1, 28556)
+        self.assertAlmostEqual(lo, p_lo / q_hi)
+        self.assertTrue(np.isinf(hi))
+        self.assertTrue(30 < lo < 100)
+        # 0 of 449 P/LP and 79 of 465 B/LB: zero lower bound, finite upper bound
+        lo, hi = c.exact_lr_interval(0, 449, 79, 465)
+        self.assertEqual(lo, 0.0)
+        self.assertAlmostEqual(hi, stats.beta.ppf(0.9875, 1, 449) / stats.beta.ppf(0.0125, 79, 387))
+        # both zero: undefined
+        self.assertTrue(all(np.isnan(x) for x in c.exact_lr_interval(0, 10, 0, 10)))
 
     def test_levels_for_prior(self):
         self.assertAlmostEqual(c.levels_for_prior(0.10)["very_strong"], 350, delta=1)          # Tavtigian 2018

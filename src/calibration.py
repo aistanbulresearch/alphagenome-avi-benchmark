@@ -8,6 +8,8 @@ holds at least MIN_WINDOW labelled variants,
 This equals the local posterior odds divided by the prior odds once the benign class is weighted to the
 prior (Pejaver et al.), so the prior (0.0441) enters only through the evidence levels below. A
 one-sided 95% bound comes from bootstrap resampling of the variants (10,000 replicates in the paper).
+Where a window holds no B/LB (or no P/LP) the bootstrap cannot vary the empty class; the bound there is
+the exact one from Clopper-Pearson intervals of the two proportions (exact_lr_interval).
 
 Pathogenic threshold for a level L: the smallest grid score t such that the lower bound of lr+ is at
 least L at every grid score >= t. Benign: the largest t such that the upper bound is at most 1/L at
@@ -19,6 +21,7 @@ gnomAD variants; this study has no such reference set, so only the labelled-vari
 from __future__ import annotations
 
 import numpy as np
+from scipy import stats
 
 PRIOR = 0.0441
 LEVELS = {"supporting": 2.406, "moderate": 5.790, "strong": 33.53, "very_strong": 1124.0}
@@ -59,7 +62,17 @@ def bootstrap_bounds(scores: np.ndarray, labels: np.ndarray, grid: np.ndarray, h
         idx = rng.integers(0, n, n)
         reps[r] = local_lr(scores[idx], labels[idx], grid, half)
     # no interpolation: an infinite lr+ (no B/LB in the window) must not turn a bound into NaN
-    return np.quantile(reps, 0.05, axis=0, method="lower"), np.quantile(reps, 0.95, axis=0, method="higher")
+    lower = np.quantile(reps, 0.05, axis=0, method="lower")
+    upper = np.quantile(reps, 0.95, axis=0, method="higher")
+    # a window without B/LB (or without P/LP): every replicate keeps the class empty, so the bootstrap bound
+    # is infinite (or zero); use the exact one-sided 95% bound from the window counts instead
+    pos, neg = np.sort(scores[labels == 1]), np.sort(scores[labels == 0])
+    lo, hi = grid - half, grid + half
+    k_pos = np.searchsorted(pos, hi, side="right") - np.searchsorted(pos, lo, side="left")
+    k_neg = np.searchsorted(neg, hi, side="right") - np.searchsorted(neg, lo, side="left")
+    for i in np.nonzero((k_pos == 0) | (k_neg == 0))[0]:
+        lower[i], upper[i] = exact_lr_interval(int(k_pos[i]), len(pos), int(k_neg[i]), len(neg), level=0.90)
+    return lower, upper
 
 
 def thresholds(grid: np.ndarray, lower: np.ndarray, upper: np.ndarray, levels: dict | None = None) -> dict:
@@ -130,6 +143,24 @@ def interval_lr(scores: np.ndarray, labels: np.ndarray, lo: float, hi: float, si
     return float(p / b) if b > 0 else (float("inf") if p > 0 else float("nan"))
 
 
+def exact_lr_interval(k_pos: int, n_pos: int, k_neg: int, n_neg: int, level: float = 0.95) -> tuple:
+    """Interval for a likelihood ratio (k_pos/n_pos) / (k_neg/n_neg) from exact Clopper-Pearson intervals of
+    the two proportions, each at 1 - (1 - level)/2 (Bonferroni, so the ratio interval covers at least
+    `level`). Used where a count in the score interval is zero: the bootstrap then never sees the empty class
+    and returns an infinite (or zero) bound for every replicate."""
+    if k_pos == 0 and k_neg == 0:
+        return float("nan"), float("nan")
+    a = (1 - level) / 2                       # per proportion, two-sided
+
+    def cp(k, n):
+        lo = 0.0 if k == 0 else float(stats.beta.ppf(a / 2, k, n - k + 1))
+        hi = 1.0 if k == n else float(stats.beta.ppf(1 - a / 2, k + 1, n - k))
+        return lo, hi
+    p_lo, p_hi = cp(k_pos, n_pos)
+    q_lo, q_hi = cp(k_neg, n_neg)
+    return p_lo / q_hi, (p_hi / q_lo if q_lo > 0 else float("inf"))
+
+
 def level_intervals(thresholds: dict) -> list:
     """[(level, side, lo, hi)]: each evidence level is the score interval between its threshold and the
     next stronger defined threshold (ClinGen: a variant gets the level of the interval it falls in)."""
@@ -146,4 +177,4 @@ def level_intervals(thresholds: dict) -> list:
     return out
 
 
-__all__ = ["PRIOR", "LEVELS", "calibrate", "likelihood_ratio", "interval_lr", "level_intervals", "levels_for_prior", "thresholds_from_curve", "thresholds", "local_lr", "windows", "grid_points"]
+__all__ = ["PRIOR", "LEVELS", "calibrate", "likelihood_ratio", "interval_lr", "exact_lr_interval", "level_intervals", "levels_for_prior", "thresholds_from_curve", "thresholds", "local_lr", "windows", "grid_points"]

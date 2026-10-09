@@ -77,6 +77,22 @@ class Part1(unittest.TestCase):
         self.assertTrue(out["AVI"]["evaluated_on_main"]["interval"])
         self.assertGreater(out["AVI"]["derivation"]["n_pos"], 0)
 
+    def test_zero_count_interval_uses_exact_bounds(self):
+        y = np.array([1] * 20 + [0] * 1000)
+        hit = np.zeros(len(y), bool)
+        hit[:9] = True                                    # 9 P/LP, no B/LB in the interval
+        boots = [float("inf")] * 50
+        ci, method = pa.lr_interval(boots, hit, y)
+        self.assertTrue(np.isfinite(ci[0]) and ci[0] > 0)
+        self.assertTrue(method.startswith("exact"))
+        hit2 = np.zeros(len(y), bool)
+        hit2[100:300] = True                              # only B/LB
+        ci2, _ = pa.lr_interval([0.0] * 50, hit2, y)
+        self.assertEqual(ci2[0], 0.0)
+        self.assertTrue(np.isfinite(ci2[1]) and ci2[1] > 0)
+        ci3, method3 = pa.lr_interval([1.0, 2.0, 3.0], np.r_[hit[:10], hit2[10:]], y)
+        self.assertEqual(method3, "gene bootstrap")
+
     def test_calibration_skips_tool_without_calibration_scores(self):
         """A tool scored only on the main set (Pangolin) has nothing to derive thresholds from."""
         v = table(3000, 2)

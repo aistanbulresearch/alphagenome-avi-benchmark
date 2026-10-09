@@ -80,6 +80,15 @@ def discrimination(v: pd.DataFrame, mask: pd.Series, tools: list, reps: int) -> 
     return rows, diffs
 
 
+def lr_interval(boots: list, hit: np.ndarray, y: np.ndarray) -> tuple[list, str]:
+    """95% interval of an interval or threshold likelihood ratio: the gene bootstrap, or exact Clopper-Pearson
+    bounds when the interval holds no P/LP or no B/LB (the bootstrap cannot vary an empty class)."""
+    k_pos, k_neg = int(hit[y == 1].sum()), int(hit[y == 0].sum())
+    if k_pos == 0 or k_neg == 0:
+        return list(cal.exact_lr_interval(k_pos, int((y == 1).sum()), k_neg, int((y == 0).sum()))),             "exact (a zero count in the interval)"
+    return list(m.interval(boots)), "gene bootstrap"
+
+
 def calibration_tables(v: pd.DataFrame, set_masks: dict, tools: list, reps: int, boot_reps: int) -> dict:
     """Thresholds derived on the calibration sample (non-canonical intronic and UTR, rare) and their
     likelihood ratios on the main set (same regions), plus SpliceAI's published thresholds."""
@@ -100,8 +109,9 @@ def calibration_tables(v: pd.DataFrame, set_masks: dict, tools: list, reps: int,
         for lvl, side, lo, hi in cal.level_intervals(res["thresholds"]):
             boots = [cal.interval_lr(s, y, lo, hi, side, w) for w in m.cluster_weights(clusters, reps)]
             hit = (s >= lo) & (s < hi) if side == "ge" else (s > lo) & (s <= hi)
+            ci, how = lr_interval(boots, hit, y)
             evaluated["interval"][f"{lvl} {'pathogenic' if side == 'ge' else 'benign'}"] = {
-                "interval": [lo, hi], "lr": cal.interval_lr(s, y, lo, hi, side), "ci": m.interval(boots),
+                "interval": [lo, hi], "lr": cal.interval_lr(s, y, lo, hi, side), "ci": ci, "ci_method": how,
                 "n_pos": int(hit[y == 1].sum()), "n_neg": int(hit[y == 0].sum()),
                 "fraction_pos": float(hit[y == 1].mean()), "fraction_neg": float(hit[y == 0].mean())}
         # supplementary: everything beyond each threshold; the published single-level SpliceAI rules
@@ -111,8 +121,9 @@ def calibration_tables(v: pd.DataFrame, set_masks: dict, tools: list, reps: int,
             checks += [("published PP3 (>=0.2)", "ge", 0.2), ("published BP4 (<=0.1)", "le", 0.1)]
         for lvl, side, thr in checks:
             boots = [cal.likelihood_ratio(s, y, thr, side, w) for w in m.cluster_weights(clusters, reps)]
+            ci, how = lr_interval(boots, (s >= thr) if side == "ge" else (s <= thr), y)
             evaluated["cumulative"][f"{lvl} {'pathogenic' if side == 'ge' else 'benign'}"] = {
-                "threshold": thr, "lr": cal.likelihood_ratio(s, y, thr, side), "ci": m.interval(boots),
+                "threshold": thr, "lr": cal.likelihood_ratio(s, y, thr, side), "ci": ci, "ci_method": how,
                 "fraction_pos_meeting": float(((s >= thr) if side == "ge" else (s <= thr))[y == 1].mean()),
                 "fraction_neg_meeting": float(((s >= thr) if side == "ge" else (s <= thr))[y == 0].mean())}
         # supplementary: the same intervals within each region of the main set
@@ -127,8 +138,9 @@ def calibration_tables(v: pd.DataFrame, set_masks: dict, tools: list, reps: int,
             for lvl, side, lo, hi in cal.level_intervals(res["thresholds"]):
                 hit = (rs >= lo) & (rs < hi) if side == "ge" else (rs > lo) & (rs <= hi)
                 boots = [cal.interval_lr(rs, ry, lo, hi, side, w) for w in m.cluster_weights(rc, reps)]
+                ci, how = lr_interval(boots, hit, ry)
                 rows[f"{lvl} {'pathogenic' if side == 'ge' else 'benign'}"] = {
-                    "lr": cal.interval_lr(rs, ry, lo, hi, side), "ci": m.interval(boots),
+                    "lr": cal.interval_lr(rs, ry, lo, hi, side), "ci": ci, "ci_method": how,
                     "n_pos": int(hit[ry == 1].sum()), "n_neg": int(hit[ry == 0].sum())}
             by_region[rname] = {"n_pos": int(ry.sum()), "n_neg": int((1 - ry).sum()), "levels": rows}
         evaluated["interval_by_region"] = by_region

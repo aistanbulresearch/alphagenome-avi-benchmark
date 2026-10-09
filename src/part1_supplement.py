@@ -16,6 +16,7 @@ import pandas as pd
 import calibration as cal
 import metrics as m
 import part1_data as pdata
+import part1_analysis as pa
 from part1_analysis import OUT, base_weights
 
 COMPARATORS = ("SpliceAI", "SpliceAI 4999", "Pangolin", "SpliceAI2", "CADD")
@@ -78,7 +79,7 @@ def published_intervals(v: pd.DataFrame, reps: int) -> list:
             hit = (s >= lo) & (s < hi) if side == "ge" else (s > lo) & (s <= hi)
             boots = [cal.interval_lr(s, y, lo, hi, side, w) for w in m.cluster_weights(clusters, reps)]
             rows.append({"tool": label, "level": level, "side": side, "lo": lo, "hi": hi,
-                         "lr": cal.interval_lr(s, y, lo, hi, side), "ci": m.interval(boots),
+                         "lr": cal.interval_lr(s, y, lo, hi, side), "ci": pa.lr_interval(boots, hit, y)[0],
                          "n_pos": int(hit[y == 1].sum()), "n_neg": int(hit[y == 0].sum()),
                          "fraction_pos": float(hit[y == 1].mean()), "fraction_neg": float(hit[y == 0].mean())})
     return rows
