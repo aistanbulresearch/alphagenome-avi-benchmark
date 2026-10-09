@@ -5,8 +5,8 @@ transcript's exon or a neighbouring gene's.
     POU1F1, WT1    HGVS name in the source (c.N+k / c.N-k: k bases; no offset: exonic)
     CD19           exon intervals spanned by the variants the authors label exon 1-3; exon 2 assayed
     MST1R          exons 10-12 of the MANE Select transcript (the minigene holds them); exon 11 assayed
-    COMPASS        the assayed exon's hg38 start and end, per sequence (Reference); kept only where both ends
-                   are GENCODE v38 exon ends on that sequence
+    COMPASS        the assayed exon's hg38 start and end, per sequence (Reference); kept only where it is a
+                   GENCODE v38 exon (start and end of one exon) on that sequence
     OpenSplice     per exon_id, the substitutions the authors place in the exon region plus the exonic bases of
                    the splice-site regions (5'SS: last 3 exonic bases; 3'SS: first exonic base), kept only where
                    the span's length equals the table's exon_length
@@ -136,6 +136,11 @@ def is_flank(pos: int, span: tuple, low_ends: set, high_starts: set) -> bool:
     return (pos < s and e in low_ends) or (pos > e and s in high_starts)
 
 
+def annotated_exon(span: Optional[tuple], exons: set) -> bool:
+    """True if `span` is one annotated exon: its start and end belong to the same exon in `exons`."""
+    return span is not None and tuple(span) in exons
+
+
 def compass_exons() -> dict:
     out = {}
     with gzip.open(PART2 / "compass" / "GSE307247_Processed_PSIs_All_Cells.csv.gz", "rt", encoding="utf-8") as h:
@@ -159,8 +164,8 @@ def mfass_exons() -> dict:
 
 
 def gtf_tables(gtf: Path) -> tuple:
-    """(MST1R exons 10-12, outer sides (low, high), exon starts and ends per sequence) from one GTF pass."""
-    mst1r, mane, starts, ends = [], [], defaultdict(set), defaultdict(set)
+    """(MST1R exons 10-12, outer sides (low, high), exon (start, end) pairs per sequence) from one GTF pass."""
+    mst1r, mane, exons = [], [], defaultdict(set)
     with gzip.open(gtf, "rt", encoding="utf-8") as h:
         for line in h:
             if line.startswith("#"):
@@ -168,13 +173,12 @@ def gtf_tables(gtf: Path) -> tuple:
             f = line.split("\t")
             if f[2] != "exon":
                 continue
-            starts[f[0]].add(int(f[3]))
-            ends[f[0]].add(int(f[4]))
+            exons[f[0]].add((int(f[3]), int(f[4])))
             if 'tag "MANE_Select"' in f[8]:
                 mane.append(line)
                 if 'gene_name "MST1R"' in f[8] and re.search(r'exon_number (\d+);', f[8]).group(1) in ("10", "11", "12"):
                     mst1r.append((int(f[3]), int(f[4])))
-    return sorted(mst1r), outer_sides(mane), starts, ends
+    return sorted(mst1r), outer_sides(mane), exons
 
 
 def positions(d: pd.DataFrame, gtf: Path) -> pd.DataFrame:
@@ -184,7 +188,7 @@ def positions(d: pd.DataFrame, gtf: Path) -> pd.DataFrame:
     note, pos = d["region_note"].fillna("").tolist(), d["pos"].astype(int).tolist()
     ds, src = d["dataset"].tolist(), d["variant_id_in_source"].fillna("").astype(str).tolist()
     chrom = [c if c.startswith("chr") else "chr" + c for c in d["chrom"].astype(str)]
-    mexons, (low, high), starts, ends = gtf_tables(gtf)
+    mexons, (low, high), annotated = gtf_tables(gtf)
     dist, override, spans = [None] * n, [None] * n, [[] for _ in range(n)]   # spans: assayed exon interval(s)
     cd_rows = [i for i in range(n) if ds[i] == "cortes_lopez2022_cd19"]
     cd_spans = defaultdict(list)
@@ -206,7 +210,7 @@ def positions(d: pd.DataFrame, gtf: Path) -> pd.DataFrame:
             spans[i] = cd19
         elif ds[i] == "compass":
             sp = cex.get(src[i].split(":")[0])
-            if sp and sp[0] in starts[chrom[i]] and sp[1] in ends[chrom[i]]:
+            if annotated_exon(sp, annotated[chrom[i]]):
                 spans[i] = [sp]
         elif ds[i] == "opensplice":
             parts = note[i].split(";")
@@ -231,5 +235,5 @@ def classes(d: pd.DataFrame, gtf: Path) -> pd.Series:
 
 
 __all__ = ["hgvs_distance", "interval_distance", "nearest", "mfass_exon", "intervals_from_labels", "distance_class",
-           "position_class", "opensplice_spans", "construct_position", "outer_sides", "is_flank", "gtf_tables",
+           "position_class", "annotated_exon", "opensplice_spans", "construct_position", "outer_sides", "is_flank", "gtf_tables",
            "positions", "classes"]

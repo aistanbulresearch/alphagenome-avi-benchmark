@@ -94,6 +94,12 @@ class Exons(unittest.TestCase):
         self.assertEqual(px.position_class(float("nan"), float("nan")), "unmapped")    # missing values from a frame
         self.assertEqual(px.position_class(4.0, float("nan")), "intronic 3-50")
 
+    def test_compass_span_must_be_one_annotated_exon(self):
+        exons = {(100, 150), (180, 200)}
+        self.assertTrue(px.annotated_exon((100, 150), exons))
+        self.assertFalse(px.annotated_exon((100, 200), exons))       # ends of two different exons
+        self.assertFalse(px.annotated_exon(None, exons))
+
     def test_classes(self):
         self.assertEqual([px.distance_class(x) for x in (0, 1, 2, 3, 50, 51, None)],
                          ["exonic", "intronic 1-2", "intronic 1-2", "intronic 3-50", "intronic 3-50", "intronic >50",
