@@ -33,6 +33,28 @@ def arrow(ax, x0, y0, x1, y1):
                 arrowprops={"arrowstyle": "-|>", "color": INK2, "lw": 0.7, "mutation_scale": 7})
 
 
+def main_set_steps() -> list:
+    """[(reason, variants removed)] from the new-label set to the main set, in the order the filters apply."""
+    import part1_data as pdata
+    d = pd.read_csv(DERIVED / "variants" / "clinvar_variants.tsv.gz", sep="\t", dtype=str, keep_default_na=False,
+                    usecols=["new_label", "variant_type", "family", "region"])
+    new = d[d.new_label == "yes"]
+    snv = new[new.variant_type == "snv"]
+    regions = snv[snv.family.isin(["intronic", "utr"]) | (snv.region == "synonymous")]
+    out = [("not SNV", len(new) - len(snv)),
+           ("coding other than synonymous (missense, nonsense) or unparsed name", len(snv) - len(regions))]
+    v = pdata.load()
+    v = v[v.new_label == "yes"]
+    mask = pd.Series(True, index=v.index)
+    for why, keep in (("no review star", v["stars_n"] >= 1), ("no MANE Select name", v["mane_select"] == "yes"),
+                      ("on training chromosomes", v["chromosome_group"].isin(["untouched", "validation"])),
+                      ("not rare in gnomAD v4.1 (FAF95 ≥ 0.001)", v["rare"].fillna(True).astype(bool))):
+        before = int(mask.sum())
+        mask &= keep
+        out.append((why, before - int(mask.sum())))
+    return out
+
+
 def figure_design() -> None:
     v = pd.read_csv(DERIVED / "variants" / "clinvar_variants.tsv.gz", sep="\t", dtype=str, keep_default_na=False,
                     usecols=["new_label", "exclusion"])
@@ -47,13 +69,13 @@ def figure_design() -> None:
 
     fig, ax = plt.subplots(figsize=(180 * MM, 125 * MM))
     ax.axis("off")
-    ax.text(0.0, 0.985, "Part 1  Clinical labels added after the AlphaGenome training snapshot (2025-06-15)",
+    ax.text(0.0, 0.985, "Part 1  ClinVar labels added after the release used by the AVI developers (2025-06-15)",
             transform=ax.transAxes, fontsize=7.2, fontweight="bold", color=INK, va="top")
     box(ax, 0.0, 0.80, 0.40, 0.13, f"ClinVar, October 2026 release\n{n_all:,} variants classified P/LP or B/LB "
                                    "(GRCh38)")
     box(ax, 0.44, 0.69, 0.53, 0.24,
         "Excluded\n"
-        f"{excl.get('labelled before', 0):,} already P/LP or B/LB before the snapshot\n"
+        f"{excl.get('labelled before', 0):,} already P/LP or B/LB at or before that release\n"
         "        (ClinVar 2025-06-15 VCF; 2025-07 and 2024-07 releases)\n"
         f"{excl.get(chr(100) + 'evelopers' + chr(39) + ' benchmark or submitter', 0):,} at AVI developers' "
         "benchmark positions or from a development submitter\n"
@@ -64,18 +86,22 @@ def figure_design() -> None:
     arrow(ax, 0.20, 0.80, 0.20, 0.74)
     arrow(ax, 0.20, 0.775, 0.44, 0.775)
     box(ax, 0.0, 0.62, 0.40, 0.12, f"New-label set\n{n_new:,} variants")
+    steps = main_set_steps()
+    box(ax, 0.44, 0.42, 0.53, 0.24, "Not in the main set\n" + "\n".join(f"{n:,} {why}" for why, n in steps),
+        fill=BAND)
     arrow(ax, 0.20, 0.62, 0.20, 0.56)
-    box(ax, 0.0, 0.40, 0.40, 0.16, f"Main set\n{n_main:,} variants: SNV, ≥1 review star, MANE Select name,\n"
-                                   "untouched and validation chromosomes,\nrare in gnomAD v4.1 (FAF95 < 0.001)")
+    arrow(ax, 0.20, 0.59, 0.44, 0.59)
+    box(ax, 0.0, 0.40, 0.40, 0.16, f"Main set\n{n_main:,} variants: SNV; intronic, UTR or synonymous;\n≥1 review "
+                                   "star; MANE Select name; untouched and\nvalidation chromosomes; rare in gnomAD v4.1")
     arrow(ax, 0.20, 0.40, 0.20, 0.34)
     box(ax, 0.0, 0.22, 0.40, 0.12, f"Main comparison\nintronic ≥3 bp from an exon: {int(main_row['n_pos']):,} P/LP, "
                                    f"{int(main_row['n_neg']):,} B/LB", fill=BAND)
-    box(ax, 0.44, 0.40, 0.53, 0.20,
+    box(ax, 0.44, 0.20, 0.53, 0.17,
         "Calibration sample (thresholds derived here)\n"
         f"labelled variants outside the new-label set: all {calib.get('P/LP', 0):,} P/LP and {calib.get('B/LB', 0):,} "
-        "B/LB\n(random, stratified by region and chromosome group), non-canonical\nintronic and UTR, ≥1 star, rare. "
+        "B/LB\n(random, stratified by region and chromosome group); non-canonical intronic\nand UTR, ≥1 star, rare. "
         "Thresholds tested on the main set.")
-    arrow(ax, 0.44, 0.47, 0.40, 0.47)
+    arrow(ax, 0.44, 0.30, 0.40, 0.42)
 
     ax.text(0.0, 0.17, "Part 2  Experimental splicing measurements (no predictor selected the variants)",
             transform=ax.transAxes, fontsize=7.2, fontweight="bold", color=INK, va="top")

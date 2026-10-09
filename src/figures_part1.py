@@ -123,25 +123,27 @@ def figure_calibration() -> None:
            for t in tools for k, *_ in LEVELS):
         handles.append(plt.Line2D([], [], color=INK2, marker=">", ms=4.5, ls="none",
                                   label="exact lower bound, no B/LB"))
-    a.legend(handles=handles, loc="upper left", bbox_to_anchor=(0, -0.2), ncol=3, handlelength=1.4)
+    a.legend(handles=handles, loc="upper left", bbox_to_anchor=(0, -0.25), ncol=3, handlelength=1.4)
     a.set_title("a  Evidence levels, each tested within its own score interval")
     for i, t in enumerate(tools):
         pos, neg = evidence_share(cal, t)
+        strong = sum(e["fraction_pos"] for k, e in cal[t]["evaluated_on_main"]["interval"].items()
+                     if k.startswith(("strong", "very_strong")) and k.endswith("pathogenic"))
         yy = len(tools) - 1 - i
-        b.plot([0, pos * 100], [yy + 0.13] * 2, color=COLOR[t], lw=1.0)
-        b.plot(pos * 100, yy + 0.13, "o", ms=4, color=COLOR[t])
-        b.plot([0, neg * 100], [yy - 0.13] * 2, color=COLOR[t], lw=1.0)
-        b.plot(neg * 100, yy - 0.13, "o", ms=4, mfc="white", mec=COLOR[t], mew=1.0)
-        b.text(pos * 100 + 3, yy + 0.13, f"{pos:.0%}", va="center", fontsize=6, color=INK2)
-        b.text(neg * 100 + 3, yy - 0.13, f"{neg:.0%}" if neg > 0 else "no benign level reached", va="center",
-               fontsize=6, color=INK2)
+        for dy, share, marker, fill in ((0.25, pos, "o", True), (0.0, strong, "D", True), (-0.25, neg, "o", False)):
+            b.plot([0, share * 100], [yy + dy] * 2, color=COLOR[t], lw=1.0)
+            b.plot(share * 100, yy + dy, marker, ms=4 if marker == "o" else 3.4, mfc=COLOR[t] if fill else "white",
+                   mec=COLOR[t], mew=1.0)
+            text = f"{share:.0%}" if share > 0 or dy >= 0 else "no benign level reached"
+            b.text(share * 100 + 3, yy + dy, text, va="center", fontsize=6, color=INK2)
     clean_rows_axis(b, tools)
     b.set_xlim(0, 112)
     b.set_xticks([0, 25, 50, 75, 100])
     b.set_xlabel("Share of variants receiving evidence (%)")
-    hb = [plt.Line2D([], [], color=INK2, marker="o", ms=4, ls="none", label="P/LP with pathogenic evidence"),
+    hb = [plt.Line2D([], [], color=INK2, marker="o", ms=4, ls="none", label="P/LP with any pathogenic evidence"),
+          plt.Line2D([], [], color=INK2, marker="D", ms=3.4, ls="none", label="P/LP with strong evidence"),
           plt.Line2D([], [], color=INK2, marker="o", ms=4, mfc="white", ls="none", label="B/LB with benign evidence")]
-    b.legend(handles=hb, loc="upper left", bbox_to_anchor=(0, -0.2), ncol=1, handlelength=1.0)
+    b.legend(handles=hb, loc="upper left", bbox_to_anchor=(0, -0.25), ncol=1, handlelength=1.0)
     b.set_title("b  Evidence coverage (prior 0.0441)")
     fig.tight_layout(w_pad=2.5)
     save(fig, "figure3_part1_calibration")
