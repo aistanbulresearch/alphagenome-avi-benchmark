@@ -34,25 +34,12 @@ def arrow(ax, x0, y0, x1, y1):
 
 
 def main_set_steps() -> list:
-    """[(reason, variants removed)] from the new-label set to the main set, in the order the filters apply."""
-    import part1_data as pdata
-    d = pd.read_csv(DERIVED / "variants" / "clinvar_variants.tsv.gz", sep="\t", dtype=str, keep_default_na=False,
-                    usecols=["new_label", "variant_type", "family", "region"])
-    new = d[d.new_label == "yes"]
-    snv = new[new.variant_type == "snv"]
-    regions = snv[snv.family.isin(["intronic", "utr"]) | (snv.region == "synonymous")]
-    out = [("not SNV", len(new) - len(snv)),
-           ("coding other than synonymous (missense, nonsense) or unparsed name", len(snv) - len(regions))]
-    v = pdata.load()
-    v = v[v.new_label == "yes"]
-    mask = pd.Series(True, index=v.index)
-    for why, keep in (("no review star", v["stars_n"] >= 1), ("no MANE Select name", v["mane_select"] == "yes"),
-                      ("on training chromosomes", v["chromosome_group"].isin(["untouched", "validation"])),
-                      ("not rare in gnomAD v4.1 (FAF95 ≥ 0.001)", v["rare"].fillna(True).astype(bool))):
-        before = int(mask.sum())
-        mask &= keep
-        out.append((why, before - int(mask.sum())))
-    return out
+    """Lines of the 'not in the main set' box, from results/part1/flow.tsv (src/part1_flow.py), in the order
+    the filters apply; steps kept for a supporting analysis say so."""
+    f = pd.read_csv(R1 / "flow.tsv", sep="\t", keep_default_na=False)
+    f = f[f["stage"] == "not in the main set"]
+    return [f"{int(r.total):,} {r.step.replace('>=', '≥')}" + (f"  ({r.note})" if r.note else "")
+            for r in f.itertuples()]
 
 
 def figure_design() -> None:
@@ -87,7 +74,7 @@ def figure_design() -> None:
     arrow(ax, 0.20, 0.775, 0.44, 0.775)
     box(ax, 0.0, 0.62, 0.40, 0.12, f"New-label set\n{n_new:,} variants")
     steps = main_set_steps()
-    box(ax, 0.44, 0.42, 0.53, 0.24, "Not in the main set\n" + "\n".join(f"{n:,} {why}" for why, n in steps),
+    box(ax, 0.44, 0.40, 0.55, 0.27, "Not in the main set (filters in this order)\n" + "\n".join(steps),
         fill=BAND)
     arrow(ax, 0.20, 0.62, 0.20, 0.56)
     arrow(ax, 0.20, 0.59, 0.44, 0.59)
@@ -96,7 +83,7 @@ def figure_design() -> None:
     arrow(ax, 0.20, 0.40, 0.20, 0.34)
     box(ax, 0.0, 0.22, 0.40, 0.12, f"Main comparison\nintronic ≥3 bp from an exon: {int(main_row['n_pos']):,} P/LP, "
                                    f"{int(main_row['n_neg']):,} B/LB", fill=BAND)
-    box(ax, 0.44, 0.20, 0.53, 0.17,
+    box(ax, 0.44, 0.19, 0.55, 0.17,
         "Calibration sample (thresholds derived here)\n"
         f"labelled variants outside the new-label set: all {calib.get('P/LP', 0):,} P/LP and {calib.get('B/LB', 0):,} "
         "B/LB\n(random, stratified by region and chromosome group); non-canonical intronic\nand UTR, ≥1 star, rare. "

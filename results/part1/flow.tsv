@@ -1,0 +1,15 @@
+stage	step	P/LP	B/LB	total	note
+release	ClinVar October 2026, P/LP or B/LB	355037	1407127	1762164	
+excluded	already P/LP or B/LB at or before the 2025-06-15 release (or the 2024-07, 2025-07 archives)	283523	1142653	1426176	
+excluded	at AVI developers' benchmark positions or from a development submitter	21719	102048	123767	
+excluded	older record of unresolved identity at the same position	508	310	818	
+excluded	identity collisions	7	10	17	
+new-label set	new-label set	49280	162106	211386	
+not in the main set	not SNV	23456	8013	31469	
+not in the main set	coding other than synonymous (missense, nonsense, other)	19278	27060	46338	
+not in the main set	HGVS name not parsed	58	424	482	
+not in the main set	no review star	109	140	249	
+not in the main set	no MANE Select name	22	646	668	
+not in the main set	on training chromosomes	1899	38504	40403	supporting analysis
+not in the main set	not rare in gnomAD v4.1 (FAF95 >= 0.001)	5	4106	4111	supporting analysis
+main set	main set	4453	83213	87666	

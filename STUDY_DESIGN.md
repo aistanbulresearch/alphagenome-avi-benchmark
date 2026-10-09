@@ -44,11 +44,11 @@ AVI uses conservation scores and AlphaMissense as inputs. The conservation compa
 ### 4.1 Variant set
 
 - **Source:** ClinVar monthly releases. The developers used the ClinVar release of 2025-06-15.
-- **Main set ("new labels"):**
+- **New-label set:**
   - The variant has a pathogenic/likely pathogenic or benign/likely benign classification in the October 2026 release.
   - It had no such classification in the 2025-06-15 release or in the earlier archives used for history (2024-07, 2025-07).
-  - It has at least one review star.
-- **Excluded from the main set:**
+  - The review-star requirement is part of the main analysis set (section 4.4), applied after this step.
+- **Excluded from the new-label set:**
   - Variants at positions in benchmark datasets the developers used for training, selection or evaluation (saturation genome editing screens, TraitGym, ncVarDB; see `data/development_sources.md`).
   - Submissions from the organisation that supplied the developers' GREGoR cases.
   - Variants at the position of an older strict ClinVar record of at most 50 bases whose identity cannot be linked to any current record (it may be the same variant under an older identifier).
