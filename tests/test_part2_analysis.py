@@ -45,6 +45,23 @@ class Part2(unittest.TestCase):
         self.assertEqual(out["AVI - SpliceAI2"]["datasets"], ["compass", "kitzman_wt1_ex9"])
         self.assertAlmostEqual(out["AVI - SpliceAI2"]["estimate"], -0.1)
 
+    def test_leave_one_out(self):
+        diffs = [{"dataset": ds, "pair": "AVI - SpliceAI", "difference": d, "se": 0.02}
+                 for ds, d in (("a", -0.1), ("b", -0.05), ("c", 0.2))]
+        out = p2.pooled_differences(diffs, ["a", "b", "c"], ["AVI", "SpliceAI"])["AVI - SpliceAI"]
+        loo = out["leave_one_out"]
+        self.assertEqual(set(loo), {"a", "b", "c"})
+        self.assertAlmostEqual(loo["c"]["estimate"], p2.dersimonian_laird([-0.1, -0.05], [0.02, 0.02])["estimate"])
+
+    def test_untested_median_estimates_are_not_analysed(self):
+        """STUDY_DESIGN 5.3: the MST1R median-based estimates without a test are excluded."""
+        d = pd.DataFrame({"dataset": ["braun2018_mst1r_ex11"] * 3 + ["compass"],
+                          "use": ["main"] * 4, "subset": ["model_inferred", "median_estimate", "model_inferred", "exac"],
+                          "in_part1": False, "development": False})
+        sets = p2.analysis_sets(d)
+        self.assertEqual(sets["braun2018_mst1r_ex11"].tolist(), [True, False, True, False])
+        self.assertEqual(int(sets["compass"].sum()), 1)
+
     def test_development_hits(self):
         alleles = pd.DataFrame({"allele": ["1:100:A:G", "1:205:C:T", "2:50:G:A"], "chrom": ["1", "1", "2"],
                                 "pos": ["100", "205", "50"]})

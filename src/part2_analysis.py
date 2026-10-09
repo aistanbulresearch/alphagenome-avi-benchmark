@@ -84,7 +84,8 @@ def load(dev_path=EXPOSURE / "development_positions.tsv") -> pd.DataFrame:
 
 def analysis_sets(d: pd.DataFrame) -> dict:
     """{name: mask}: each main dataset after exclusions; the developers'-gene rows; MFASS (comparison)."""
-    clean = ~d["in_part1"] & ~d["development"]
+    # STUDY_DESIGN 5.3: MST1R median-based estimates have no test and are excluded
+    clean = ~d["in_part1"] & ~d["development"] & (d["subset"] != "median_estimate")
     out = {}
     for ds in sorted(d["dataset"].unique()):
         use = d["use"] == ("comparison" if ds == "mfass" else "main")
@@ -164,8 +165,15 @@ def pooled_differences(diffs: list, main_sets: list, tools: list) -> dict:
         keep = [s for s in main_sets if s not in DEVELOPER_EVALUATED.get(t, set())]
         x = [r for r in diffs if r["pair"] == f"AVI - {t}" and r["dataset"] in keep and r["se"] > 0]
         if x:
-            pooled[f"AVI - {t}"] = {**dersimonian_laird([r["difference"] for r in x], [r["se"] for r in x]),
-                                    "datasets": [r["dataset"] for r in x]}
+            est, se = [r["difference"] for r in x], [r["se"] for r in x]
+            loo = {}
+            if len(x) > 2:                 # sensitivity: the pooled estimate without each dataset in turn
+                for i, r in enumerate(x):
+                    sub = dersimonian_laird(est[:i] + est[i + 1:], se[:i] + se[i + 1:])
+                    loo[r["dataset"]] = {"estimate": sub["estimate"], "ci": sub["ci"],
+                                         "ci_hartung_knapp": sub.get("ci_hartung_knapp")}
+            pooled[f"AVI - {t}"] = {**dersimonian_laird(est, se), "datasets": [r["dataset"] for r in x],
+                                    "leave_one_out": loo}
     return pooled
 
 

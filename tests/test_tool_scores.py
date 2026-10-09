@@ -21,6 +21,12 @@ class Parsers(unittest.TestCase):
         self.assertEqual(ts.parse_spliceai(parts, "A", "G"), {"spliceai_max": "0.5"})
         self.assertIsNone(ts.parse_spliceai(parts, "C", "G"))
 
+    def test_duplicate_rows_of_an_allele_take_the_maximum(self):
+        self.assertEqual(ts.merge_hits(None, {"spliceai_max": "0.2"}), {"spliceai_max": "0.2"})
+        self.assertEqual(ts.merge_hits({"spliceai_max": "0.7"}, {"spliceai_max": "0.2"}), {"spliceai_max": "0.7"})
+        self.assertEqual(ts.merge_hits({"spliceai_max": "0.2"}, {"spliceai_max": "0.7"}), {"spliceai_max": "0.7"})
+        self.assertEqual(ts.merge_hits({"spliceai_max": "0.2"}, None), {"spliceai_max": "0.2"})
+
     def test_cadd_columns(self):
         parts = ["1", "100", "A", "G", "0.523", "7.812\n"]
         self.assertEqual(ts.parse_cadd(parts, "A", "G"), {"cadd_raw": "0.523", "cadd_phred": "7.812"})

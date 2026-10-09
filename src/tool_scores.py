@@ -106,6 +106,13 @@ def local_fetch(path: Path) -> Callable:
 WHOLE_CHUNK = 4_000_000     # compressed bytes: a chunk holding several targets is read once when smaller
 
 
+def merge_hits(a: dict | None, b: dict | None) -> dict | None:
+    """Combine two parsed rows of the same allele (a file can hold more than one): the larger value per field."""
+    if a is None or b is None:
+        return a or b
+    return {k: (a[k] if float(a[k] or "-inf") >= float(b.get(k) or "-inf") else b[k]) for k in a}
+
+
 def lookup_all(variants: list, url: str, index: gr.TabixIndex, contig_of: Callable, parse: Callable,
                fetch: Callable, threads: int) -> list:
     """[(variant, parsed record or None)]. Positions that share a small tabix chunk are served by one
@@ -119,7 +126,7 @@ def lookup_all(variants: list, url: str, index: gr.TabixIndex, contig_of: Callab
         for v in by_pos[key]:
             hit = None
             for r in records:
-                hit = parse(r, v["ref"], v["alt"]) or hit
+                hit = merge_hits(hit, parse(r, v["ref"], v["alt"]))
             out.append((v, hit))
         return out
 
