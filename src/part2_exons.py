@@ -3,9 +3,8 @@ of the construct, and the position class built on it. Replaces the nearest GENCO
 transcript's exon or a neighbouring gene's.
 
     POU1F1, WT1    HGVS name in the source (c.N+k / c.N-k: k bases; no offset: exonic)
-    CD19           exon intervals spanned by the variants the authors label exon 1-3
-    MST1R          exon 11 of the MANE Select transcript (the minigene holds exons 10-12; variants inside
-                   exon 10 or 12 are classed "other exon")
+    CD19           exon intervals spanned by the variants the authors label exon 1-3; exon 2 assayed
+    MST1R          exons 10-12 of the MANE Select transcript (the minigene holds them); exon 11 assayed
     COMPASS        the assayed exon's hg38 start and end, per sequence (Reference); kept only where both ends
                    are GENCODE v38 exon ends on that sequence
     OpenSplice     per exon_id, the substitutions the authors place in the exon region plus the exonic bases of
@@ -13,6 +12,8 @@ transcript's exon or a neighbouring gene's.
                    the span's length equals the table's exon_length
     MFASS          exon inside the 170-nt construct: left flank intron1_len, then exon_len (genomic orientation)
 
+In the two multi-exon minigenes (CD19, MST1R) a variant inside an exon other than the assayed one is classed
+"other exon", and an intronic variant's distance is to the nearest exon of the construct (as in Part 1).
 Outside the outer end of a gene's first or last exon (MANE Select) a variant is classed "flank", not intronic.
 """
 from __future__ import annotations
@@ -103,11 +104,12 @@ def opensplice_spans(t: pd.DataFrame) -> dict:
     return out
 
 
-def mst1r_position(pos: int, exons: list) -> tuple:
-    """(distance to exon 11, override) for the MST1R minigene; `exons` are exons 10, 11, 12 in genomic order."""
-    if any(s <= pos <= e for i, (s, e) in enumerate(exons) if i != 1):
+def construct_position(pos: int, exons: list, assayed: int) -> tuple:
+    """(distance, override) in a multi-exon construct; `exons` in genomic order, `assayed` the index of the
+    measured exon. Inside another exon: "other exon"; otherwise the distance to the nearest exon."""
+    if any(s <= pos <= e for i, (s, e) in enumerate(exons) if i != assayed):
         return None, "other exon"
-    return interval_distance(pos, [exons[1]]), None
+    return interval_distance(pos, exons), None
 
 
 def outer_sides(lines: Iterable[str]) -> tuple[dict, dict]:
@@ -197,9 +199,10 @@ def positions(d: pd.DataFrame, gtf: Path) -> pd.DataFrame:
             dist[i] = hgvs_distance(note[i])
             continue
         if ds[i] == "braun2018_mst1r_ex11":
-            dist[i], override[i] = mst1r_position(pos[i], mexons)
-            spans[i] = [mexons[1]]
+            dist[i], override[i] = construct_position(pos[i], mexons, 1)
+            spans[i] = mexons
         elif ds[i] == "cortes_lopez2022_cd19":
+            dist[i], override[i] = construct_position(pos[i], cd19, 1)
             spans[i] = cd19
         elif ds[i] == "compass":
             sp = cex.get(src[i].split(":")[0])
@@ -228,5 +231,5 @@ def classes(d: pd.DataFrame, gtf: Path) -> pd.Series:
 
 
 __all__ = ["hgvs_distance", "interval_distance", "nearest", "mfass_exon", "intervals_from_labels", "distance_class",
-           "position_class", "opensplice_spans", "mst1r_position", "outer_sides", "is_flank", "gtf_tables",
+           "position_class", "opensplice_spans", "construct_position", "outer_sides", "is_flank", "gtf_tables",
            "positions", "classes"]

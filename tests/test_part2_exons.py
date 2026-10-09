@@ -52,13 +52,17 @@ class Exons(unittest.TestCase):
         spans = px.opensplice_spans(pd.DataFrame(plus + minus + wrong + no_length + no_exon))
         self.assertEqual(spans, {"p": [(100, 199)], "m": [(86, 185)]})
 
-    def test_mst1r_distance_is_to_exon_11_and_other_exons_are_set_apart(self):
-        exons = [(100, 150), (300, 350), (500, 560)]                 # exons 10, 11, 12
-        self.assertEqual(px.mst1r_position(320, exons), (0, None))
-        self.assertEqual(px.mst1r_position(298, exons), (2, None))
-        self.assertEqual(px.mst1r_position(152, exons), (148, None))  # 2 bases from exon 10, far from exon 11
-        self.assertEqual(px.mst1r_position(120, exons), (None, "other exon"))
-        self.assertEqual(px.mst1r_position(560, exons), (None, "other exon"))
+    def test_multi_exon_construct_other_exons_set_apart_intronic_distance_to_nearest_exon(self):
+        """Inside the assayed exon: exonic; inside another exon of the construct: "other exon"; in an intron:
+        bases to the nearest exon of the construct (Part 1's definition of the intronic regions)."""
+        exons = [(100, 150), (300, 350), (500, 560)]                 # e.g. MST1R exons 10, 11, 12; 11 assayed
+        self.assertEqual(px.construct_position(320, exons, 1), (0, None))
+        self.assertEqual(px.construct_position(298, exons, 1), (2, None))
+        self.assertEqual(px.construct_position(152, exons, 1), (2, None))     # 2 bases from exon 10
+        self.assertEqual(px.construct_position(225, exons, 1), (75, None))
+        self.assertEqual(px.construct_position(120, exons, 1), (None, "other exon"))
+        self.assertEqual(px.construct_position(560, exons, 1), (None, "other exon"))
+        self.assertEqual(px.construct_position(120, exons, 0), (0, None))
 
     def test_outer_sides_of_first_and_last_exons(self):
         gtf = [
