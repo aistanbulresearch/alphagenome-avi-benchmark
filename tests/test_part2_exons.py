@@ -34,6 +34,62 @@ class Exons(unittest.TestCase):
                           "is_exon": [True, True, True, False, True, True]})
         self.assertEqual(px.intervals_from_labels(d, "key", "pos", "is_exon"), {"e1": [(10, 12)], "e2": [(100, 105)]})
 
+    def test_opensplice_span_includes_the_exonic_bases_of_the_splice_site_regions(self):
+        """The 5'SS region holds the last 3 exonic bases (-3..+6), the 3'SS region the first exonic base
+        (-4..+1); which genomic side each lies on depends on the strand."""
+        def rows(exon_id, regions, length):
+            out = []
+            for region, (a, b) in regions.items():
+                out += [{"exon_id": exon_id, "region": region, "POS": p, "exon_length": length} for p in range(a, b + 1)]
+            return out
+        plus = rows("p", {"Intron up": (60, 95), "3'SS": (96, 100), "Exon": (101, 196), "5'SS": (197, 205),
+                          "Intron down": (206, 224)}, 100)            # true exon 100..199
+        minus = rows("m", {"Intron down": (61, 79), "5'SS": (80, 88), "Exon": (89, 184), "3'SS": (185, 189),
+                           "Intron up": (190, 255)}, 100)             # true exon 86..185
+        wrong = rows("w", {"3'SS": (96, 100), "Exon": (101, 196), "5'SS": (197, 205)}, 120)
+        no_length = rows("n", {"3'SS": (96, 100), "Exon": (101, 250), "5'SS": (251, 259)}, None)
+        no_exon = rows("x", {"3'SS": (96, 100), "5'SS": (101, 109)}, 10)
+        spans = px.opensplice_spans(pd.DataFrame(plus + minus + wrong + no_length + no_exon))
+        self.assertEqual(spans, {"p": [(100, 199)], "m": [(86, 185)]})
+
+    def test_mst1r_distance_is_to_exon_11_and_other_exons_are_set_apart(self):
+        exons = [(100, 150), (300, 350), (500, 560)]                 # exons 10, 11, 12
+        self.assertEqual(px.mst1r_position(320, exons), (0, None))
+        self.assertEqual(px.mst1r_position(298, exons), (2, None))
+        self.assertEqual(px.mst1r_position(152, exons), (148, None))  # 2 bases from exon 10, far from exon 11
+        self.assertEqual(px.mst1r_position(120, exons), (None, "other exon"))
+        self.assertEqual(px.mst1r_position(560, exons), (None, "other exon"))
+
+    def test_outer_sides_of_first_and_last_exons(self):
+        gtf = [
+            "chr1\tX\texon\t100\t200\t.\t+\t.\ttranscript_id \"A\"; tag \"MANE_Select\";",
+            "chr1\tX\texon\t300\t400\t.\t+\t.\ttranscript_id \"A\"; tag \"MANE_Select\";",
+            "chr1\tX\texon\t500\t600\t.\t+\t.\ttranscript_id \"A\"; tag \"MANE_Select\";",
+            "chr2\tX\texon\t100\t200\t.\t-\t.\ttranscript_id \"B\"; tag \"MANE_Select\";",
+            "chr2\tX\texon\t300\t400\t.\t-\t.\ttranscript_id \"B\"; tag \"MANE_Select\";",
+            "chr3\tX\texon\t100\t200\t.\t+\t.\ttranscript_id \"C\";",
+        ]
+        low, high = px.outer_sides(gtf)
+        # plus strand: first exon (100-200) has its low side outside the gene, last (500-600) its high side
+        self.assertEqual(low["chr1"], {200})
+        self.assertEqual(high["chr1"], {500})
+        # minus strand: first exon is 300-400 (high side outside), last is 100-200 (low side outside)
+        self.assertEqual(low["chr2"], {200})
+        self.assertEqual(high["chr2"], {300})
+        self.assertNotIn("chr3", low)
+        self.assertTrue(px.is_flank(90, (100, 200), low["chr1"], high["chr1"]))
+        self.assertFalse(px.is_flank(210, (100, 200), low["chr1"], high["chr1"]))
+        self.assertFalse(px.is_flank(150, (100, 200), low["chr1"], high["chr1"]))
+        self.assertTrue(px.is_flank(610, (500, 600), low["chr1"], high["chr1"]))
+        self.assertFalse(px.is_flank(290, (300, 400), low["chr1"], high["chr1"]))
+
+    def test_class_overrides_distance(self):
+        self.assertEqual(px.position_class(5, None), "intronic 3-50")
+        self.assertEqual(px.position_class(5, "flank"), "flank")
+        self.assertEqual(px.position_class(None, "other exon"), "other exon")
+        self.assertEqual(px.position_class(float("nan"), float("nan")), "unmapped")    # missing values from a frame
+        self.assertEqual(px.position_class(4.0, float("nan")), "intronic 3-50")
+
     def test_classes(self):
         self.assertEqual([px.distance_class(x) for x in (0, 1, 2, 3, 50, 51, None)],
                          ["exonic", "intronic 1-2", "intronic 1-2", "intronic 3-50", "intronic 3-50", "intronic >50",

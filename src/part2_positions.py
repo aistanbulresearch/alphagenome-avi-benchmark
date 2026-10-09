@@ -1,5 +1,6 @@
 """Where the Part 2 variants lie relative to the exon their assay measured (a description of the data, not an
-analysis): exonic, intronic 1-2 bases from that exon, 3-50, more than 50, or unmapped. Distances come from each
+analysis): exonic, intronic 1-2 bases from that exon, 3-50, more than 50, flank (beyond the outer end of a
+gene's first or last exon), other exon (MST1R exons 10 and 12), or unmapped. Distances come from each
 dataset's own construct description (src/part2_exons.py). Writes results/part2/variant_positions.tsv.
 
 Usage:
@@ -17,7 +18,7 @@ import part2_analysis as p2
 import part2_exons as px
 from paths import RAW, ROOT
 
-CLASSES = ("exonic", "intronic 1-2", "intronic 3-50", "intronic >50", "unmapped")
+CLASSES = ("exonic", "intronic 1-2", "intronic 3-50", "intronic >50", "flank", "other exon", "unmapped")
 
 
 def table(d: pd.DataFrame, cls: pd.Series) -> pd.DataFrame:
