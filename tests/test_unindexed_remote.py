@@ -59,6 +59,32 @@ class Unindexed(unittest.TestCase):
         got = ur.fetch_positions("u", size, smap, "chr7", positions, self.fetch, probe=8000, scan=6000, gap=50)
         self.assertEqual(sorted(tuple(r) for rs in got.values() for r in rs), self.truth(positions))
 
+    def test_records_that_begin_a_block_are_found(self):
+        """Blocks cut exactly at record starts: the first line of a block is complete, and a target there must
+        still be returned (the reader skips only lines before a record below the target)."""
+        lines = self.text.decode().split("\n")
+        header, rows = lines[0], [line for line in lines[1:] if line]
+        blocks, starts, chunk, prev = [], [], [header], None
+        for row in rows:
+            pos = int(row.split("\t")[1])
+            if len(chunk) >= 30 and pos != prev:        # cut at the first row of a position
+                blocks.append("\n".join(chunk) + "\n")
+                starts.append(pos)
+                chunk = []
+            chunk.append(row)
+            prev = pos
+        blocks.append("\n".join(chunk) + "\n")
+        data = b"".join(bgzf_block(b.encode()) for b in blocks) + bgzf_block(b"")
+        fetch = lambda url, a, b: data[a:b]  # noqa: E731
+        smap = ur.sparse_map("u", len(data), "chr7", fetch, step=20000, probe=1500, threads=4)
+        targets = sorted(set(starts))
+        self.assertGreater(len(targets), 50)
+        for gap in (0, 50):
+            with self.subTest(gap=gap):
+                got = ur.fetch_positions("u", len(data), smap, "chr7", targets, fetch, probe=1500, scan=700,
+                                         gap=gap)
+                self.assertEqual(sorted(tuple(r) for rs in got.values() for r in rs), self.truth(targets))
+
     def test_bracket_brackets(self):
         smap = [(0, None), (100, 50), (200, 80), (300, 80), (400, 120)]
         self.assertEqual(ur.bracket(smap, 500, 80), (100, 50, 200, 80))
