@@ -1,0 +1,32 @@
+# Corrections after results were seen
+
+The analysis plan in `STUDY_DESIGN.md` was fixed before any score was retrieved (Part 2: before any Part 2 score).
+This file lists every change to code or method made after the affected results had been produced, with what
+changed, why, and the main numbers before and after. Each correction was triggered by a failure, a review or a
+mismatch with the plan, was applied to every tool alike, and was not chosen by the direction of its effect; the
+earlier outputs are kept. Commits are in this repository's history.
+
+## A. Changes made after the affected results were produced
+
+| # | Date | Commit | What changed | Why | Before | After |
+|---|---|---|---|---|---|---|
+| 1 | 2026-10-08 | 071b9a8, ace93a6 | Bootstrap bounds computed without interpolation when a replicate ratio is infinite | Interpolating between infinite replicates returned NaN bounds | Some calibration and interval bounds NaN; that output was not interpreted | Finite or explicitly infinite bounds |
+| 2 | 2026-10-08 | 7addf00 | Each evidence level tested within its own score interval; the planned test (likelihood ratio of all variants beyond each threshold) kept as a supplementary table | Evidence is assigned by score interval in the ClinGen framework; the cumulative ratio adds higher-level variants to the lower levels | AVI supporting 47.7 [42.6, 53.9], moderate 80.9 [70.0, 95.8] (cumulative) | AVI supporting 4.51 [2.56, 6.77], moderate 29.1 [22.5, 37.3] (interval). On the main set every level of every tool holds under both tests |
+| 3 | 2026-10-08 | a0ad0ce | Calibration skips a tool with no calibration-sample scores | Pangolin was scored on a main-set sample only; the run stopped on an empty array | Run failed | Pangolin enters discrimination only |
+| 4 | 2026-10-09 | 88f363f | Exact Clopper–Pearson bounds where a derivation window or a test interval holds no P/LP or no B/LB | The bootstrap cannot vary an empty class: windows or intervals without B/LB gave an infinite lower bound, those without P/LP a zero upper bound | Very strong thresholds derived for AVI (1.72), SpliceAI (1.0), SpliceAI masked (1.0), CADD (28.15), SpliceAI2 (0.88); SpliceAI very strong 9 P/LP, 0 B/LB shown as ∞ [∞, ∞]; AVI very strong 772 [312, ∞]; AVI benign coverage at prior 0.01: 3.4% | No very strong level for any tool (SpliceAI exact lower bound 52 against 1,124); strong interval open-ended: AVI 397 [294, 569], SpliceAI 158 [130, 197], CADD 68.9 [51.9, 93.0], SpliceAI2 512 [369, 778]; AVI benign coverage at prior 0.01: 0.85%. Supporting, moderate and benign levels unchanged |
+| 5 | 2026-10-09 | 8d28368 | MST1R median-based estimates (106 SNVs without a significance test) excluded from the analysis sets | The Part 2 plan excludes them; the code had kept them | MST1R 1,849 variants (875 splice-altering); AVI − SpliceAI −0.011 [−0.042, 0.020]; pooled AVI − SpliceAI −0.089 [−0.130, −0.047] | Rerun in progress |
+| 6 | 2026-10-09 | 8d28368 | Where a SpliceAI file holds more than one row for an allele, the larger score is kept (it was the last row read) | Independent code review; 1 of 297 sampled alleles has two rows | Part 1 SpliceAI scored 169,585 rows (masked 169,297); main comparison AVI − SpliceAI −0.005 [−0.017, 0.006] | Rerun in progress |
+| 7 | 2026-10-09 | 32c3b67 | Part 2 position classes measured from the exon each assay tested (from each dataset's own construct description), not the nearest exon of any GENCODE transcript | Independent code review: the nearest exon can belong to another transcript or gene; with canonical exons instead, 12.8% of OpenSplice and 34.7% of POU1F1 variants change class | Pooled AVI − SpliceAI: exonic −0.155 [−0.248, −0.061]; intronic 3–50 −0.037 [−0.060, −0.015]; intronic >50 +0.034 [0.009, 0.059] | Rerun in progress (an additional analysis, reported as such whatever it shows) |
+
+## B. Fixes made before the affected results existed
+
+| Date | Commit | What changed | Effect on results |
+|---|---|---|---|
+| 2026-10-08 | 14dfb11 | Forward scan stops at the target position in six-column (CADD) files | Found while the first CADD retrieval stalled; no CADD result existed |
+| 2026-10-08 | f9fef58 | SpliceAI2 range reads retried after an incomplete HTTP read | Retrieval failure; no score existed |
+
+## C. Wording of the design document
+
+`STUDY_DESIGN.md` keeps its pre-scoring text; later clarifications and changes are dated beside it (acdb2f2).
+The clarification on the review-star filter (it is applied as part of the main set, as the code always did)
+changed no analysis.
