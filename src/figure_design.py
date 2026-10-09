@@ -48,6 +48,7 @@ def figure_design() -> None:
     excl = v["exclusion"].value_counts().to_dict()
     n_all, n_new = len(v), int((v["new_label"] == "yes").sum())
     calib = pd.read_csv(DERIVED / "variants" / "calibration_sample.tsv", sep="\t", dtype=str)["label"].value_counts()
+    deriv = json.load(open(R1 / "calibration.json", encoding="utf-8"))["AVI"]["derivation"]
     cov = pd.read_csv(R1 / "coverage.tsv", sep="\t")
     n_main = int(cov[(cov.set == "main") & (cov.tool == "AVI")]["variants"].iloc[0])
     disc = pd.read_csv(R1 / "discrimination.tsv", sep="\t")
@@ -85,8 +86,9 @@ def figure_design() -> None:
                                    f"{int(main_row['n_neg']):,} B/LB", fill=BAND)
     box(ax, 0.44, 0.19, 0.55, 0.17,
         "Calibration sample (thresholds derived here)\n"
-        f"labelled variants outside the new-label set: all {calib.get('P/LP', 0):,} P/LP and {calib.get('B/LB', 0):,} "
-        "B/LB\n(random, stratified by region and chromosome group); non-canonical intronic\nand UTR, ≥1 star, rare. "
+        f"labelled variants outside the new-label set, non-canonical intronic and UTR,\n≥1 star: all "
+        f"{calib.get('P/LP', 0):,} P/LP and {calib.get('B/LB', 0):,} B/LB drawn (stratified by region and\nchromosome "
+        f"group); rare and scored by AVI: {deriv['n_pos']:,} P/LP, {deriv['n_neg']:,} B/LB.\n"
         "Thresholds tested on the main set.")
     arrow(ax, 0.44, 0.30, 0.40, 0.42)
 

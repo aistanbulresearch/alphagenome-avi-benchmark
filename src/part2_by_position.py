@@ -1,5 +1,5 @@
-"""Part 2 discrimination by position relative to the exon (exonic, intronic 3-50, intronic >50; the same
-50-base cut as Part 1's deep intronic region), per dataset and pooled over the main datasets. A dataset's
+"""Part 2 discrimination by position relative to the exon each assay measured (exonic, intronic 3-50, intronic
+>50; the same 50-base cut as Part 1's deep intronic region), per dataset and pooled over the main datasets. A dataset's
 class is analysed when it holds at least 10 splice-altering and 10 other variants. Added after the main
 Part 2 results. Writes results/part2/by_position_*.
 
@@ -17,7 +17,7 @@ import pandas as pd
 
 import metrics as m
 import part2_analysis as p2
-import part2_positions as pp
+import part2_exons as px
 from paths import RAW
 
 CLASSES = ("exonic", "intronic 3-50", "intronic >50")
@@ -48,8 +48,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--gtf", type=Path, default=RAW / "gencode.v38.annotation.gtf.gz")
     a = ap.parse_args(argv)
     d = p2.load()
-    exons = pp.read_exons(a.gtf)
-    d["class"] = [pp.classify(exons, str(c), int(p), str(g)) for c, p, g in zip(d["chrom"], d["pos"], d["gene"])]
+    d["class"] = px.classes(d, a.gtf)                 # distance to the exon each assay measured
     tools = [t for t in p2.TOOLS if t in d.columns]
     sets = p2.analysis_sets(d)
     main_sets = [n for n in sets if n != "mfass" and not n.startswith("opensplice, ")]
