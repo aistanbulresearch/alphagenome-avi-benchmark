@@ -40,6 +40,19 @@ class CompassClinvarCheck(unittest.TestCase):
                 h.write(header + "".join(lines))
             self.assertEqual(cc.significance_of(keys, path, "random_snv"), {"Uncertain significance": 1, "-": 1})
 
+    def test_significance_reads_every_row_and_shows_conflicting_rows(self):
+        keys = {("1", 100, "A", "G"): "random_snv", ("1", 200, "C", "T"): "random_snv"}
+        header = HEADER.rstrip("\n") + "\tClinicalSignificance\n"
+        lines = ["1\tGRCh38\t1\t100\tA\tG\tUncertain significance\n",
+                 "2\tGRCh38\t1\t100\tA\tG\tLikely benign\n",        # same allele, a later row disagrees
+                 "3\tGRCh38\t1\t200\tC\tT\tUncertain significance\n"]
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "variant_summary.txt.gz"
+            with gzip.open(path, "wt", encoding="utf-8") as h:
+                h.write(header + "".join(lines))
+            self.assertEqual(cc.significance_of(keys, path, "random_snv"),
+                             {"Likely benign | Uncertain significance": 1, "Uncertain significance": 1})
+
     def test_analysed_keys_drop_part1_and_benchmark_alleles(self):
         keys = {("1", 100, "A", "G"): "random_snv", ("1", 200, "C", "T"): "random_snv",
                 ("2", 7, "G", "A"): "exac", ("3", 9, "T", "C"): "random_snv"}

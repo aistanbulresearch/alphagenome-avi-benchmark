@@ -74,8 +74,11 @@ def present_by_subset(keys: dict, summary: Path) -> dict:
 
 
 def significance_of(keys: dict, summary: Path, subset: str) -> dict:
-    """ClinicalSignificance of the keys of one subset found in a variant_summary file, counted once per allele."""
-    seen, counts = set(), {}
+    """ClinicalSignificance of the keys of one subset found in a variant_summary file, counted once per allele.
+
+    Every row of an allele is read; an allele whose rows carry different classifications is counted under all of
+    them joined with ' | ', so a later row cannot hide a P/LP or B/LB classification."""
+    by_allele = {}
     with gzip.open(summary, "rt", encoding="utf-8", errors="replace") as h:
         header = h.readline().lstrip("#").rstrip("\n").split("\t")
         ix = [header.index(k) for k in ("Assembly", "Chromosome", "PositionVCF", "ReferenceAlleleVCF",
@@ -88,9 +91,12 @@ def significance_of(keys: dict, summary: Path, subset: str) -> dict:
                 k = (norm(f[ix[1]]), int(f[ix[2]]), f[ix[3]], f[ix[4]])
             except ValueError:
                 continue
-            if keys.get(k) == subset and k not in seen:
-                seen.add(k)
-                counts[f[ix[5]]] = counts.get(f[ix[5]], 0) + 1
+            if keys.get(k) == subset:
+                by_allele.setdefault(k, set()).add(f[ix[5]])
+    counts = {}
+    for classes in by_allele.values():
+        label = " | ".join(sorted(classes))
+        counts[label] = counts.get(label, 0) + 1
     return counts
 
 
