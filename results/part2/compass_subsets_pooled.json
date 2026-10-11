@@ -1,0 +1,60 @@
+{
+ "pooled_with_random_compass": {
+  "AVI - SpliceAI": {
+   "estimate": -0.08861435291135066,
+   "ci": [
+    -0.12990489700201255,
+    -0.04732380882068877
+   ],
+   "tau2": 0.002314342103667785,
+   "q": 49.56629680188517,
+   "i2": 0.899125003831034,
+   "k": 6,
+   "ci_hartung_knapp": [
+    -0.15893164310976468,
+    -0.01829706271293663
+   ],
+   "datasets": [
+    "braun2018_mst1r_ex11",
+    "cortes_lopez2022_cd19",
+    "kitzman_pou1f1_ex2",
+    "kitzman_wt1_ex9",
+    "opensplice",
+    "compass, random SNVs"
+   ]
+  },
+  "AVI - SpliceAI masked": {
+   "estimate": 0.002581049973106968,
+   "ci": [
+    -0.020598172660434896,
+    0.025760272606648833
+   ],
+   "tau2": 0.00042213434962622896,
+   "q": 11.832435315381394,
+   "i2": 0.5774327205913118,
+   "k": 6,
+   "ci_hartung_knapp": [
+    -0.02492741593812597,
+    0.030089515884339908
+   ],
+   "datasets": [
+    "braun2018_mst1r_ex11",
+    "cortes_lopez2022_cd19",
+    "kitzman_pou1f1_ex2",
+    "kitzman_wt1_ex9",
+    "opensplice",
+    "compass, random SNVs"
+   ]
+  }
+ },
+ "counts": {
+  "compass, random SNVs": {
+   "variants": 28229,
+   "splice_altering": 5850
+  },
+  "compass, ExAC SNVs": {
+   "variants": 3746,
+   "splice_altering": 1213
+  }
+ }
+}
