@@ -1,0 +1,37 @@
+"""COMPASS ClinVar provenance check on synthetic data (labels only, no scores)."""
+import gzip
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+
+import part2_compass_clinvar_check as cc  # noqa: E402
+
+HEADER = "#AlleleID\tAssembly\tChromosome\tPositionVCF\tReferenceAlleleVCF\tAlternateAlleleVCF\n"
+
+
+class CompassClinvarCheck(unittest.TestCase):
+    def test_counts_by_subset_only_grch38_exact_alleles(self):
+        keys = {("1", 100, "A", "G"): "random_snv", ("1", 200, "C", "T"): "exac", ("X", 5, "G", "A"): "random_snv"}
+        lines = ["1\tGRCh38\t1\t100\tA\tG\n",        # random, present
+                 "2\tGRCh37\t1\t200\tC\tT\n",        # wrong assembly
+                 "3\tGRCh38\t1\t200\tC\tA\n",        # other allele
+                 "4\tGRCh38\tX\t5\tG\tA\n",          # random, present
+                 "5\tGRCh38\t1\t200\tC\tT\n",        # exac, present
+                 "6\tGRCh38\t1\tna\tC\tT\n"]         # unparsable position
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "variant_summary.txt.gz"
+            with gzip.open(path, "wt", encoding="utf-8") as h:
+                h.write(HEADER + "".join(lines))
+            self.assertEqual(cc.present_by_subset(keys, path), {"random_snv": 2, "exac": 1})
+
+    def test_chromosome_names_are_normalised(self):
+        self.assertEqual(cc.norm("chr7"), "7")
+        self.assertEqual(cc.norm("chrM"), "MT")
+        self.assertEqual(cc.norm("X"), "X")
+
+
+if __name__ == "__main__":
+    unittest.main()

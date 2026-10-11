@@ -1,0 +1,79 @@
+"""Provenance check of the COMPASS random-variant proxy (labels only, no scores).
+
+The authors' 'clinvar_single' label mixes their ClinVar variants and random SNVs; the planned rule
+(src/part2_data.py harmonise_compass) sets aside the alleles present in the 2025-06-15 ClinVar VCF and keeps the
+rest as random. This check counts how many COMPASS main-set SNVs of each subset appear in the archived ClinVar
+variant summaries of July 2024 and July 2025 (around the library's design) and of October 2026. A random-labelled
+allele present in an archive from before the design would be a ClinVar variant that the proxy kept as random.
+
+Output: results/part2/compass_clinvar_check.json (counts only).
+
+Usage:
+    python src/part2_compass_clinvar_check.py
+"""
+from __future__ import annotations
+
+import csv
+import gzip
+import json
+import sys
+from pathlib import Path
+
+from paths import DERIVED, RAW, ROOT
+
+TABLE = DERIVED / "part2" / "assay_variants.tsv.gz"
+RELEASES = ["variant_summary_2024-07.txt.gz", "variant_summary_2025-07.txt.gz", "variant_summary_2026-10.txt.gz"]
+OUT = ROOT / "results" / "part2" / "compass_clinvar_check.json"
+
+
+def norm(chrom: str) -> str:
+    c = chrom[3:] if chrom.lower().startswith("chr") else chrom
+    return "MT" if c == "M" else c
+
+
+def compass_keys(path: Path = TABLE) -> dict:
+    """{(chrom, pos, ref, alt): subset} of the COMPASS main-set SNVs."""
+    keys = {}
+    with gzip.open(path, "rt", encoding="utf-8", newline="") as h:
+        for r in csv.DictReader(h, delimiter="\t"):
+            if r["dataset"] == "compass" and r["use"] == "main" and r["variant_type"] == "SNV":
+                keys[(norm(r["chrom"]), int(r["pos"]), r["ref"], r["alt"])] = r["subset"]
+    return keys
+
+
+def present_by_subset(keys: dict, summary: Path) -> dict:
+    """Number of keys of each subset found as GRCh38 alleles in a ClinVar variant_summary file."""
+    hit = {}
+    with gzip.open(summary, "rt", encoding="utf-8", errors="replace") as h:
+        header = h.readline().lstrip("#").rstrip("\n").split("\t")
+        ix = [header.index(k) for k in ("Assembly", "Chromosome", "PositionVCF", "ReferenceAlleleVCF",
+                                        "AlternateAlleleVCF")]
+        for line in h:
+            f = line.rstrip("\n").split("\t")
+            if f[ix[0]] != "GRCh38":
+                continue
+            try:
+                k = (norm(f[ix[1]]), int(f[ix[2]]), f[ix[3]], f[ix[4]])
+            except ValueError:
+                continue
+            if k in keys:
+                hit[k] = keys[k]
+    counts = {}
+    for s in hit.values():
+        counts[s] = counts.get(s, 0) + 1
+    return counts
+
+
+def main() -> int:
+    keys = compass_keys()
+    totals = {}
+    for s in keys.values():
+        totals[s] = totals.get(s, 0) + 1
+    out = {"compass_main_snvs": totals, "present_in": {r: present_by_subset(keys, RAW / r) for r in RELEASES}}
+    OUT.write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8")
+    print(json.dumps(out))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
