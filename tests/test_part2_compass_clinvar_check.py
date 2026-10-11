@@ -27,6 +27,12 @@ class CompassClinvarCheck(unittest.TestCase):
                 h.write(HEADER + "".join(lines))
             self.assertEqual(cc.present_by_subset(keys, path), {"random_snv": 2, "exac": 1})
 
+    def test_analysed_keys_drop_part1_and_benchmark_alleles(self):
+        keys = {("1", 100, "A", "G"): "random_snv", ("1", 200, "C", "T"): "random_snv",
+                ("2", 7, "G", "A"): "exac", ("3", 9, "T", "C"): "random_snv"}
+        out = cc.analysed_keys(keys, part1={"1:200:C:T"}, development={"2:7:G:A"})
+        self.assertEqual(out, {("1", 100, "A", "G"): "random_snv", ("3", 9, "T", "C"): "random_snv"})
+
     def test_chromosome_names_are_normalised(self):
         self.assertEqual(cc.norm("chr7"), "7")
         self.assertEqual(cc.norm("chrM"), "MT")

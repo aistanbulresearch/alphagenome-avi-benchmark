@@ -14,5 +14,21 @@
    "exac": 405,
    "random_snv": 293
   }
+ },
+ "analysed_snvs": {
+  "exac": 3746,
+  "random_snv": 28229
+ },
+ "analysed_present_in": {
+  "variant_summary_2024-07.txt.gz": {
+   "exac": 244
+  },
+  "variant_summary_2025-07.txt.gz": {
+   "exac": 299
+  },
+  "variant_summary_2026-10.txt.gz": {
+   "exac": 387,
+   "random_snv": 196
+  }
  }
 }

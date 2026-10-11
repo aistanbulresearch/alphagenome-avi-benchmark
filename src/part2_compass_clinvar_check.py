@@ -5,6 +5,8 @@ The authors' 'clinvar_single' label mixes their ClinVar variants and random SNVs
 rest as random. This check counts how many COMPASS main-set SNVs of each subset appear in the archived ClinVar
 variant summaries of July 2024 and July 2025 (around the library's design) and of October 2026. A random-labelled
 allele present in an archive from before the design would be a ClinVar variant that the proxy kept as random.
+The same counts are also given for the alleles that enter the analysis (after the Part 2 exclusions of Part 1 new
+labels and the developers' benchmark data).
 
 Output: results/part2/compass_clinvar_check.json (counts only).
 
@@ -41,6 +43,12 @@ def compass_keys(path: Path = TABLE) -> dict:
     return keys
 
 
+def analysed_keys(keys: dict, part1: set, development: set) -> dict:
+    """The keys whose allele ('chrom:pos:ref:alt') is neither a Part 1 new label nor in the developers' benchmark data."""
+    return {k: v for k, v in keys.items()
+            if f"{k[0]}:{k[1]}:{k[2]}:{k[3]}" not in part1 and f"{k[0]}:{k[1]}:{k[2]}:{k[3]}" not in development}
+
+
 def present_by_subset(keys: dict, summary: Path) -> dict:
     """Number of keys of each subset found as GRCh38 alleles in a ClinVar variant_summary file."""
     hit = {}
@@ -64,12 +72,24 @@ def present_by_subset(keys: dict, summary: Path) -> dict:
     return counts
 
 
-def main() -> int:
-    keys = compass_keys()
-    totals = {}
+def _totals(keys: dict) -> dict:
+    out = {}
     for s in keys.values():
-        totals[s] = totals.get(s, 0) + 1
-    out = {"compass_main_snvs": totals, "present_in": {r: present_by_subset(keys, RAW / r) for r in RELEASES}}
+        out[s] = out.get(s, 0) + 1
+    return out
+
+
+def main() -> int:
+    import pandas as pd
+
+    import part2_analysis as p2
+
+    keys = compass_keys()
+    frame = pd.DataFrame([{"allele": f"{c}:{p}:{r}:{a}", "chrom": c, "pos": str(p)} for c, p, r, a in keys])
+    analysed = analysed_keys(keys, p2.part1_new_labels(), p2.development_hits(frame))
+    out = {"compass_main_snvs": _totals(keys), "present_in": {r: present_by_subset(keys, RAW / r) for r in RELEASES},
+           "analysed_snvs": _totals(analysed),
+           "analysed_present_in": {r: present_by_subset(analysed, RAW / r) for r in RELEASES}}
     OUT.write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8")
     print(json.dumps(out))
     return 0
