@@ -1,0 +1,12 @@
+{
+ "tool": "spliceai2",
+ "files": "https://huggingface.co/datasets/illumina-ai/SpliceAI2-data precomputed_scores_v2.0/GRCh38/snv/chr*.tsv.gz",
+ "version": "precomputed_scores_v2.0",
+ "header_sha256": "e920b06b872aad847ca88829ca7cfa665d39ed9fc8408c166aa59badfd0b1186",
+ "part1_rows": 171590,
+ "part1_scored": 171427,
+ "part2_alleles": 375238,
+ "part2_scored": 375170,
+ "rows_where_summary_differs_from_max_delta0": 0,
+ "rows_read": 571688
+}

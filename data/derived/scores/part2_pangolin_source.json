@@ -1,0 +1,31 @@
+{
+ "tool": "pangolin",
+ "package": "Pangolin 1.0.2",
+ "source": "https://github.com/tkzeng/Pangolin.git",
+ "source_commit": "5cf94b8db938c658391b4305cd7ce33297d44ff7",
+ "environment": {
+  "python": "3.11.15",
+  "torch": "2.14.1+cpu",
+  "numpy": "2.4.6",
+  "pyfaidx": "0.9.0.4"
+ },
+ "genome": {
+  "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz",
+  "sha256": "c1dd87068c254eb53d944f71e51d1311964fce8de24d6fc0effc9c61c01527d4"
+ },
+ "annotation": {
+  "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_38/gencode.v38.annotation.gtf.gz",
+  "sha256": "22020df0d3356e965868f4b193e89fa13e838b950a574349f7fcd461ac01c050"
+ },
+ "settings": {
+  "distance": 50,
+  "masked": true,
+  "batch": 16
+ },
+ "code": "src/pangolin_local.py",
+ "code_commit": "0982e156ffb188f6eb5d47c014eedafd8544e230",
+ "started_utc": "2026-10-08T02:12:54Z",
+ "finished_utc": "2026-10-08T17:32:25Z",
+ "variants": 7034,
+ "scored": 7034
+}

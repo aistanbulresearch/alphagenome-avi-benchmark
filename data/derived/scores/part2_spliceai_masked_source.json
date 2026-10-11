@@ -1,0 +1,7 @@
+{
+ "tool": "spliceai_masked",
+ "file": "https://ftp.ensembl.org/pub/data_files/homo_sapiens/GRCh38/variation_plugins/spliceai_scores.masked.snv.ensembl_mane_v1.4.grch38.vcf.gz",
+ "seconds": 360,
+ "variants": 375238,
+ "scored": 370278
+}

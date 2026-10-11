@@ -1,0 +1,8 @@
+{
+ "tool": "spliceai",
+ "file": "https://ftp.ensembl.org/pub/data_files/homo_sapiens/GRCh38/variation_plugins/spliceai_scores.raw.snv.ensembl_mane_v1.4.grch38.vcf.gz",
+ "index_sha256": "683f1e361dda6e03318b49d06b8f6fd990229f72ec1a3a6000a46fed22cf3a18",
+ "variants": 171590,
+ "scored": 169585,
+ "seconds": 1959
+}

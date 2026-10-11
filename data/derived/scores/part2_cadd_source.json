@@ -1,0 +1,7 @@
+{
+ "tool": "cadd",
+ "file": "https://kircherlab.bihealth.org/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz",
+ "seconds": 528,
+ "variants": 375238,
+ "scored": 375222
+}

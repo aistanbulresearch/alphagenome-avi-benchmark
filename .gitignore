@@ -12,5 +12,7 @@ __pycache__/
 work/
 .remember/
 data/derived/exposure/development_positions.tsv
-data/derived/scores/
+# per-variant scores stay local; the source record of each score file is kept
+data/derived/scores/*
+!data/derived/scores/*_source.json
 .venv/
