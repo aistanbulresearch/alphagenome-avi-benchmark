@@ -27,6 +27,19 @@ class CompassClinvarCheck(unittest.TestCase):
                 h.write(HEADER + "".join(lines))
             self.assertEqual(cc.present_by_subset(keys, path), {"random_snv": 2, "exac": 1})
 
+    def test_significance_of_present_alleles_counted_once_per_allele(self):
+        keys = {("1", 100, "A", "G"): "random_snv", ("1", 200, "C", "T"): "random_snv", ("2", 7, "G", "A"): "exac"}
+        header = HEADER.rstrip("\n") + "\tClinicalSignificance\n"
+        lines = ["1\tGRCh38\t1\t100\tA\tG\tUncertain significance\n",
+                 "2\tGRCh38\t1\t100\tA\tG\tUncertain significance\n",     # same allele, second record
+                 "3\tGRCh38\t1\t200\tC\tT\t-\n",
+                 "4\tGRCh38\t2\t7\tG\tA\tBenign\n"]                      # other subset
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "variant_summary.txt.gz"
+            with gzip.open(path, "wt", encoding="utf-8") as h:
+                h.write(header + "".join(lines))
+            self.assertEqual(cc.significance_of(keys, path, "random_snv"), {"Uncertain significance": 1, "-": 1})
+
     def test_analysed_keys_drop_part1_and_benchmark_alleles(self):
         keys = {("1", 100, "A", "G"): "random_snv", ("1", 200, "C", "T"): "random_snv",
                 ("2", 7, "G", "A"): "exac", ("3", 9, "T", "C"): "random_snv"}

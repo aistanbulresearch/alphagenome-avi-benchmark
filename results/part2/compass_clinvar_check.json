@@ -30,5 +30,10 @@
    "exac": 387,
    "random_snv": 196
   }
+ },
+ "analysed_random_significance_2026_10": {
+  "Uncertain significance": 146,
+  "Conflicting classifications of pathogenicity": 2,
+  "-": 48
  }
 }
