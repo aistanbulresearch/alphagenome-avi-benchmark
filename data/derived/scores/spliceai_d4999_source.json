@@ -1,0 +1,25 @@
+{
+ "tool": "spliceai_d4999",
+ "package": "SpliceAI 1.3.1",
+ "environment": {
+  "python": "3.11.15",
+  "tensorflow-cpu": "2.21.0",
+  "numpy": "2.4.6",
+  "pyfaidx": "0.9.0.4"
+ },
+ "genome": {
+  "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz",
+  "sha256": "c1dd87068c254eb53d944f71e51d1311964fce8de24d6fc0effc9c61c01527d4"
+ },
+ "settings": {
+  "distance": 4999,
+  "mask": 0,
+  "batch": 32
+ },
+ "code": "src/spliceai_local.py",
+ "code_commit": "b80656723549bc2d4e5046dc3a29a832e729c38e",
+ "started_utc": "2026-10-07T10:28:49Z",
+ "finished_utc": "2026-10-07T14:48:55Z",
+ "variants": 3636,
+ "scored": 3474
+}

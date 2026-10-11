@@ -170,3 +170,4 @@ check(f"{name} phastCons supporting pathogenic method = {x!r}", x == "empty scor
 bad = [n for n, df in sheets.items() if df.astype(str).apply(lambda c: c.str.contains(r"\b(?:chr)?\d{1,2}:\d{4,}:[ACGT]", regex=True)).any().any()]
 check(f"no allele identifiers in any sheet {bad}", not bad)
 print("FAILS:", fails)
+sys.exit(1 if fails else 0)

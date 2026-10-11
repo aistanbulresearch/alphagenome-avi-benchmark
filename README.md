@@ -20,12 +20,12 @@ The study design is in [STUDY_DESIGN.md](STUDY_DESIGN.md).
 
 ## Reproducing
 
-Every number, table and figure of the manuscript is computed by the scripts in `src/` from public files. Commands are run from the repository root. Raw downloads are not stored here: `data/downloads.json` lists each file with its URL, date and SHA-256, and `data/derived/scores/*_source.json` records the source, version and checksum of every score file. Per-variant tool scores are not distributed (the SpliceAI2 terms forbid it; for the other tools only the sources are given). Variant lists without scores are in `data/derived/variants/`, including the Part 1 main set (`main_set.tsv`).
+Every number, table and figure of the manuscript is computed by the scripts in `src/` from public files. Commands are run from the repository root. Raw downloads are not stored here: `data/downloads.json` lists each file with its URL, date and SHA-256, and `data/derived/scores/*_source.json` records where each score file came from: the source file or API, the version, the retrieval or run time and the variant counts, with the checksum of the remote file's index where one was read, and for the local runs the package, environment, genome checksum and settings. Per-variant tool scores are not distributed (the SpliceAI2 terms forbid it; for the other tools only the sources are given). Variant lists without scores are in `data/derived/variants/`, including the Part 1 main set (`main_set.tsv`).
 
 ### Environments, folders and keys
 
 - Analysis: Python 3.14 with `pip install -r requirements.txt` (the AlphaGenome client is pinned to 0.9.0).
-- SpliceAI and Pangolin run locally in a second environment: Python 3.11, SpliceAI 1.3.1 with tensorflow-cpu 2.21, and Pangolin 1.0.2 from github.com/tkzeng/Pangolin at commit 5cf94b8 with torch 2.14.1 (CPU), installed without its VCF dependencies (versions in `data/derived/scores/pangolin_source.json`).
+- SpliceAI and Pangolin run locally in a second environment: Python 3.11, SpliceAI 1.3.1 with tensorflow-cpu 2.21, and Pangolin 1.0.2 from github.com/tkzeng/Pangolin at commit 5cf94b8 with torch 2.14.1 (CPU), installed without its VCF dependencies (versions in `data/derived/scores/spliceai_d4999_source.json` and `pangolin_source.json`).
 - Raw files go to `data/raw/`, or to the folder named by the environment variable `AVI_RAW_DIR`.
 - `ALPHAGENOME_API_KEY` (AlphaGenome Atlas API, for AVI) and `HF_TOKEN` (the SpliceAI2 dataset on Hugging Face, after accepting its terms) are read from the environment and never written to a file.
 
@@ -63,7 +63,6 @@ python src/tool_scores.py --tool spliceai --threads 16
 python src/tool_scores.py --tool spliceai_masked --threads 16
 python src/tool_scores.py --tool cadd --threads 16
 python src/conservation_scores.py --threads 16
-python src/spliceai2_scores.py
 ```
 
 In the second environment:
@@ -73,7 +72,7 @@ python src/spliceai_local.py --fasta data/raw/hg38.fa --batch 32
 python src/pangolin_local.py --fasta data/raw/hg38.fa --gtf data/raw/gencode.v38.annotation.gtf.gz --batch 16
 ```
 
-The Part 1 AVI scores come from `src/avi_atlas.py` (Atlas API, client 0.9.0; `avi_source.json`). The `--tool avi` path of `src/tool_scores.py`, which reads a local copy of the downloadable AVI file, was not used for the reported results. `src/spliceai2_scores.py` also scores the Part 2 alleles, so it runs after step 5's `build`.
+The Part 1 AVI scores come from `src/avi_atlas.py` (Atlas API, client 0.9.0; `avi_source.json`). The `--tool avi` path of `src/tool_scores.py`, which reads a local copy of the downloadable AVI file, was not used for the reported results. The SpliceAI2 scores of both parts are retrieved in step 5, because `src/spliceai2_scores.py` also reads the Part 2 alleles.
 
 ### 5. Part 2 assay data and scores
 
@@ -84,6 +83,7 @@ python src/part2_scores.py --tool spliceai --threads 16
 python src/part2_scores.py --tool spliceai_masked --threads 16
 python src/part2_scores.py --tool cadd --threads 16
 python src/part2_scores.py --tool conservation --threads 16
+python src/spliceai2_scores.py
 ```
 
 In the second environment: `python src/pangolin_local.py --fasta data/raw/hg38.fa --gtf data/raw/gencode.v38.annotation.gtf.gz --batch 16 --part2`.
